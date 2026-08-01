@@ -1,0 +1,16 @@
+# Plugin runtime data
+*/settings.json
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AI / agents
+CLAUDE.local.md
