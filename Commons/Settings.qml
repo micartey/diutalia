@@ -731,7 +731,7 @@ Singleton {
 
     property JsonObject colorSchemes: JsonObject {
       property bool useWallpaperColors: false
-      property string predefinedScheme: "Diutalia (default)"
+      property string predefinedScheme: "Catppuccin Mocha Sapphire"
       property bool darkMode: true
       property string schedulingMode: "off"
       property string manualSunrise: "06:30"

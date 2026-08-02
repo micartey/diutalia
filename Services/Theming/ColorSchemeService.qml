@@ -13,7 +13,7 @@ Singleton {
 
   property var schemes: []
   property bool scanning: false
-  property string schemesDirectory: Quickshell.shellDir + "/Assets/ColorScheme"
+  property string schemesDirectory: Quickshell.shellDir + "/Themes"
   property string downloadedSchemesDirectory: Settings.configDir + "colorschemes"
   property string colorsJsonFilePath: Settings.configDir + "colors.json"
   // Last successfully parsed predefined scheme JSON (full object). Used to refresh app templates
@@ -63,7 +63,7 @@ Singleton {
     // Use find command to locate all scheme.json files in both directories
     // First ensure the downloaded schemes directory exists
     Quickshell.execDetached(["mkdir", "-p", downloadedSchemesDirectory]);
-    // Find in both preinstalled and downloaded directories
+    // Find bundled Themes and user-created schemes.
     findProcess.command = ["find", "-L", schemesDirectory, downloadedSchemesDirectory, "-mindepth", "2", "-name", "*.json", "-type", "f"];
     findProcess.running = true;
   }
@@ -72,9 +72,9 @@ Singleton {
     if (!path)
       return "";
     var chunks = path.split("/");
-    // Get the filename without extension
+    var directory = chunks.length > 1 ? chunks[chunks.length - 2] : "";
     var filename = chunks[chunks.length - 1];
-    var schemeName = filename.replace(".json", "");
+    var schemeName = directory || filename.replace(".json", "");
     // Convert back to display names for special cases
     if (schemeName === "Diutalia-default") {
       return "Diutalia (default)";
@@ -172,6 +172,16 @@ Singleton {
         var stored = Settings.data.colorSchemes.predefinedScheme;
         if (stored) {
           var basename = getBasename(stored);
+          var schemeExists = false;
+          for (var i = 0; i < files.length; i++) {
+            if (getBasename(files[i]) === basename) {
+              schemeExists = true;
+              break;
+            }
+          }
+          if (!schemeExists) {
+            basename = "Catppuccin Mocha Sapphire";
+          }
           if (basename !== stored) {
             Settings.data.colorSchemes.predefinedScheme = basename;
           }

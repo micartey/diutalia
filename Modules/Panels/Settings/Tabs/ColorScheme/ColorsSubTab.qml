@@ -19,12 +19,11 @@ ColumnLayout {
   property int cacheVersion: 0
   property var screen
 
-  signal openDownloadPopup
-
   function extractSchemeName(schemePath) {
     var pathParts = schemePath.split("/");
+    var directory = pathParts.length > 1 ? pathParts[pathParts.length - 2] : "";
     var filename = pathParts[pathParts.length - 1];
-    var schemeName = filename.replace(".json", "");
+    var schemeName = directory || filename.replace(".json", "");
 
     if (schemeName === "Diutalia-default") {
       schemeName = "Diutalia (default)";
@@ -449,12 +448,5 @@ ColumnLayout {
       }
     }
 
-    NButton {
-      text: I18n.tr("panels.color-scheme.download-button")
-      icon: "download"
-      onClicked: root.openDownloadPopup()
-      Layout.alignment: Qt.AlignRight
-      Layout.topMargin: Style.marginS
-    }
   }
 }

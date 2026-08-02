@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# Generate a registry.json from all color schemes in Assets/ColorScheme
-# Output format matches ~/Development/misc/diutalia/diutalia-colorschemes/registry.json
+# Generate a registry.json from local Themes.
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-COLORSCHEME_DIR="$PROJECT_ROOT/Assets/ColorScheme"
+COLORSCHEME_DIR="$PROJECT_ROOT/Themes"
 
 # Start JSON output
 echo '{'
