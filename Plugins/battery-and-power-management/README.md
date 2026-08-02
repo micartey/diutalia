@@ -1,6 +1,6 @@
 # Battery & Power Management Plugin
 
-A lightweight, efficient battery status bar widget and interactive control popup designed for the **Noctalia** desktop shell environment.
+A lightweight, efficient battery status bar widget and interactive control popup designed for the **Diutalia** desktop shell environment.
 
 This plugin displays real-time battery diagnostics (including dynamic power draw in Watts) and provides desktop controls to switch system power profiles or adjust hardware battery charge thresholds safely without needing root privileges.
 
@@ -23,14 +23,14 @@ To ensure the threshold operations and power profile modifications function smoo
 
 ## Installation
 
-1.  **Install via Settings**: Open your Noctalia settings panel, navigate to the plugins section, and install this plugin directly from the interface.
+1.  **Install via Settings**: Open your Diutalia settings panel, navigate to the plugins section, and install this plugin directly from the interface.
 2.  **Configure Udev Permissions**: To allow the widget to adjust battery thresholds without root access, execute the provided setup script:
 
-        cd ~/.config/noctalia/plugins/battery-and-power-management/
+        cd ~/.config/diutalia/plugins/battery-and-power-management/
         chmod +x setup_rules.sh
         sudo ./setup_rules.sh
 
-3.  **Apply Changes**: Log out and log back into your session to apply group membership changes. If the widget does not appear immediately, reload your Noctalia configuration via the desktop settings or restart your session.
+3.  **Apply Changes**: Log out and log back into your session to apply group membership changes. If the widget does not appear immediately, reload your Diutalia configuration via the desktop settings or restart your session.
 
 ## Diagnostics and Monitoring
 

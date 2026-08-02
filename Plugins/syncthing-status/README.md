@@ -1,6 +1,6 @@
 # syncthing-status
 
-Syncthing status plugin for Noctalia.
+Syncthing status plugin for Diutalia.
 
 ## Features
 
@@ -14,7 +14,7 @@ Syncthing status plugin for Noctalia.
 
 ## Usage
 
-The plugin adds a capsule to the Noctalia bar showing the current Syncthing state. Left-click opens the detail panel; right-click provides quick toggle, refresh, and settings shortcuts.
+The plugin adds a capsule to the Diutalia bar showing the current Syncthing state. Left-click opens the detail panel; right-click provides quick toggle, refresh, and settings shortcuts.
 
 Configure the Syncthing connection in the plugin settings page. By default, the plugin autodetects the GUI URL and API key from Syncthing's `config.xml`.
 

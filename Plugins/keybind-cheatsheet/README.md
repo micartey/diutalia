@@ -1,6 +1,6 @@
-# Keybind Cheatsheet for Noctalia
+# Keybind Cheatsheet for Diutalia
 
-Universal keyboard shortcuts cheatsheet plugin for Noctalia that **automatically detects** your compositor (Hyprland, Niri or MangoWC) and displays your keybindings with **recursive config parsing**. Supports the classic Hyprland `.conf` format, the new **Hyprland 0.55+ Lua config**, Niri KDL and MangoWC.
+Universal keyboard shortcuts cheatsheet plugin for Diutalia that **automatically detects** your compositor (Hyprland, Niri or MangoWC) and displays your keybindings with **recursive config parsing**. Supports the classic Hyprland `.conf` format, the new **Hyprland 0.55+ Lua config**, Niri KDL and MangoWC.
 
 ![Preview](preview.png)
 
@@ -30,40 +30,40 @@ Universal keyboard shortcuts cheatsheet plugin for Noctalia that **automatically
 ## Installation
 
 ```bash
-cp -r keybind-cheatsheet ~/.config/noctalia/plugins/
+cp -r keybind-cheatsheet ~/.config/diutalia/plugins/
 ```
 
 ## Usage
 
 ### Bar Widget
-Add the plugin to your bar configuration in Noctalia settings. Click the keyboard icon to open the cheatsheet.
+Add the plugin to your bar configuration in Diutalia settings. Click the keyboard icon to open the cheatsheet.
 
 ### Global Hotkey
 
 **Hyprland:**
 ```bash
-bind = $mod, F1, exec, qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle
+bind = $mod, F1, exec, qs -c diutalia-shell ipc call plugin:keybind-cheatsheet toggle
 ```
 You can set your custom Super key variable (e.g. `$mainMod`) in the plugin settings.
 
 **Niri:**
 ```kdl
 binds {
-    Mod+F1 { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
+    Mod+F1 { spawn-sh "qs -c diutalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
 }
 ```
 
 **MangoWC:**
 ```bash
-bind=SUPER,F1,spawn,qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle
+bind=SUPER,F1,spawn,qs -c diutalia-shell ipc call plugin:keybind-cheatsheet toggle
 ```
 
 ### IPC Commands
 
 | Command | Effect |
 |---------|--------|
-| `qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle` | Open / close the cheatsheet panel |
-| `qs -c noctalia-shell ipc call plugin:keybind-cheatsheet refresh` | Force a re-parse of your keybindings |
+| `qs -c diutalia-shell ipc call plugin:keybind-cheatsheet toggle` | Open / close the cheatsheet panel |
+| `qs -c diutalia-shell ipc call plugin:keybind-cheatsheet refresh` | Force a re-parse of your keybindings |
 
 `refresh` is useful after editing your config — bind it to a key to reload without restarting the shell.
 
@@ -262,7 +262,7 @@ The plugin follows `source` (Hyprland `.conf`), `require()` (Hyprland Lua) and `
 
 ## Requirements
 
-- Noctalia Shell 3.6.0+
+- Diutalia Shell 3.6.0+
 - Hyprland (classic `.conf` or 0.55+ Lua), Niri, or MangoWC
 - `hyprctl` on `PATH` for Hyprland Lua configs
 - `wl-paste` (wl-clipboard) for the color clipboard quick-paste feature

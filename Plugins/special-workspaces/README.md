@@ -5,7 +5,7 @@ A widget to track Hyprland special workspaces.
 ### Requirements
 
 * Hyprland
-* Noctalia (duh.)
+* Diutalia (duh.)
 
 ## Features
 

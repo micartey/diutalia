@@ -1,6 +1,6 @@
 # AI-Assisted Development Guidelines
 
-Guidelines for AI tools contributing to the Noctalia Plugins repository. **Study the official plugins before writing code** — especially `hello-world` (minimal reference) and `timer` (complex example with shared state). Official plugins have `"official": true` in their manifest.
+Guidelines for AI tools contributing to the Diutalia Plugins repository. **Study the official plugins before writing code** — especially `hello-world` (minimal reference) and `timer` (complex example with shared state). Official plugins have `"official": true` in their manifest.
 
 ## Plugin API
 
@@ -239,7 +239,7 @@ NIconButtonHot {
   "id": "my-plugin",
   "name": "My Plugin",
   "version": "1.0.0",
-  "minNoctaliaVersion": "4.4.1",
+  "minDiutaliaVersion": "4.4.1",
   "author": "Author Name",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
@@ -265,7 +265,7 @@ NIconButtonHot {
 **Field rules:**
 - `id` must match the folder name
 - `version` starts at `1.0.0`; bump appropriately on updates
-- `minNoctaliaVersion` — verify the features you use exist in that version
+- `minDiutaliaVersion` — verify the features you use exist in that version
 - `repository` — always `https://github.com/noctalia-dev/noctalia-plugins` for PRs to this repo
 - `tags` — use only tags from [README.md](./README.md#tags); include compositor tags if compositor-specific
 - `entryPoints` — only include the ones your plugin provides
@@ -297,7 +297,7 @@ Do **not** add fallback text after `tr()` calls — the translation system handl
 
 ## Code Style
 
-- **Use Noctalia widgets** (`NButton`, `NLabel`, `NBox`, `NSlider`, etc.) instead of raw Qt types (`Text`, `Rectangle`, `Button`). This ensures correct theming.
+- **Use Diutalia widgets** (`NButton`, `NLabel`, `NBox`, `NSlider`, etc.) instead of raw Qt types (`Text`, `Rectangle`, `Button`). This ensures correct theming.
 - **Use `Style` constants** for margins, radii, colors: `Style.marginL`, `Style.radiusM`, `Color.mPrimary`
 - **Use `Logger`** for logging (`Logger.i`, `Logger.d`, `Logger.w`, `Logger.e`), not `console.log`
 - **Always null-coalesce** pluginApi access: `pluginApi?.tr(...)`, `pluginApi?.pluginSettings || ({})`
@@ -325,7 +325,7 @@ These are the most frequent issues in AI-generated plugin PRs:
 - **Hardcoded strings** — all user-facing text must go through `pluginApi?.tr()` with translations in `i18n/`.
 - **Wrong settings pattern** — modifying `pluginApi.pluginSettings` directly in bindings instead of using edit-copy properties and saving in `saveSettings()`.
 - **Missing `saveSettings()` function** in Settings.qml — the shell calls this; without it, settings won't persist.
-- **Incorrect manifest fields** — `id` not matching folder name, missing `defaultSettings` for settings the plugin uses, wrong `minNoctaliaVersion`.
+- **Incorrect manifest fields** — `id` not matching folder name, missing `defaultSettings` for settings the plugin uses, wrong `minDiutaliaVersion`.
 - **Using `console.log`** instead of `Logger.i` / `Logger.d` / `Logger.w` / `Logger.e`.
 
 ## Performance
@@ -337,7 +337,7 @@ These are the most frequent issues in AI-generated plugin PRs:
 
 ## Testing
 
-- [ ] Plugin loads and runs with `qs -c noctalia-shell`
+- [ ] Plugin loads and runs with `qs -c diutalia-shell`
 - [ ] Test with both light and dark themes
 - [ ] Test on target compositors (Niri, Hyprland, Sway, Labwc, MangoWC) — especially if using compositor-specific features
 - [ ] Verify settings persist across restarts
@@ -345,7 +345,7 @@ These are the most frequent issues in AI-generated plugin PRs:
 
 ## PR Checklist
 
-- [ ] Plugin tested with Noctalia Shell (`qs -c noctalia-shell`)
+- [ ] Plugin tested with Diutalia Shell (`qs -c diutalia-shell`)
 - [ ] `manifest.json` is valid with all required fields
 - [ ] `id` matches folder name
 - [ ] `registry.json` is **not** included in the PR (auto-generated)
@@ -379,4 +379,4 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `chore`
 - [Official Plugins](https://github.com/noctalia-dev/noctalia-plugins) — study `hello-world` and `timer` first
 - [Plugin Documentation](https://docs.noctalia.dev/development/plugins/overview/)
 - [Development Guidelines](https://docs.noctalia.dev/development/guideline/)
-- [Noctalia Widgets](https://github.com/noctalia-dev/noctalia-shell/tree/main/Widgets) — all N* components
+- [Diutalia Widgets](https://github.com/noctalia-dev/noctalia-shell/tree/main/Widgets) — all N* components

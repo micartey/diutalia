@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 import qs.Commons
 import qs.Modules.Panels.Settings
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 import qs.Services.UI
 
 Singleton {
@@ -28,7 +28,7 @@ Singleton {
   // Plugin updates available: { pluginId: { currentVersion, availableVersion } }
   property var pluginUpdates: ({})
 
-  // Plugin updates that require a newer Noctalia version: { pluginId: { currentVersion, availableVersion, minNoctaliaVersion } }
+  // Plugin updates that require a newer Diutalia version: { pluginId: { currentVersion, availableVersion, minDiutaliaVersion } }
   property var pluginUpdatesPending: ({})
 
   // Plugin load errors: { pluginId: { error: string, entryPoint: string, timestamp: date } }
@@ -1031,7 +1031,7 @@ Singleton {
     }
   }
 
-  // Bundled plugins update with Noctalia itself.
+  // Bundled plugins update with Diutalia itself.
   function checkForUpdates() {
     root.pluginUpdates = {};
     root.pluginUpdatesPending = {};
@@ -1058,15 +1058,15 @@ Singleton {
 
         // Compare versions
         if (compareVersions(availableVersion, currentVersion) > 0) {
-          // Check if the available version requires a higher Noctalia version
-          if (availablePlugin.minNoctaliaVersion) {
-            var noctaliaVersion = UpdateService.baseVersion;
-            if (compareVersions(availablePlugin.minNoctaliaVersion, noctaliaVersion) > 0) {
-              Logger.d("PluginService", "Pending update for", pluginId + ": requires Noctalia v" + availablePlugin.minNoctaliaVersion + " (current: v" + noctaliaVersion + ")");
+          // Check if the available version requires a higher Diutalia version
+          if (availablePlugin.minDiutaliaVersion) {
+            var diutaliaVersion = Settings.version.replace(/^v/, "").replace("-git", "");
+            if (compareVersions(availablePlugin.minDiutaliaVersion, diutaliaVersion) > 0) {
+              Logger.d("PluginService", "Pending update for", pluginId + ": requires Diutalia v" + availablePlugin.minDiutaliaVersion + " (current: v" + diutaliaVersion + ")");
               pendingUpdates[pluginId] = {
                 currentVersion: currentVersion,
                 availableVersion: availableVersion,
-                minNoctaliaVersion: availablePlugin.minNoctaliaVersion
+                minDiutaliaVersion: availablePlugin.minDiutaliaVersion
               };
               continue;
             }
@@ -1116,7 +1116,7 @@ Singleton {
         });
       }
     } else if (pendingCount > 0) {
-      Logger.i("PluginService", pendingCount, "plugin update(s) pending (require newer Noctalia)");
+      Logger.i("PluginService", pendingCount, "plugin update(s) pending (require newer Diutalia)");
     } else {
       Logger.i("PluginService", "All installed plugins are up to date");
     }
@@ -1183,10 +1183,10 @@ Singleton {
       return;
     }
 
-    // Check Noctalia compatibility
-    if (availablePlugin.minNoctaliaVersion) {
-      // Simple check: just warn, don't block (UpdateService would have more sophisticated logic)
-      Logger.d("PluginService", "Plugin requires Noctalia v" + availablePlugin.minNoctaliaVersion);
+    // Check Diutalia compatibility
+    if (availablePlugin.minDiutaliaVersion) {
+      // Simple compatibility check; bundled plugins update with Diutalia.
+      Logger.d("PluginService", "Plugin requires Diutalia v" + availablePlugin.minDiutaliaVersion);
     }
 
     // Backup entire bar layout (global + screen overrides)

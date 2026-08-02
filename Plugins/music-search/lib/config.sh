@@ -3,7 +3,7 @@
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 DEFAULT_CACHE_HOME="${XDG_CACHE_HOME:-${HOME}/.cache}"
-DEFAULT_CACHE_DIR="${DEFAULT_CACHE_HOME}/noctalia/plugins/music-search"
+DEFAULT_CACHE_DIR="${DEFAULT_CACHE_HOME}/diutalia/plugins/music-search"
 CACHE_DIR="${MUSIC_CACHE_DIR:-${DEFAULT_CACHE_DIR}}"
 PID_FILE="${CACHE_DIR}/mpv.pid"
 STATE_FILE="${CACHE_DIR}/state.json"
@@ -14,7 +14,7 @@ SETTINGS_FILE="${CACHE_DIR}/settings.json"
 PLAYLISTS_FILE="${CACHE_DIR}/playlists.json"
 QUEUE_FILE="${CACHE_DIR}/queue.json"
 DOWNLOAD_BASENAME="${CACHE_DIR}/current-media"
-DOWNLOADS_DIR_DEFAULT="${HOME}/Music/Noctalia"
+DOWNLOADS_DIR_DEFAULT="${HOME}/Music/Diutalia"
 LOCAL_MUSIC_DIR="${HOME}/Music"
 
 STATE_LOCK="${CACHE_DIR}/state.lock"

@@ -40,8 +40,8 @@
       "needs_restart": "OBS benötigt Neustart",
       "offline": "Offline",
       "connected_hint": "Linksklick {primaryAction}. Rechtsklick schaltet die Aufnahme ein oder aus, Mittelklick schaltet Replay ein oder aus, und das Panel bietet Streaming- und Speicheraktionen.",
-      "qt_websockets_missing_hint": "In dieser QuickShell-Laufzeit fehlt die Qt-WebSockets-Unterstützung. Installiere qt6-websockets und starte Noctalia anschließend neu, um die OBS-Steuerung zu aktivieren.",
-      "config_missing_hint": "Die OBS-WebSocket-Konfiguration fehlt oder ist deaktiviert. Öffne OBS, aktiviere obs-websocket und aktualisiere das Plugin oder starte Noctalia neu.",
+      "qt_websockets_missing_hint": "In dieser QuickShell-Laufzeit fehlt die Qt-WebSockets-Unterstützung. Installiere qt6-websockets und starte Diutalia anschließend neu, um die OBS-Steuerung zu aktivieren.",
+      "config_missing_hint": "Die OBS-WebSocket-Konfiguration fehlt oder ist deaktiviert. Öffne OBS, aktiviere obs-websocket und aktualisiere das Plugin oder starte Diutalia neu.",
       "disconnected_hint": "Die WebSocket-Steuerung ist derzeit nicht verfügbar. Starte OBS neu oder aktualisiere den Status, um die Schnellaktionen wiederherzustellen.",
       "recording_elapsed": "Aufnahmezeit",
       "streaming_elapsed": "Streamdauer",
@@ -87,9 +87,9 @@
     },
     "runtime": {
       "qt_websockets_missing_title": "Qt WebSockets fehlen",
-      "qt_websockets_missing": "Installiere qt6-websockets und starte Noctalia neu, um die OBS-Steuerung zu aktivieren.",
+      "qt_websockets_missing": "Installiere qt6-websockets und starte Diutalia neu, um die OBS-Steuerung zu aktivieren.",
       "websocket_config_missing_title": "OBS WebSocket nicht konfiguriert",
-      "websocket_config_missing": "Aktiviere obs-websocket in OBS und aktualisiere das Plugin oder starte Noctalia neu."
+      "websocket_config_missing": "Aktiviere obs-websocket in OBS und aktualisiere das Plugin oder starte Diutalia neu."
     },
     "poll_interval": {
       "label": "Aktualisierungsintervall",

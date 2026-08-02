@@ -19,7 +19,7 @@
     "reloadSkippedNoWallpaper": "No wallpaper is configured, so there was nothing to reload",
     "refreshedWallpapers": "Wallpaper list refreshed: {count} wallpapers",
     "refreshSkippedNoFolder": "Wallpaper source directory is empty, so the wallpaper list could not be refreshed",
-    "wallpaperColorsApplied": "Wallpaper colors applied to Noctalia",
+    "wallpaperColorsApplied": "Wallpaper colors applied to Diutalia",
     "wallpaperColorsCached": "Wallpaper colors cached for this display",
     "wallpaperColorsFailed": "Failed to extract colors from the selected wallpaper",
     "wallpaperColorsNoSelection": "Select a wallpaper first before applying wallpaper colors",

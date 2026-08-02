@@ -1,12 +1,12 @@
 
 Project Overview
 
-Noctalia is a desktop shell for Linux (similar to Windows taskbar + system tray + control panel, or macOS menu bar + dock). It runs on Wayland compositors (Hyprland, Niri, Sway, etc.). The target audience is Linux enthusiasts who customize their desktop environment. The tone should be casual but precise — friendly yet technically accurate.
+Diutalia is a desktop shell for Linux (similar to Windows taskbar + system tray + control panel, or macOS menu bar + dock). It runs on Wayland compositors (Hyprland, Niri, Sway, etc.). The target audience is Linux enthusiasts who customize their desktop environment. The tone should be casual but precise — friendly yet technically accurate.
 
 Terms That MUST NOT Be Translated
 
 Keep these terms in English exactly as written:
-- Noctalia — product name
+- Diutalia — product name
 - Matugen — color extraction tool name
 - Quickshell — framework name
 - Wayland, Hyprland, Niri, Sway, MangoWC — compositor names

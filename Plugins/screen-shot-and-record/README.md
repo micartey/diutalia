@@ -18,10 +18,10 @@ Install from the plugin marketplace. You also need to install the following pack
 
 ## Usage
 
-First, you need to disable animations for windows with the class name `noctalia-shell:regionSelector` in your window manager configuration file. Taking Hyprland as an example:
+First, you need to disable animations for windows with the class name `diutalia-shell:regionSelector` in your window manager configuration file. Taking Hyprland as an example:
 
 ```txt
-layerrule = match:namespace noctalia-shell:regionSelector, no_anim on
+layerrule = match:namespace diutalia-shell:regionSelector, no_anim on
 ```
 
 All functions can be accessed through the status bar buttons. However, the author recommends using keyboard shortcuts via IPC binding to avoid the status bar menu blocking the screen.

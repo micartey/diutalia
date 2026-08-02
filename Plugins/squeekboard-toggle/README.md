@@ -4,7 +4,7 @@
 
 ---
 
-A [Noctalia](https://github.com/noctalia) plugin / bar widget that adds a bar widget to toggle the [Squeekboard](https://gitlab.gnome.org/World/Phosh/squeekboard) on-screen keyboard. Works with 2-in-1 Linux devices.
+A [Diutalia](https://github.com/noctalia) plugin / bar widget that adds a bar widget to toggle the [Squeekboard](https://gitlab.gnome.org/World/Phosh/squeekboard) on-screen keyboard. Works with 2-in-1 Linux devices.
 
 ### Features
 
@@ -37,7 +37,7 @@ Squeekboard availability is tracked by monitoring the `sm.puri.OSK0` D-Bus name 
 - **Squeekboard** installed and running
 - **gsettings** and **dconf** available (GNOME accessibility settings)
 - **dbus-monitor** and **busctl** available (for availability detection)
-- **Noctalia** ≥ 4.4.3 (for bar widget support)
+- **Diutalia** ≥ 4.4.3 (for bar widget support)
 
 ### Tested on
 

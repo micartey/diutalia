@@ -13,7 +13,7 @@ Example client configuration:
 ```json
 {
   "mcpServers": {
-    "noctalia-agent-sessions": {
+    "diutalia-agent-sessions": {
       "type": "http",
       "url": "http://127.0.0.1:55854/mcp",
       "headers": {

@@ -21,7 +21,7 @@ Item {
 
     // Monitor specific properties
     readonly property string currentWallpaper:  pluginApi?.pluginSettings?.[screenName]?.currentWallpaper  ?? ""
-    readonly property string noctaliaWallpaper: pluginApi?.pluginSettings?.[screenName]?.noctaliaWallpaper ?? ""
+    readonly property string diutaliaWallpaper: pluginApi?.pluginSettings?.[screenName]?.diutaliaWallpaper ?? ""
 
     // Global properties
     readonly property bool enabled:         pluginApi?.pluginSettings?.enabled         ?? false
@@ -43,22 +43,22 @@ Item {
         }
 
         const mode = Settings.data.colorSchemes.darkMode ? "dark" : "light";
-        const noctaliaWallpaper = WallpaperService.currentWallpapers[root.screenName][mode];
+        const diutaliaWallpaper = WallpaperService.currentWallpapers[root.screenName][mode];
 
         // Check if the wallpaper name is VERY similar to how the thumbnail generation works,
         // aka if the last characters are ".extension.bmp", in that case just don't do anything, just as a fail safe.
         const videoExtension = currentWallpaper.split(".").pop();
-        const isSimilarToThumbnailGen = noctaliaWallpaper.slice(-8) === `.${videoExtension}.bmp`;
+        const isSimilarToThumbnailGen = diutaliaWallpaper.slice(-8) === `.${videoExtension}.bmp`;
 
-        if (thumbFolderModel.indexOf(noctaliaWallpaper) === -1 && !isSimilarToThumbnailGen) {
-            saveTimer.save("noctaliaWallpaper", noctaliaWallpaper);
+        if (thumbFolderModel.indexOf(diutaliaWallpaper) === -1 && !isSimilarToThumbnailGen) {
+            saveTimer.save("diutaliaWallpaper", diutaliaWallpaper);
         }
 
         oldWallpapersSaved();
     }
 
     function applyOldWallpapers() {
-        WallpaperService.changeWallpaper(noctaliaWallpaper, screenName);
+        WallpaperService.changeWallpaper(diutaliaWallpaper, screenName);
         Logger.d("video-wallpaper", "Applying the old wallpapers...");
     }
 

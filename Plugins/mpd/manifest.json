@@ -2,11 +2,11 @@
   "id": "mpd",
   "name": "MPD",
   "version": "1.1.1",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "author": "Ido Perlmuter",
   "license": "MIT",
   "repository": "https://github.com/ido50/noctalia-mpd",
-  "description": "MPD plugin for Noctalia",
+  "description": "MPD plugin for Diutalia",
   "tags": [
     "Bar",
     "Audio",

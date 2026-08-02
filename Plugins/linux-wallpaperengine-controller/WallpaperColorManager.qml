@@ -126,7 +126,7 @@ Item {
     pluginApi.saveSettings();
 
     const pluginDir = pluginApi?.pluginDir || "";
-    const scriptPath = pluginDir + "/scripts/update-noctalia-wallpapers-cache.sh";
+    const scriptPath = pluginDir + "/scripts/update-diutalia-wallpapers-cache.sh";
     Quickshell.execDetached(["bash", scriptPath, screenName, screenshotPath]);
   }
 

@@ -15,7 +15,7 @@ Variants {
 
     required property ShellScreen modelData
 
-    active: modelData && Settings.data.wallpaper.enabled && (!PowerProfileService.noctaliaPerformanceMode || !Settings.data.noctaliaPerformance.disableWallpaper)
+    active: modelData && Settings.data.wallpaper.enabled && (!PowerProfileService.diutaliaPerformanceMode || !Settings.data.diutaliaPerformance.disableWallpaper)
 
     sourceComponent: PanelWindow {
       id: root
@@ -127,7 +127,7 @@ Variants {
       screen: modelData
       WlrLayershell.layer: WlrLayer.Background
       WlrLayershell.exclusionMode: ExclusionMode.Ignore
-      WlrLayershell.namespace: "noctalia-wallpaper-" + (screen?.name || "unknown")
+      WlrLayershell.namespace: "diutalia-wallpaper-" + (screen?.name || "unknown")
 
       anchors {
         bottom: true
@@ -205,7 +205,7 @@ Variants {
         anchors.fill: parent
         active: true
 
-        layer.enabled: Settings.data.wallpaper.desktopBlur > 0 && !PowerProfileService.noctaliaPerformanceMode
+        layer.enabled: Settings.data.wallpaper.desktopBlur > 0 && !PowerProfileService.diutaliaPerformanceMode
         layer.smooth: false
         layer.effect: MultiEffect {
           blurEnabled: true

@@ -1,6 +1,6 @@
 # Screen Recorder Plugin
 
-Hardware-accelerated screen recording for Noctalia using [gpu-screen-recorder](https://git.dec05eba.com/gpu-screen-recorder/about/).
+Hardware-accelerated screen recording for Diutalia using [gpu-screen-recorder](https://git.dec05eba.com/gpu-screen-recorder/about/).
 
 ## Features
 
@@ -23,12 +23,12 @@ Hardware-accelerated screen recording for Noctalia using [gpu-screen-recorder](h
 
 ## Installation
 
-1. Copy this plugin to your Noctalia plugins directory:
+1. Copy this plugin to your Diutalia plugins directory:
    ```bash
-   cp -r screen-recorder ~/.config/noctalia/plugins/
+   cp -r screen-recorder ~/.config/diutalia/plugins/
    ```
 
-2. Add the widget to your bar through Noctalia settings
+2. Add the widget to your bar through Diutalia settings
 
 ## Usage
 
@@ -66,25 +66,25 @@ Control the screen recorder via IPC for keybindings or scripts:
 
 ```bash
 # Toggle recording on/off
-qs -c noctalia-shell ipc call plugin:screen-recorder toggle
+qs -c diutalia-shell ipc call plugin:screen-recorder toggle
 
 # Explicitly start recording
-qs -c noctalia-shell ipc call plugin:screen-recorder start
+qs -c diutalia-shell ipc call plugin:screen-recorder start
 
 # Explicitly stop recording
-qs -c noctalia-shell ipc call plugin:screen-recorder stop
+qs -c diutalia-shell ipc call plugin:screen-recorder stop
 
 # Start the replay buffer
-qs -c noctalia-shell ipc call plugin:screen-recorder startReplay
+qs -c diutalia-shell ipc call plugin:screen-recorder startReplay
 
 # Save the replay buffer (last N seconds)
-qs -c noctalia-shell ipc call plugin:screen-recorder saveReplay
+qs -c diutalia-shell ipc call plugin:screen-recorder saveReplay
 
 # Stop the replay buffer
-qs -c noctalia-shell ipc call plugin:screen-recorder stopReplay
+qs -c diutalia-shell ipc call plugin:screen-recorder stopReplay
 
 # Toggle replay buffer on/off
-qs -c noctalia-shell ipc call plugin:screen-recorder toggleReplay
+qs -c diutalia-shell ipc call plugin:screen-recorder toggleReplay
 ```
 
 ## Video Codecs
@@ -131,7 +131,7 @@ Try changing the video source from "Portal" to "Screen" in settings.
 ### Recording stops immediately
 - Check if the output directory exists and is writable
 - Ensure gpu-screen-recorder has necessary permissions
-- Check Noctalia logs for detailed error messages
+- Check Diutalia logs for detailed error messages
 
 ## License
 
@@ -140,4 +140,4 @@ MIT License
 ## Credits
 
 - Uses [gpu-screen-recorder](https://git.dec05eba.com/gpu-screen-recorder/about/) by dec05eba
-- Part of the [Noctalia](https://github.com/noctalia-dev/noctalia-shell) plugin ecosystem
+- Part of the [Diutalia](https://github.com/noctalia-dev/noctalia-shell) plugin ecosystem

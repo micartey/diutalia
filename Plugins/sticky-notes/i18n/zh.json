@@ -45,7 +45,7 @@
       "label": "GitHub Token",
       "desc": "填写带有 gist 权限的个人访问令牌。",
       "placeholder": "ghp_xxx",
-      "help": "插件会创建或复用一个名为 `noctalia-sticky-notes` 的私有 gist。每条 note 会保存为一个文件，文件名就是 note id。"
+      "help": "插件会创建或复用一个名为 `diutalia-sticky-notes` 的私有 gist。每条 note 会保存为一个文件，文件名就是 note id。"
     }
   },
   "sync": {

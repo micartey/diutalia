@@ -1,6 +1,6 @@
-# Color Scheme Creator Plugin for Noctalia
+# Color Scheme Creator Plugin for Diutalia
 
-A visual editor for creating custom predefined color schemes directly from the Noctalia bar.
+A visual editor for creating custom predefined color schemes directly from the Diutalia bar.
 
 ## Features
 
@@ -16,16 +16,16 @@ A visual editor for creating custom predefined color schemes directly from the N
 1. Click the palette icon on the bar to open the editor
 2. Adjust colors by clicking any color swatch — a color picker opens for that role
 3. Enable **Preview** to see changes live on the shell without committing
-4. Enter a name and click **Save** — the scheme is saved to `~/.config/noctalia/colorschemes/{name}/` and applied immediately
+4. Enter a name and click **Save** — the scheme is saved to `~/.config/diutalia/colorschemes/{name}/` and applied immediately
 5. The scheme will appear in **Settings → Colors** as the active predefined scheme
 
 ## IPC Commands
 
 ```bash
-qs -c noctalia-shell ipc call plugin:color-scheme-creator toggle
-qs -c noctalia-shell ipc call plugin:color-scheme-creator open
+qs -c diutalia-shell ipc call plugin:color-scheme-creator toggle
+qs -c diutalia-shell ipc call plugin:color-scheme-creator open
 ```
 
 ## Requirements
 
-- Noctalia 4.1.2 or later
+- Diutalia 4.1.2 or later

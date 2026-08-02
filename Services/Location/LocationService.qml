@@ -9,7 +9,7 @@ import qs.Commons
 Singleton {
   id: root
 
-  property string locationFile: Quickshell.env("NOCTALIA_WEATHER_FILE") || (Settings.cacheDir + "location.json")
+  property string locationFile: Quickshell.env("DIUTALIA_WEATHER_FILE") || (Settings.cacheDir + "location.json")
   property int weatherUpdateFrequency: 30 * 60
   property bool isFetchingWeather: false
 
@@ -202,15 +202,16 @@ Singleton {
     }
 
     Logger.d("Location", "Geocoding location name");
-    var geoUrl = "https://api.noctalia.dev/geocode?city=" + encodeURIComponent(locationName);
+    var geoUrl = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(locationName) + "&count=1&language=en&format=json";
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           try {
             var geoData = JSON.parse(xhr.responseText);
-            if (geoData.lat != null) {
-              callback(geoData.lat, geoData.lng, geoData.name, geoData.country);
+            if (geoData.results && geoData.results.length > 0) {
+              const result = geoData.results[0];
+              callback(result.latitude, result.longitude, result.name, result.country);
             } else {
               errorCallback("Location", "could not resolve location name");
             }
@@ -261,18 +262,18 @@ Singleton {
     xhr.send();
   }
 
-  // Geolocate via IP address using the Noctalia API
+  // Geolocate via IP address using ipapi.co.
   function geolocate(callback, errorCallback) {
     Logger.d("Location", "Geolocating via IP");
-    var url = "https://api.noctalia.dev/geolocate";
+    var url = "https://ipapi.co/json/";
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           try {
             var data = JSON.parse(xhr.responseText);
-            if (data.lat != null) {
-              callback(data.lat, data.lng, data.city, data.country);
+            if (data.latitude != null) {
+              callback(data.latitude, data.longitude, data.city, data.country_name);
             } else {
               errorCallback("Location", "Geolocate: no coordinates returned");
             }

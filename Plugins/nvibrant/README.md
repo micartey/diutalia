@@ -1,6 +1,6 @@
 # NVibrant
 
-A Noctalia plugin to toggle **NVIDIA digital vibrance** (color saturation) directly from the bar — no terminal needed.
+A Diutalia plugin to toggle **NVIDIA digital vibrance** (color saturation) directly from the bar — no terminal needed.
 
 ![Preview](preview.png)
 
@@ -21,15 +21,15 @@ A Noctalia plugin to toggle **NVIDIA digital vibrance** (color saturation) direc
 
 ## Installation
 
-Install via the Noctalia plugin manager, or manually:
+Install via the Diutalia plugin manager, or manually:
 
 ```bash
-git clone https://github.com/noctalia-dev/noctalia-plugins ~/.config/noctalia/plugins/nvibrant
+git clone https://github.com/noctalia-dev/noctalia-plugins ~/.config/diutalia/plugins/nvibrant
 ```
 
 *Note: If cloning manually, ensure the `nvibrant` folder is located directly inside your plugins directory.*
 
-Then enable the plugin and add the bar widget in Noctalia Settings.
+Then enable the plugin and add the bar widget in Diutalia Settings.
 
 ## Usage
 
@@ -37,7 +37,7 @@ Then enable the plugin and add the bar widget in Noctalia Settings.
 |---|---|
 | Left click | Toggle vibrance on/off |
 | Right click | Context menu (toggle + settings) |
-| IPC | `qs -c noctalia-shell ipc call plugin:nvibrant toggle` |
+| IPC | `qs -c diutalia-shell ipc call plugin:nvibrant toggle` |
 
 ## Settings
 

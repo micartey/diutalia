@@ -14,7 +14,7 @@ import qs.Widgets
 
 import qs.Modules.Bar.Extras
 import qs.Services.UI
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 
 Item {
     id: root

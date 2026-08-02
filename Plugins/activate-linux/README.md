@@ -14,7 +14,7 @@ Allows the user to fully customize the text shown in the watermark. Free as in f
 
 ## Requirements
 
-- Noctalia Shell (any version)
+- Diutalia Shell (any version)
 
 ## Changelog
 
@@ -36,5 +36,5 @@ MIT
 ## Authors
 
 - outfoxxed (initial example [from quickshell documentation](https://git.outfoxxed.me/quickshell/quickshell-examples/src/branch/master/activate_linux))
-- pgattic (port to noctalia-shell)
+- pgattic (port to diutalia-shell)
 

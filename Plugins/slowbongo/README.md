@@ -5,17 +5,17 @@ A bongo cat that sits in your bar and slaps when you type. This is very early da
 
 ## Features
 
-- **Bar Widget**: Compact widget that fits seamlessly in your Noctalia bar
+- **Bar Widget**: Compact widget that fits seamlessly in your Diutalia bar
 - **Keyboard Reactive**: Cat taps its paws in alternation when you type
 - **Audio Reactive**: Optional rave mode and tappy mode that react to music
 - **Easy pause**: Can quickly pause and un-pause reactivity with a single left click.
 - **Customizable Appearance**: Choose from multiple color schemes and adjust size
 - **Font-Based Animation**: Uses a bongo cat font for easy rendering
-- **Bar Widget**: Compact widget that fits seamlessly in your Noctalia bar
+- **Bar Widget**: Compact widget that fits seamlessly in your Diutalia bar
 
 ## Installation
 
-1. Navigate to the Noctalia settings plugins section.
+1. Navigate to the Diutalia settings plugins section.
 
 2. Enter the sources sub-menu.
 
@@ -24,7 +24,7 @@ A bongo cat that sits in your bar and slaps when you type. This is very early da
   https://github.com/tuibird/slowbongo.git
    ```
 
-4. Open the Noctalia plugins store and enable **Slow Bongo**.
+4. Open the Diutalia plugins store and enable **Slow Bongo**.
 
 ## Configuration
 
@@ -36,7 +36,7 @@ The plugin automatically detects keyboard input devices on first run. You can ma
 
 ### Colors
 
-The colours are all pulled from your current Noctalia colourscheme.
+The colours are all pulled from your current Diutalia colourscheme.
 
 ### Rave Mode
 
@@ -92,7 +92,7 @@ When enabled, the cat taps along to the beat when music is playing instead of on
 ## Technical Details
 
 - Uses `evtest` to monitor keyboard events from `/dev/input/event*` devices
-- Integrates with Noctalia's SpectrumService for audio visualization
+- Integrates with Diutalia's SpectrumService for audio visualization
 - Custom font file (`bongocatfont.woff`) contains the cat animations
 - Alternates between left (1) and right (2) paw animations, returning to idle (0) after configurable timeout
 
@@ -103,4 +103,4 @@ MIT
 ## Credits
 
 - Thank you to [Kitgore](https://github.com/kitgore) for the inital bongo cat font 
-- Noctalia plugins for the amazing guides/examples
+- Diutalia plugins for the amazing guides/examples

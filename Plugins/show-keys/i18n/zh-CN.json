@@ -6,7 +6,7 @@
         },
         "ipc": {
             "title": "IPC 命令",
-            "toggleCommand": "切换捕获：qs -c noctalia-shell ipc call plugin:show-keys toggle"
+            "toggleCommand": "切换捕获：qs -c diutalia-shell ipc call plugin:show-keys toggle"
         },
         "security": {
             "title": "安全免责声明",
@@ -15,7 +15,7 @@
         },
         "device": {
             "label": "设备路径（重要）",
-            "description": "键盘设备事件路径，修改后需要重启 noctalia-shell 才能生效。",
+            "description": "键盘设备事件路径，修改后需要重启 diutalia-shell 才能生效。",
             "placeholder": "/dev/input/event3"
         },
         "guide": {
@@ -46,7 +46,7 @@
         },
         "useCustomColors": {
             "label": "使用自定义颜色",
-            "description": "覆盖您的 Noctalia shell 主题配色方案"
+            "description": "覆盖您的 Diutalia shell 主题配色方案"
         },
         "monitors": {
             "label": "活跃显示器",

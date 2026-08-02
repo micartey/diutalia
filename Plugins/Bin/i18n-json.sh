@@ -114,7 +114,7 @@ translate_text() {
     fi
 
     # Prepare the API request
-    local prompt="<role>You are a translator for Noctalia, a Linux desktop shell application.</role>
+    local prompt="<role>You are a translator for Diutalia, a Linux desktop shell application.</role>
 
 <guidelines>
 ${context}

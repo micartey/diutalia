@@ -1,6 +1,6 @@
 # RSS Feed Reader Plugin
 
-Stay updated with your favorite websites and blogs directly from Noctalia Shell. Monitor multiple RSS/Atom feeds, track unread items, and never miss important content.
+Stay updated with your favorite websites and blogs directly from Diutalia Shell. Monitor multiple RSS/Atom feeds, track unread items, and never miss important content.
 
 ## Features
 
@@ -18,7 +18,7 @@ Stay updated with your favorite websites and blogs directly from Noctalia Shell.
 
 ### Step 1: Add RSS Feeds
 
-1. Right-click the RSS icon in your Noctalia bar
+1. Right-click the RSS icon in your Diutalia bar
 2. Select **"Settings"**
 3. Click **"Add Feed"**
 4. Enter:
@@ -125,7 +125,7 @@ Most websites offer RSS feeds. Look for:
 
 ## Contributing
 
-Found a bug or have a feature request? Open an issue on the [Noctalia Plugins repository](https://github.com/noctalia-dev/noctalia-plugins).
+Found a bug or have a feature request? Open an issue on the [Diutalia Plugins repository](https://github.com/noctalia-dev/noctalia-plugins).
 
 ## Changelog
 
@@ -148,13 +148,13 @@ Features:
 - External link opening in browser
 - Comprehensive error handling
 - Full i18n support for 12 languages
-- Compatible with Noctalia Shell 3.6.0+
+- Compatible with Diutalia Shell 3.6.0+
 
 Technical:
 - Built with Quickshell framework
 - Curl-based feed fetching
 - Regex-based XML parsing
-- Noctalia UI components integration
+- Diutalia UI components integration
 - Persistent read state management
 - Automatic feed refresh timer
 - Efficient item sorting and limiting
@@ -167,5 +167,5 @@ MIT License - See repository for details
 
 - **Author**: Lokize
 - **Repository**: https://github.com/noctalia-dev/noctalia-plugins
-- **Noctalia Shell**: https://noctalia.dev
+- **Diutalia Shell**: https://noctalia.dev
 - **RSS Icon**: Nerd Fonts

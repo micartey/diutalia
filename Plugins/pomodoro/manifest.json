@@ -2,7 +2,7 @@
   "id": "pomodoro",
   "name": "Pomodoro",
   "version": "1.2.0",
-  "minNoctaliaVersion": "4.0.0",
+  "minDiutaliaVersion": "4.0.0",
   "author": "notprayasmitra",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

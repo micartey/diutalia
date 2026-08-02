@@ -6,12 +6,12 @@ A launcher provider plugin that lets you search your recently opened folders and
 
 ## Usage
 
-1. Open the Noctalia launcher
+1. Open the Diutalia launcher
 2. Type `>vsc` to enter VSCode mode
 3. Add a search term after the command (e.g., `>vsc noct`), or browse the most recently saved folders and workspaces
 4. Select your workspaces and press Enter
 
-Alternatively, you can trigger the provider by IPC with the command `qs -c noctalia-shell ipc call plugin:vscode-provider toggle`.
+Alternatively, you can trigger the provider by IPC with the command `qs -c diutalia-shell ipc call plugin:vscode-provider toggle`.
 
 ## Supported forks
 
@@ -39,5 +39,5 @@ The name of this fork's configuration directory in `~/.config`.
 
 ## Requirements
 
-- Noctalia 4.5.0 or later
+- Diutalia 4.5.0 or later
 - VS Code, or one of its forks

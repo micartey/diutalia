@@ -6,7 +6,7 @@
         },
         "ipc": {
             "title": "IPC Commands",
-            "toggleCommand": "Toggle Capture: qs -c noctalia-shell ipc call plugin:show-keys toggle"
+            "toggleCommand": "Toggle Capture: qs -c diutalia-shell ipc call plugin:show-keys toggle"
         },
         "security": {
             "title": "Security Disclaimer",
@@ -15,7 +15,7 @@
         },
         "device": {
             "label": "Device Path (IMPORTANT)",
-            "description": "Your keyboard device event path, RESTART noctalia-shell to apply changes.",
+            "description": "Your keyboard device event path, RESTART diutalia-shell to apply changes.",
             "placeholder": "/dev/input/event3"
         },
         "guide": {
@@ -46,7 +46,7 @@
         },
         "useCustomColors": {
             "label": "Use Custom Colors",
-            "description": "Override your Noctalia shell theme colors"
+            "description": "Override your Diutalia shell theme colors"
         },
         "monitors": {
             "label": "Active Monitors",

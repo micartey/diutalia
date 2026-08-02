@@ -207,7 +207,7 @@ ColumnLayout {
 
 				NText {
 					Layout.fillWidth: true
-					text: pluginApi?.tr("settings.ipcCommands.refreshIp") + ": qs -c noctalia-shell ipc call plugin:ip-monitor refreshIp"
+					text: pluginApi?.tr("settings.ipcCommands.refreshIp") + ": qs -c diutalia-shell ipc call plugin:ip-monitor refreshIp"
 					pointSize: Style.fontSizeXS
 					font.family: Settings.data.ui.fontFixed
 					color: Color.mOnSurfaceVariant
@@ -216,7 +216,7 @@ ColumnLayout {
 
 				NText {
 					Layout.fillWidth: true
-					text: pluginApi?.tr("settings.ipcCommands.togglePanel") + ": qs -c noctalia-shell ipc call plugin:ip-monitor toggle"
+					text: pluginApi?.tr("settings.ipcCommands.togglePanel") + ": qs -c diutalia-shell ipc call plugin:ip-monitor toggle"
 					pointSize: Style.fontSizeXS
 					font.family: Settings.data.ui.fontFixed
 					color: Color.mOnSurfaceVariant

@@ -1,6 +1,6 @@
 # Tailscale Plugin
 
-A Tailscale status plugin for Noctalia that shows your Tailscale connection status in the menu bar and lets you send and receive files via Taildrop.
+A Tailscale status plugin for Diutalia that shows your Tailscale connection status in the menu bar and lets you send and receive files via Taildrop.
 
 ![Preview of the tailscale status plugin](preview.png)
 
@@ -79,24 +79,24 @@ Right-click any online peer in the panel and choose **Send File**. A file picker
 
 ## IPC Commands
 
-You can control the Tailscale plugin via the command line using the Noctalia IPC interface.
+You can control the Tailscale plugin via the command line using the Diutalia IPC interface.
 
 ### General Usage
 ```bash
-qs -c noctalia-shell ipc call plugin:tailscale <command>
+qs -c diutalia-shell ipc call plugin:tailscale <command>
 ```
 
 ### Available Commands
 
 | Command | Description | Example |
 |---|---|---|
-| `toggle` | Toggle Tailscale connection (connect/disconnect) | `qs -c noctalia-shell ipc call plugin:tailscale toggle` |
-| `togglePanel` | Toggle Tailscale panel | `qs -c noctalia-shell ipc call plugin:tailscale togglePanel` |
-| `status` | Get current Tailscale status | `qs -c noctalia-shell ipc call plugin:tailscale status` |
-| `refresh` | Force refresh Tailscale status | `qs -c noctalia-shell ipc call plugin:tailscale refresh` |
-| `login` | Trigger Tailscale login (opens browser) | `qs -c noctalia-shell ipc call plugin:tailscale login` |
-| `switchAccount` | Switch to a Tailscale account by id (see `tailscale switch --list`) | `qs -c noctalia-shell ipc call plugin:tailscale switchAccount a585` |
-| `receive` | Fetch any pending Taildrop files | `qs -c noctalia-shell ipc call plugin:tailscale receive` |
+| `toggle` | Toggle Tailscale connection (connect/disconnect) | `qs -c diutalia-shell ipc call plugin:tailscale toggle` |
+| `togglePanel` | Toggle Tailscale panel | `qs -c diutalia-shell ipc call plugin:tailscale togglePanel` |
+| `status` | Get current Tailscale status | `qs -c diutalia-shell ipc call plugin:tailscale status` |
+| `refresh` | Force refresh Tailscale status | `qs -c diutalia-shell ipc call plugin:tailscale refresh` |
+| `login` | Trigger Tailscale login (opens browser) | `qs -c diutalia-shell ipc call plugin:tailscale login` |
+| `switchAccount` | Switch to a Tailscale account by id (see `tailscale switch --list`) | `qs -c diutalia-shell ipc call plugin:tailscale switchAccount a585` |
+| `receive` | Fetch any pending Taildrop files | `qs -c diutalia-shell ipc call plugin:tailscale receive` |
 
 ## Usage
 

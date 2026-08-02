@@ -2,7 +2,7 @@
   "id": "sys-info-widget",
   "name": "System Info",
   "version": "1.0.8",
-  "minNoctaliaVersion": "4.6.6",
+  "minDiutaliaVersion": "4.6.6",
   "author": "Simon",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

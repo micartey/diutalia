@@ -10,8 +10,6 @@ Singleton {
   id: root
 
   property string supporterDataFile: Settings.cacheDir + "supporters.json"
-  property int updateFrequency: 60 * 60 // 1 hour in seconds
-  property bool isFetching: false
   property bool isInitialized: false
 
   readonly property alias data: adapter
@@ -33,10 +31,7 @@ Singleton {
       }
     }
     onLoadFailed: function (error) {
-      if (error.toString().includes("No such file") || error === 2) {
-        root.isInitialized = true;
-        fetchFromApi();
-      }
+      root.isInitialized = true;
     }
 
     JsonAdapter {
@@ -51,34 +46,13 @@ Singleton {
   }
 
   function loadFromCache() {
-    const now = Time.timestamp;
-    var needsRefetch = false;
-
-    if (!data.timestamp || (now >= data.timestamp + updateFrequency)) {
-      needsRefetch = true;
-      Logger.i("Supporter", "Cache expired or missing, scheduling fetch");
-    } else {
-      Logger.i("Supporter", "Cache is fresh, using cached data");
-    }
+    Logger.i("Supporter", "Using cached supporter data");
 
     if (data.supporters && data.supporters.length > 0) {
       root.supporters = data.supporters;
       Logger.d("Supporter", "Loaded", data.supporters.length, "supporters from cache");
     }
 
-    if (needsRefetch) {
-      fetchFromApi();
-    }
-  }
-
-  function fetchFromApi() {
-    if (isFetching) {
-      Logger.d("Supporter", "Already fetching");
-      return;
-    }
-
-    isFetching = true;
-    supporterProcess.running = true;
   }
 
   function saveData() {
@@ -139,31 +113,4 @@ Singleton {
     }
   }
 
-  Process {
-    id: supporterProcess
-
-    command: ["curl", "-s", "https://api.noctalia.dev/supporters"]
-
-    stdout: StdioCollector {
-      onStreamFinished: {
-        try {
-          const response = text;
-          if (response && response.trim()) {
-            const parsed = JSON.parse(response);
-            if (Array.isArray(parsed)) {
-              root.data.supporters = parsed;
-              root.supporters = parsed;
-              root.saveData();
-              Logger.d("Supporter", "Fetched", parsed.length, "supporters");
-            } else if (parsed.message) {
-              Logger.w("Supporter", "API error:", parsed.message);
-            }
-          }
-        } catch (e) {
-          Logger.e("Supporter", "Failed to parse response:", e);
-        }
-        root.isFetching = false;
-      }
-    }
-  }
 }

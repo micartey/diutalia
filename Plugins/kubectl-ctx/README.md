@@ -43,10 +43,10 @@ Logs and describe output are opened in a terminal emulator. The terminal is kept
 
 ```bash
 # Toggle panel
-qs -c noctalia-shell ipc call plugin:kubectl-ctx toggle
+qs -c diutalia-shell ipc call plugin:kubectl-ctx toggle
 
 # Refresh contexts and resources
-qs -c noctalia-shell ipc call plugin:kubectl-ctx refresh
+qs -c diutalia-shell ipc call plugin:kubectl-ctx refresh
 ```
 
 ## Requirements

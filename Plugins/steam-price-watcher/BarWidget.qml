@@ -207,11 +207,11 @@ Item {
     
     homeProcess.exited.connect((exitCode) => {
       var homeDir = homeProcess.stdout.text.trim();
-      var iconPath = homeDir + "/.config/noctalia/plugins/steam-price-watcher/logo-notification.png";
+      var iconPath = homeDir + "/.config/diutalia/plugins/steam-price-watcher/logo-notification.png";
       
       Logger.d("Steam", "Steam Price Watcher: Icon path:", iconPath);
       
-      var notifyCmd = '["notify-send", "-a", "Noctalia Shell", "-i", "' + iconPath + '", "🎮 Steam Price Watcher", "' + game.name + ' atingiu ' + symbol + ' ' + game.currentPrice.toFixed(2) + '!\\nPreço alvo: ' + symbol + ' ' + game.targetPrice.toFixed(2) + '"]';
+      var notifyCmd = '["notify-send", "-a", "Diutalia Shell", "-i", "' + iconPath + '", "🎮 Steam Price Watcher", "' + game.name + ' atingiu ' + symbol + ' ' + game.currentPrice.toFixed(2) + '!\\nPreço alvo: ' + symbol + ' ' + game.targetPrice.toFixed(2) + '"]';
       
       var notifyProcess = Qt.createQmlObject(
         'import Quickshell.Io; Process { running: true; command: ' + notifyCmd + '; onExited: (exitCode) => { Logger.d("Steam", "Steam Price Watcher: Notification sent, exit code:", exitCode); destroy(); } }',

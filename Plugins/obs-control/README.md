@@ -1,6 +1,6 @@
 # OBS Control
 
-OBS Studio controls for Noctalia Shell.
+OBS Studio controls for Diutalia Shell.
 
 OBS Control adds a stable bar button, an optional Control Center shortcut, and a panel for recording, replay buffer, and streaming actions.
 
@@ -9,7 +9,7 @@ OBS Control adds a stable bar button, an optional Control Center shortcut, and a
 1. Install `obs-studio`.
 2. Enable OBS WebSocket in OBS.
 3. Install `qt6-websockets` if your Quickshell runtime does not already include Qt WebSockets.
-4. Enable the plugin in Noctalia.
+4. Enable the plugin in Diutalia.
 5. Add `plugin:obs-control` to your bar or Control Center layout.
 
 On Arch Linux:
@@ -26,14 +26,14 @@ sudo pacman -S obs-studio qt6-websockets
 - OBS launch support with minimize-to-tray behavior for automatic starts
 - auto-close for plugin-managed OBS launches after the last active output stops
 - replay save and open-videos shortcuts
-- Noctalia IPC actions for keybinds and scripts
+- Diutalia IPC actions for keybinds and scripts
 
 ## IPC
 
 General form:
 
 ```bash
-qs -c noctalia-shell ipc call plugin:obs-control <command>
+qs -c diutalia-shell ipc call plugin:obs-control <command>
 ```
 
 ### Commands
@@ -57,11 +57,11 @@ Example Niri binds:
 
 ```kdl
 binds {
-    Mod+F9 { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:obs-control" "toggleRecord"; }
-    Mod+F10 { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:obs-control" "toggleReplay"; }
-    Mod+Shift+F10 { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:obs-control" "saveReplay"; }
-    Mod+F11 { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:obs-control" "toggleStream"; }
-    Mod+F12 { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:obs-control" "togglePanel"; }
+    Mod+F9 { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:obs-control" "toggleRecord"; }
+    Mod+F10 { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:obs-control" "toggleReplay"; }
+    Mod+Shift+F10 { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:obs-control" "saveReplay"; }
+    Mod+F11 { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:obs-control" "toggleStream"; }
+    Mod+F12 { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:obs-control" "togglePanel"; }
 }
 ```
 
@@ -69,20 +69,20 @@ binds {
 
 You can open settings from:
 
-- **Plugins → OBS Control → Configure** in Noctalia
+- **Plugins → OBS Control → Configure** in Diutalia
 - the **gear button** in the panel header
-- IPC with `qs -c noctalia-shell ipc call plugin:obs-control openSettings`
+- IPC with `qs -c diutalia-shell ipc call plugin:obs-control openSettings`
 
 ## Troubleshooting
 
 - If OBS is running but control is unavailable, restart OBS once after enabling obs-websocket.
-- If the plugin reports missing Qt WebSockets support, install `qt6-websockets` and restart Noctalia.
-- If OBS WebSocket is disabled, enable it in OBS and then refresh or restart Noctalia.
+- If the plugin reports missing Qt WebSockets support, install `qt6-websockets` and restart Diutalia.
+- If OBS WebSocket is disabled, enable it in OBS and then refresh or restart Diutalia.
 - If `xdg-open` opens a terminal file browser, set **Videos Opener** to your GUI file manager.
 - If actions do nothing, try:
 
 ```bash
-qs -c noctalia-shell ipc call plugin:obs-control refreshStatus
+qs -c diutalia-shell ipc call plugin:obs-control refreshStatus
 ```
 
 ## Screenshots

@@ -15,7 +15,7 @@ A privacy indicator widget that monitors and displays when microphone, camera, o
 
 ## Configuration
 
-Access the plugin settings in Noctalia to configure the following options:
+Access the plugin settings in Diutalia to configure the following options:
 
 - **Hide Inactive States**: If enabled, microphone, camera, and screen icons are hidden whenever they are inactive. Only active states are shown.
 - **Remove Margins**: If enabled, removes all outer margins of the widget.
@@ -35,7 +35,7 @@ Hover over the widget to see a tooltip listing which applications are using each
 
 ## Requirements
 
-- Noctalia Shell 3.6.0 or higher
+- Diutalia Shell 3.6.0 or higher
 - Pipewire (for microphone and screen sharing detection)
 - Access to `/dev/video*` devices (for camera detection)
 

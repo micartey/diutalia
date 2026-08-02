@@ -6,7 +6,7 @@
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "author": "Lokize",
   "license": "MIT",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "entryPoints": {
     "barWidget": "BarWidget.qml",
     "panel": "Panel.qml",

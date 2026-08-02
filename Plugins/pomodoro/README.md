@@ -1,6 +1,6 @@
 # Pomodoro Plugin
 
-A Pomodoro timer plugin for Noctalia for productivity. Happy Coding :)
+A Pomodoro timer plugin for Diutalia for productivity. Happy Coding :)
 
 ***Note:*** The only translation available right now is english, more translations will be added in the future.
 
@@ -20,40 +20,40 @@ A Pomodoro timer plugin for Noctalia for productivity. Happy Coding :)
 
 ## IPC Commands
 
-You can control the pomodoro plugin via the command line using the Noctalia IPC interface.
+You can control the pomodoro plugin via the command line using the Diutalia IPC interface.
 
 ### General Usage
 ```bash
-qs -c noctalia-shell ipc call plugin:pomodoro <command>
+qs -c diutalia-shell ipc call plugin:pomodoro <command>
 ```
 
 ### Available Commands
 
 | Command | Description | Example |
 |---|---|---|
-| `toggle` | Opens or closes the pomodoro panel on the current screen | `qs -c noctalia-shell ipc call plugin:pomodoro toggle` |
-| `start` | Starts/resumes the pomodoro timer | `qs -c noctalia-shell ipc call plugin:pomodoro start` |
-| `pause` | Pauses the running timer | `qs -c noctalia-shell ipc call plugin:pomodoro pause` |
-| `reset` | Resets the current session | `qs -c noctalia-shell ipc call plugin:pomodoro reset` |
-| `resetAll` | Resets all sessions and returns to work mode | `qs -c noctalia-shell ipc call plugin:pomodoro resetAll` |
-| `skip` | Skips to the next phase (work → break or break → work) | `qs -c noctalia-shell ipc call plugin:pomodoro skip` |
-| `stopAlarm` | Stops the alarm sound when ringing | `qs -c noctalia-shell ipc call plugin:pomodoro stopAlarm` |
+| `toggle` | Opens or closes the pomodoro panel on the current screen | `qs -c diutalia-shell ipc call plugin:pomodoro toggle` |
+| `start` | Starts/resumes the pomodoro timer | `qs -c diutalia-shell ipc call plugin:pomodoro start` |
+| `pause` | Pauses the running timer | `qs -c diutalia-shell ipc call plugin:pomodoro pause` |
+| `reset` | Resets the current session | `qs -c diutalia-shell ipc call plugin:pomodoro reset` |
+| `resetAll` | Resets all sessions and returns to work mode | `qs -c diutalia-shell ipc call plugin:pomodoro resetAll` |
+| `skip` | Skips to the next phase (work → break or break → work) | `qs -c diutalia-shell ipc call plugin:pomodoro skip` |
+| `stopAlarm` | Stops the alarm sound when ringing | `qs -c diutalia-shell ipc call plugin:pomodoro stopAlarm` |
 
 ### Examples
 
 **Start a pomodoro session:**
 ```bash
-qs -c noctalia-shell ipc call plugin:pomodoro start
+qs -c diutalia-shell ipc call plugin:pomodoro start
 ```
 
 **Skip to break after finishing work early:**
 ```bash
-qs -c noctalia-shell ipc call plugin:pomodoro skip
+qs -c diutalia-shell ipc call plugin:pomodoro skip
 ```
 
 **Reset everything and start fresh:**
 ```bash
-qs -c noctalia-shell ipc call plugin:pomodoro resetAll
+qs -c diutalia-shell ipc call plugin:pomodoro resetAll
 ```
 
 ## Settings

@@ -4,7 +4,7 @@ import qs.Commons
 import qs.Widgets
 
 // Settings page for the clipboard plugin. Rendered inside the
-// Noctalia Settings dialog when the user navigates to this plugin's entry.
+// Diutalia Settings dialog when the user navigates to this plugin's entry.
 //
 // Contracts followed:
 //   - docs/specs/settings-panel.md (behavior, constraints, acceptance criteria)
@@ -89,9 +89,9 @@ ColumnLayout {
     // --- Save contract ------------------------------------------------------
     //
     // Called by the shell when the user clicks the global "Apply" button in
-    // the Noctalia Settings dialog. Flushes pending values into
+    // the Diutalia Settings dialog. Flushes pending values into
     // pluginApi.pluginSettings, then calls pluginApi.saveSettings() which
-    // persists settings.json to ~/.config/noctalia/plugins/clipboard/.
+    // persists settings.json to ~/.config/diutalia/plugins/clipboard/.
     //
     // Null-guard matches the idiom used in every other entry point — if the
     // shell calls saveSettings() before injecting pluginApi (edge case on

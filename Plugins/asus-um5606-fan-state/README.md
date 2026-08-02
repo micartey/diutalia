@@ -1,6 +1,6 @@
-# ASUS 5606 fan state plugin for Noctalia
+# ASUS 5606 fan state plugin for Diutalia
 
-https://github.com/ThatOneCalculator/asus-5606-fan-state for Noctalia
+https://github.com/ThatOneCalculator/asus-5606-fan-state for Diutalia
 
 Supported laptops:
 - ASUS ZenBook S 16 UM5606

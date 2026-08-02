@@ -1,6 +1,6 @@
 # Unicode Picker
 
-Browse and search Unicode characters directly from the Noctalia launcher.
+Browse and search Unicode characters directly from the Diutalia launcher.
 
 ## Features
 

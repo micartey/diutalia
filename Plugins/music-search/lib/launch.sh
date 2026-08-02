@@ -14,7 +14,7 @@ launch_youtube_stream() {
     --speed="$speed"
     --log-file="$LOG_FILE"
     --input-ipc-server="$SOCKET_FILE"
-    --title="Noctalia music-search"
+    --title="Diutalia music-search"
   )
   local raw_opt
   raw_opt="$(yt_mpv_raw_option)"
@@ -41,7 +41,7 @@ launch_youtube_cached() {
     if [[ ${#files[@]} -eq 0 ]]; then
       exit 1
     fi
-    exec mpv --no-video --force-window=no --audio-display=no --demuxer-max-bytes=256K --speed="$6" --log-file="$4" --input-ipc-server="$3" --title="Noctalia music-search" "${files[0]}"
+    exec mpv --no-video --force-window=no --audio-display=no --demuxer-max-bytes=256K --speed="$6" --log-file="$4" --input-ipc-server="$3" --title="Diutalia music-search" "${files[0]}"
   ' _ "$source_url" "$DOWNLOAD_BASENAME" "$SOCKET_FILE" "$LOG_FILE" "$extractor_arg" "$speed" >/dev/null 2>&1 &
 }
 

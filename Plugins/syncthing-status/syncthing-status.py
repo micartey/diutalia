@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch a Syncthing status snapshot for the Noctalia plugin."""
+"""Fetch a Syncthing status snapshot for the Diutalia plugin."""
 
 from __future__ import annotations
 

@@ -2,7 +2,7 @@
   "id": "music-search",
   "name": "Music Search",
   "version": "1.2.2",
-  "minNoctaliaVersion": "4.6.6",
+  "minDiutaliaVersion": "4.6.6",
   "author": "kevichi7",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

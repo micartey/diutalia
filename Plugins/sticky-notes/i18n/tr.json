@@ -45,7 +45,7 @@
       "label": "GitHub Tokeni",
       "desc": "Gist yetkileri oluşan kişisel erişim tokeni.",
       "placeholder": "ghp_xxx",
-      "help": "Eklenti `noctalia-sticky-notes` adında özel bir gist oluşturur veya tekrar kullanır. Her not, dosya adı not kimliği olan tek bir dosya olarak kaydedilir."
+      "help": "Eklenti `diutalia-sticky-notes` adında özel bir gist oluşturur veya tekrar kullanır. Her not, dosya adı not kimliği olan tek bir dosya olarak kaydedilir."
     }
   },
   "sync": {

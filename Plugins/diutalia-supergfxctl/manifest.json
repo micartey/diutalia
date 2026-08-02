@@ -1,12 +1,12 @@
 {
-	"id": "noctalia-supergfxctl",
+	"id": "diutalia-supergfxctl",
 	"name": "SuperGFX Control",
 	"version": "0.0.3",
-	"minNoctaliaVersion": "3.8.2",
+	"minDiutaliaVersion": "3.8.2",
 	"author": "cod3d <cod3ddot@proton.me>",
 	"license": "MIT",
 	"repository": "https://github.com/noctalia-dev/noctalia-plugins",
-	"description": "GPU control with supergfxctl for noctalia.",
+	"description": "GPU control with supergfxctl for diutalia.",
 	"tags": ["Bar", "Panel", "System"],
 	"entryPoints": {
 		"main": "src/Main.qml",

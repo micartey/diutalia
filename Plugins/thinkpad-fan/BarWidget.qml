@@ -10,7 +10,7 @@ import qs.Services.UI
 Item {
     id: root
 
-    // ===== NOCTALIA REQUIRED PROPERTIES =====
+    // ===== DIUTALIA REQUIRED PROPERTIES =====
     property var pluginApi: null
     property ShellScreen screen
     property string widgetId: ""
@@ -37,7 +37,7 @@ Item {
     property int currentTemp: 0
     property bool isInitialized: false
 
-    // ===== READING NATIVE NOCTALIA SETTINGS =====
+    // ===== READING NATIVE DIUTALIA SETTINGS =====
     readonly property bool colorizeByStatus:
         pluginApi?.pluginSettings?.colorizeByStatus ??
         pluginApi?.manifest?.metadata?.defaultSettings?.colorizeByStatus ??
@@ -169,7 +169,7 @@ Item {
         root.isCustomActive ? root.colorActive
         : (root.isOff ? root.colorLevel0 : root.colorAuto)
 
-    // ===== NATIVE NOCTALIA CONTEXT MENU =====
+    // ===== NATIVE DIUTALIA CONTEXT MENU =====
     NPopupContextMenu {
         id: contextMenu
 

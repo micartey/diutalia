@@ -37,15 +37,15 @@ NIconButton {
   baseSize: Style.getCapsuleHeightForScreen(screen?.name)
   applyUiScale: false
   customRadius: Style.radiusL
-  colorBg: PowerProfileService.noctaliaPerformanceMode ? Color.mPrimary : Style.capsuleColor
-  colorFg: PowerProfileService.noctaliaPerformanceMode ? Color.mOnPrimary : Color.resolveColorKey(iconColorKey)
+  colorBg: PowerProfileService.diutaliaPerformanceMode ? Color.mPrimary : Style.capsuleColor
+  colorFg: PowerProfileService.diutaliaPerformanceMode ? Color.mOnPrimary : Color.resolveColorKey(iconColorKey)
   border.color: Style.capsuleBorderColor
   border.width: Style.capsuleBorderWidth
 
-  icon: PowerProfileService.noctaliaPerformanceMode ? "rocket" : "rocket-off"
-  tooltipText: PowerProfileService.noctaliaPerformanceMode ? I18n.tr("tooltips.noctalia-performance-enabled") : I18n.tr("tooltips.noctalia-performance-enabled")
+  icon: PowerProfileService.diutaliaPerformanceMode ? "rocket" : "rocket-off"
+  tooltipText: PowerProfileService.diutaliaPerformanceMode ? I18n.tr("tooltips.diutalia-performance-enabled") : I18n.tr("tooltips.diutalia-performance-enabled")
   tooltipDirection: BarService.getTooltipDirection(screen?.name)
-  onClicked: PowerProfileService.toggleNoctaliaPerformance()
+  onClicked: PowerProfileService.toggleDiutaliaPerformance()
 
   NPopupContextMenu {
     id: contextMenu

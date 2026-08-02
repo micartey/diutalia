@@ -1,12 +1,12 @@
 # Notes Scratchpad
 
-A simple, single-buffer scratchpad extension for quick note-taking in Noctalia Shell. Saves your cursor position inbetween uses and also provides a character/word counter.
+A simple, single-buffer scratchpad extension for quick note-taking in Diutalia Shell. Saves your cursor position inbetween uses and also provides a character/word counter.
 
 ## Keyboard Shortcut
 
 Toggle the scratchpad panel with:
 ```bash
-qs -c noctalia-shell ipc call plugin:notes-scratchpad togglePanel
+qs -c diutalia-shell ipc call plugin:notes-scratchpad togglePanel
 ```
 
 Bind this to a keyboard shortcut in your compositor configuration for quick access.

@@ -1,6 +1,6 @@
-# MPD Plugin for Noctalia
+# MPD Plugin for Diutalia
 
-This is a plugin for the [Noctalia](https://noctalia.dev/) shell for controlling [Music Player Daemon](https://www.musicpd.org/)
+This is a plugin for the [Diutalia](https://noctalia.dev/) shell for controlling [Music Player Daemon](https://www.musicpd.org/)
 (MPD). It provides a bar widget displaying the current MPD playback state and
 song name, with a hover panel showing full track details and album art. Mouse
 buttons can be used to control playback (e.g. play/pause/next/prev) or even
@@ -22,15 +22,15 @@ provided, I use a separate client for that (specifically [myMPD](https://github.
 
 ## Requirements
 
-- Noctalia shell
+- Diutalia shell
 - MPD running locally
 - [`mpc`](https://www.musicpd.org/clients/mpc/) available in `$PATH`
 - Optionally: [ashuffle](https://github.com/joshkunz/ashuffle) managed as a systemd user service (`ashuffle.service`)
 
 ## Installation
 
-Copy this directory into your Noctalia plugins folder and enable the plugin from
-Noctalia's settings.
+Copy this directory into your Diutalia plugins folder and enable the plugin from
+Diutalia's settings.
 
 ## Configuration
 

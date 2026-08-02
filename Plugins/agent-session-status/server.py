@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 
 VALID_STATUSES = {"running", "completed", "blocked"}
 PROTOCOL_VERSION = "2025-06-18"
-USAGE_INSTRUCTIONS = """Use this MCP server to publish your current agent session state to the Noctalia bar and panel.
+USAGE_INSTRUCTIONS = """Use this MCP server to publish your current agent session state to the Diutalia bar and panel.
 
 Call report_session when you start work, when your state changes, and before you finish. Use the same id for the same task so later calls update the existing in-memory session instead of creating duplicates.
 
@@ -18,7 +18,7 @@ Use status values this way:
 - blocked: you need user input, approval, or an external dependency before you can continue.
 - completed: the task is finished or you are no longer actively working on it.
 
-The MCP client must send Authorization: Bearer <token> and X-Agent: <agent-name> headers. X-Agent is the display group name in the Noctalia panel, for example codex or claude."""
+The MCP client must send Authorization: Bearer <token> and X-Agent: <agent-name> headers. X-Agent is the display group name in the Diutalia panel, for example codex or claude."""
 
 
 class ValidationError(Exception):
@@ -149,7 +149,7 @@ def _session_prompts():
         {
             "name": "agent-session-reporting",
             "title": "Agent session reporting guide",
-            "description": "Instructions for agents that report status to the Noctalia session panel.",
+            "description": "Instructions for agents that report status to the Diutalia session panel.",
         },
     ]
 
@@ -159,7 +159,7 @@ def _session_tools():
         {
             "name": "report_session",
             "title": "Report agent session status",
-            "description": "Create or update your visible Noctalia session. Call it at task start with running, when blocked with blocked, and at task end with completed. Reuse the same id for the same task. Requires Authorization bearer token and X-Agent headers.",
+            "description": "Create or update your visible Diutalia session. Call it at task start with running, when blocked with blocked, and at task end with completed. Reuse the same id for the same task. Requires Authorization bearer token and X-Agent headers.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
@@ -169,7 +169,7 @@ def _session_tools():
                     },
                     "title": {
                         "type": "string",
-                        "description": "Short human-readable task title shown in the Noctalia panel.",
+                        "description": "Short human-readable task title shown in the Diutalia panel.",
                     },
                     "status": {
                         "type": "string",
@@ -233,7 +233,7 @@ def _handle_mcp(store, token, headers, raw_body):
             return _rpc_error(request_id, -32602, "Unknown prompt: " + str(name))
 
         return _rpc_result(request_id, {
-            "description": "Instructions for reporting agent session status to Noctalia.",
+            "description": "Instructions for reporting agent session status to Diutalia.",
             "messages": [
                 {
                     "role": "user",

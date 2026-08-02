@@ -37,7 +37,7 @@ Item {
   readonly property bool hideIfNotDetected: cfg.hideIfNotDetected ?? defaults.hideIfNotDetected ?? true
   readonly property bool hideIfIdle: cfg.hideIfIdle ?? defaults.hideIfIdle ?? false
   readonly property bool showPowerProfiles: cfg.showPowerProfiles ?? defaults.showPowerProfiles ?? false
-  readonly property bool showNoctaliaPerformance: cfg.showNoctaliaPerformance ?? defaults.showNoctaliaPerformance ?? false
+  readonly property bool showDiutaliaPerformance: cfg.showDiutaliaPerformance ?? defaults.showDiutaliaPerformance ?? false
   readonly property bool showPowerInBar: cfg.showPowerInBar ?? defaults.showPowerInBar ?? true
   readonly property bool showTimeInBar: cfg.showTimeInBar ?? defaults.showTimeInBar ?? true
   readonly property int refreshIntervalSeconds: Math.max(1, cfg.refreshIntervalSeconds ?? defaults.refreshIntervalSeconds ?? 5)

@@ -1,6 +1,6 @@
 # Web Search
 
-A launcher provider plugin that allows you to quickly search the internet directly from the Noctalia launcher, complete with live autocomplete suggestions.
+A launcher provider plugin that allows you to quickly search the internet directly from the Diutalia launcher, complete with live autocomplete suggestions.
 
 ## Features
 
@@ -12,7 +12,7 @@ A launcher provider plugin that allows you to quickly search the internet direct
 
 ## Usage
 
-1. Open the Noctalia launcher
+1. Open the Diutalia launcher
 2. Type `>web` followed by your query to enter web search mode exclusively
 3. Or just type your query directly. Web search results appear as fallbacks below matched applications
 4. Live suggestions populate underneath the main result as you type
@@ -47,17 +47,17 @@ Local addresses and IPs are detected as URLs and offered for direct opening. Loc
 
 ## IPC Commands
 
-You can control the web search plugin via the command line using the Noctalia IPC interface.
+You can control the web search plugin via the command line using the Diutalia IPC interface.
 
 ### Available Commands
 
 | Command | Description | Example |
 |---|---|---|
-| `toggle` | Opens or closes the launcher on the current screen | `qs -c noctalia-shell ipc call plugin:web-search toggle` |
+| `toggle` | Opens or closes the launcher on the current screen | `qs -c diutalia-shell ipc call plugin:web-search toggle` |
 
 ## Configuration
 
-You can configure the plugin directly via Noctalia's Plugin Settings:
+You can configure the plugin directly via Diutalia's Plugin Settings:
 
 | Setting | Description | Default |
 |---|---|---|
@@ -68,7 +68,7 @@ You can configure the plugin directly via Noctalia's Plugin Settings:
 
 ## Requirements
 
-- Noctalia 3.9.0 or later
+- Diutalia 3.9.0 or later
 - Internet connection (for search suggestions)
 
 ## Changelog

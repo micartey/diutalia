@@ -13,7 +13,7 @@ import qs.Widgets
 ColumnLayout {
     id: root
 
-    // noctalia plugin api, injected dynamically
+    // diutalia plugin api, injected dynamically
     property QtObject pluginApi: null
     readonly property QtObject pluginSettings: pluginApi?.mainInstance.pluginSettings
 
@@ -127,7 +127,7 @@ ColumnLayout {
         onToggled: checked => root.pluginSettings.debug = checked
     }
 
-    // This function is called by noctalia dialog
+    // This function is called by diutalia dialog
     function saveSettings(): void {
         if (!root.pluginSettings) {
             return console.error("supergfxctl", "[Settings]: plugin core (Main.qml) is not loaded");

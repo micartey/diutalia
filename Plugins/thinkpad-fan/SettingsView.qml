@@ -55,7 +55,7 @@ ColumnLayout {
     readonly property int swatchBorderDefault: 1
 
     // All palette colors
-    readonly property var noctaliaPalette: [
+    readonly property var diutaliaPalette: [
         Color.mPrimary, Color.mSecondary, Color.mTertiary, Color.mError,
         Color.mSurface, Color.mSurfaceVariant, Color.mOutline
     ]
@@ -91,7 +91,7 @@ ColumnLayout {
         }
 
         Repeater {
-            model: root.noctaliaPalette
+            model: root.diutaliaPalette
 
             Rectangle {
                 width: root.swatchSize

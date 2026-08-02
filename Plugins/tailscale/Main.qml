@@ -68,7 +68,7 @@ Item {
   property bool accountSwitchInProgress: false
 
   // Dev/testing: override the peer list with a short mock to reproduce few-device layouts.
-  // Toggle via: qs -c noctalia-shell ipc call plugin:tailscale setMockPeers
+  // Toggle via: qs -c diutalia-shell ipc call plugin:tailscale setMockPeers
   property bool useMockData: false
   readonly property var mockPeerList: [
     {
@@ -790,7 +790,7 @@ Item {
     }
 
     // Dev/testing: toggle mock peer list to reproduce few-device layouts.
-    // Usage: qs -c noctalia-shell ipc call plugin:tailscale setMockPeers
+    // Usage: qs -c diutalia-shell ipc call plugin:tailscale setMockPeers
     function setMockPeers() {
       root.useMockData = !root.useMockData;
       Logger.d("Tailscale", "Mock peer data " + (root.useMockData ? "enabled" : "disabled"));

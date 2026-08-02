@@ -1,6 +1,6 @@
 # Git Companion
 
-Monitor your git repositories from the Noctalia bar. See open issues and pull requests (or merge requests) for a selected repo at a glance, without leaving your desktop.
+Monitor your git repositories from the Diutalia bar. See open issues and pull requests (or merge requests) for a selected repo at a glance, without leaving your desktop.
 
 ## Features
 
@@ -29,7 +29,7 @@ glab auth login
 
 ## Configuration
 
-1. Open Noctalia settings and navigate to **Git Companion**
+1. Open Diutalia settings and navigate to **Git Companion**
 2. Select your platform: **GitHub** or **GitLab**
 3. Set the refresh interval (30–90 seconds)
 4. Open the panel from the bar widget and pick a repository from the dropdown
@@ -38,7 +38,7 @@ glab auth login
 
 Toggle panel:
 ```bash
-qs -c noctalia-shell ipc call plugin:git-companion toggle
+qs -c diutalia-shell ipc call plugin:git-companion toggle
 ```
 
 ## License

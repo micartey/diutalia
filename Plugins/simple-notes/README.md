@@ -1,6 +1,6 @@
 # Simple Notes Plugin
 
-A simple note-taking plugin for [Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell).
+A simple note-taking plugin for [Diutalia Shell](https://github.com/noctalia-dev/noctalia-shell).
 
 ## Features
 - **Quick Notes**: Create, edit, and delete notes quickly from your desktop panel.
@@ -9,9 +9,9 @@ A simple note-taking plugin for [Noctalia Shell](https://github.com/noctalia-dev
 
 ## Installation
 
-1. Clone or download this repository into your Noctalia plugins directory.
-2. Restart Noctalia Shell.
-3. Enable "Simple Notes" in the Noctalia settings if not enabled by default.
+1. Clone or download this repository into your Diutalia plugins directory.
+2. Restart Diutalia Shell.
+3. Enable "Simple Notes" in the Diutalia settings if not enabled by default.
 4. Add the widget to your bar or desktop.
 
 ## Usage

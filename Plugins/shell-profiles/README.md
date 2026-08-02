@@ -1,7 +1,7 @@
-# 🗂️ Profile manager for Noctalia
+# 🗂️ Profile manager for Diutalia
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Noctalia Version](https://img.shields.io/badge/Noctalia-Plugin-orange)](https://github.com/noctalia-dev/noctalia-shell)
+[![Diutalia Version](https://img.shields.io/badge/Diutalia-Plugin-orange)](https://github.com/noctalia-dev/noctalia-shell)
 ![Languages](https://img.shields.io/badge/Languages-12-blue)
 
 A powerful plugin to save, load, and manage your entire desktop configuration snapshots. 
@@ -42,7 +42,7 @@ To keep the plugin repository lightweight, the themes shown in the screenshots a
 
 ## 🛠️ Installation
 
-1. Go to plugins in your noctalia settings, and download it.
+1. Go to plugins in your diutalia settings, and download it.
 2. Enable the plugin.
 
 ---
@@ -51,7 +51,7 @@ To keep the plugin repository lightweight, the themes shown in the screenshots a
 
 | Setting | Default | Description |
 |---|---|---|
-| `profilesDir` | `~/.config/noctalia/profiles/` | Directory where profiles are stored |
+| `profilesDir` | `~/.config/diutalia/profiles/` | Directory where profiles are stored |
 | `icon` | `bookmark` | Tabler icon shown in the bar widget |
 | `iconColor` | `primary` | Accent color for the bar icon (`primary`, `secondary`, `tertiary`, `error`) |
 | `includeWallpapers` | `true` | Whether new profile rows default to applying wallpapers |
@@ -63,7 +63,7 @@ To keep the plugin repository lightweight, the themes shown in the screenshots a
 ## Profile structure
 
 ```
-~/.config/noctalia/profiles/
+~/.config/diutalia/profiles/
 ├── my-profile/
 │   ├── settings.json
 │   ├── colors.json
@@ -100,8 +100,8 @@ qs ipc call plugin:shell-profiles applyProfile 'my-profile'
 #### Hyprland (`~/.config/hypr/hyprland.conf`)
 
 ```ini
-bind = SUPER, P, exec, qs -c noctalia-shell ipc call plugin:shell-profiles toggleProfiles
-bind = SUPER SHIFT, F1, exec, qs -c noctalia-shell ipc call plugin:shell-profiles applyProfile 'Darklestia'
+bind = SUPER, P, exec, qs -c diutalia-shell ipc call plugin:shell-profiles toggleProfiles
+bind = SUPER SHIFT, F1, exec, qs -c diutalia-shell ipc call plugin:shell-profiles applyProfile 'Darklestia'
 ```
 
 #### Niri (`~/.config/niri/config.kdl`)

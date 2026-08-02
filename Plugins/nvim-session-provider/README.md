@@ -6,12 +6,12 @@ A launcher provider plugin that lets you open one of your saved Neovim sessions
 
 ## Usage
 
-1. Open the Noctalia launcher
+1. Open the Diutalia launcher
 2. Type `>nvim` to enter Neovim mode
 3. Add a search term after the command (e.g., `>nvim noct`), or browse the most recently saved sessions
 4. Select your session and press Enter
 
-Alternatively, you can trigger the provider by IPC with the command `qs -c noctalia-shell ipc call plugin:nvim-session-provider toggle`.
+Alternatively, you can trigger the provider by IPC with the command `qs -c diutalia-shell ipc call plugin:nvim-session-provider toggle`.
 
 ## Supported session manager plugins
 
@@ -58,6 +58,6 @@ Consult the documentation of your session manager plugin if you are using a diff
 
 ## Requirements
 
-- Noctalia 4.5.0 or later
+- Diutalia 4.5.0 or later
 - Neovim (it may work with classic Vim, but I haven't tested it)
 - A session management plugin that saves session files in a central location

@@ -328,11 +328,11 @@ Item {
           }
         }
 
-        // Bug 2 fix: auto-discover standard Noctalia/common keybind files from the config dir
+        // Bug 2 fix: auto-discover standard Diutalia/common keybind files from the config dir
         var configDir = root.getDirectoryFromPath(currentFilePath);
         var standardFiles = [
           configDir + "/keybindings.common.kdl",
-          configDir + "/keybindings.noctalia.kdl"
+          configDir + "/keybindings.diutalia.kdl"
         ];
         for (var s = 0; s < standardFiles.length; s++) {
           var sf = standardFiles[s];
@@ -521,7 +521,7 @@ Item {
 
   function finalizeNiriBinds() {
     var categoryOrder = [
-      "Noctalia", "Applications", "Window Management", "Column Navigation",
+      "Diutalia", "Applications", "Window Management", "Column Navigation",
       "Window Focus", "Workspace Navigation", "Workspace Management",
       "Move Columns", "Move Windows", "Column Management", "Column Width",
       "Window Size", "Screenshots", "Power", "System", "Animations"
@@ -1237,8 +1237,8 @@ Item {
     return formattedParts.join(" + ");
   }
 
-  // Map Noctalia IPC target+function to human-readable descriptions
-  property var noctaliaIpcLabels: ({
+  // Map Diutalia IPC target+function to human-readable descriptions
+  property var diutaliaIpcLabels: ({
     "launcher toggle": "Launcher",
     "launcher clipboard": "Clipboard History",
     "launcher command": "Command Palette",
@@ -1295,10 +1295,10 @@ Item {
   })
 
   function formatNiriAction(action) {
-    // Detect Noctalia IPC commands in two formats:
-    // 1. spawn-sh "qs -c noctalia-shell ipc call target function"
-    // 2. spawn "qs" "-c" "noctalia-shell" "ipc" "call" "target" "function"
-    if (action.indexOf("noctalia-shell") !== -1 && action.indexOf("ipc") !== -1) {
+    // Detect Diutalia IPC commands in two formats:
+    // 1. spawn-sh "qs -c diutalia-shell ipc call target function"
+    // 2. spawn "qs" "-c" "diutalia-shell" "ipc" "call" "target" "function"
+    if (action.indexOf("diutalia-shell") !== -1 && action.indexOf("ipc") !== -1) {
       // Extract target and function from either format:
       // spawn-sh: ipc call target function (words separated by spaces)
       // spawn multi-arg: "ipc" "call" "target" "function" (words wrapped in quotes)
@@ -1306,8 +1306,8 @@ Item {
                      action.match(/"ipc"\s+"call"\s+"(\w+)"\s+"(\w+)"/);
       if (ipcMatch) {
         var ipcKey = ipcMatch[1] + " " + ipcMatch[2];
-        if (noctaliaIpcLabels[ipcKey]) {
-          return noctaliaIpcLabels[ipcKey];
+        if (diutaliaIpcLabels[ipcKey]) {
+          return diutaliaIpcLabels[ipcKey];
         }
         // Fallback: format target + function nicely
         return ipcMatch[1].replace(/([A-Z])/g, ' $1').trim() + ": " +
@@ -1328,9 +1328,9 @@ Item {
   }
 
   function getNiriCategory(action, actionCategories) {
-    // Noctalia IPC commands get their own category
-    if (action.indexOf("noctalia-shell") !== -1 && action.indexOf("ipc") !== -1) {
-      return "Noctalia";
+    // Diutalia IPC commands get their own category
+    if (action.indexOf("diutalia-shell") !== -1 && action.indexOf("ipc") !== -1) {
+      return "Diutalia";
     }
     for (var prefix in actionCategories) {
       if (action.startsWith(prefix)) {
@@ -1671,12 +1671,12 @@ Item {
   }
 
   function formatMangoAction(action, args) {
-    // Check Noctalia IPC calls: spawn_shell with qs ipc call ...
-    if (args.indexOf("noctalia-shell") !== -1 && args.indexOf("ipc") !== -1) {
+    // Check Diutalia IPC calls: spawn_shell with qs ipc call ...
+    if (args.indexOf("diutalia-shell") !== -1 && args.indexOf("ipc") !== -1) {
       var ipcMatch = args.match(/ipc\s+call\s+(\w+)\s+(\w+)/);
       if (ipcMatch) {
         var ipcKey = ipcMatch[1] + " " + ipcMatch[2];
-        if (noctaliaIpcLabels[ipcKey]) return noctaliaIpcLabels[ipcKey];
+        if (diutaliaIpcLabels[ipcKey]) return diutaliaIpcLabels[ipcKey];
         return ipcMatch[1] + ": " + ipcMatch[2];
       }
     }

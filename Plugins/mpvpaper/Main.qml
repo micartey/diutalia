@@ -173,7 +173,7 @@ Item {
     }
 
     InnerService {
-        // Contains all the save / load functionality for this to work with noctalia
+        // Contains all the save / load functionality for this to work with diutalia
         id: innerService
         pluginApi: root.pluginApi
 

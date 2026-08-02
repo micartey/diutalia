@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Effects
 import QtQuick.Layouts
 import qs.Commons
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 import qs.Widgets
 
 NBox {

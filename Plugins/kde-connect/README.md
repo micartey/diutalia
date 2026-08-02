@@ -1,9 +1,9 @@
-# Noctalia KDE Connect
+# Diutalia KDE Connect
 
 A Plugin integrating your mobile devices into a panel using KDEConnect
 
 > [!IMPORTANT]
-> Please submit any Pull Requests to https://github.com/WerWolv/noctalia-kde-connect and **NOT** to the noctalia-plugins repository!
+> Please submit any Pull Requests to https://github.com/WerWolv/noctalia-kde-connect and **NOT** to the diutalia-plugins repository!
 
 ## Features
 - Support for multiple devices

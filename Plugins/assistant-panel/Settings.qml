@@ -50,11 +50,11 @@ ColumnLayout {
 
   // Environment variable API keys - check if managed by env
   readonly property var envApiKeys: ({
-      [Constants.Providers.GOOGLE]: Quickshell.env("NOCTALIA_AP_GOOGLE_API_KEY") || "",
-      [Constants.Providers.OPENAI_COMPATIBLE]: Quickshell.env("NOCTALIA_AP_OPENAI_COMPATIBLE_API_KEY") || ""
+      [Constants.Providers.GOOGLE]: Quickshell.env("DIUTALIA_AP_GOOGLE_API_KEY") || "",
+      [Constants.Providers.OPENAI_COMPATIBLE]: Quickshell.env("DIUTALIA_AP_OPENAI_COMPATIBLE_API_KEY") || ""
     })
   readonly property bool apiKeyManagedByEnv: (envApiKeys[editProvider] || "") !== ""
-  readonly property string envDeeplApiKey: Quickshell.env("NOCTALIA_AP_DEEPL_API_KEY") || ""
+  readonly property string envDeeplApiKey: Quickshell.env("DIUTALIA_AP_DEEPL_API_KEY") || ""
   readonly property bool deeplApiKeyManagedByEnv: envDeeplApiKey !== ""
   // ==================
   // Panel Settings Section

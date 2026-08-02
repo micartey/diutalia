@@ -9,7 +9,7 @@ import Quickshell.Wayland
 Item {
     id: root
 
-    // --- Mandatory Panel Properties (Injected by Noctalia) ---
+    // --- Mandatory Panel Properties (Injected by Diutalia) ---
     property var pluginApi: null
     readonly property var geometryPlaceholder: panelContainer
     readonly property bool allowAttach: true

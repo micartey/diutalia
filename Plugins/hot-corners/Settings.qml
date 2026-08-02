@@ -104,7 +104,7 @@ ColumnLayout {
             }
             
             ctx.closePath();
-            // Noctalia primary color or gray
+            // Diutalia primary color or gray
             ctx.fillStyle = isActive ? Color.mPrimary : Qt.rgba(0.5, 0.5, 0.5, 0.5);
             ctx.fill();
             
@@ -204,7 +204,7 @@ ColumnLayout {
             NTextInput {
               id: cmdInput
               Layout.fillWidth: true
-              placeholderText: "e.g., noctalia-shell ipc call settings toggle"
+              placeholderText: "e.g., diutalia-shell ipc call settings toggle"
               text: popupOverlay.initialText
               inputItem.onEditingFinished: column.saveAndClose()
             }

@@ -9,7 +9,7 @@ import qs.Widgets
 //
 // Clicking toggles the plugin's Panel. Right-clicking shows a small context
 // menu (toggle / open settings) mirroring the clipper reference plugin
-// (noctalia-dev/noctalia-plugins#clipper).
+// (diutalia-dev/diutalia-plugins#clipper).
 //
 // Contracts followed:
 //   - docs/specs/plugin-entry-point-contracts.md (NIconButton root, injected
@@ -25,7 +25,7 @@ NIconButton {
     // ShellScreen is a Quickshell type. The entry-point contract
     // (docs/specs/plugin-entry-point-contracts.md, BarWidget section) names
     // `property ShellScreen screen` as the canonical declaration; the
-    // noctalia-plugins AGENTS.md audit treats a missing typed declaration as
+    // diutalia-plugins AGENTS.md audit treats a missing typed declaration as
     // a merge blocker. The `import Quickshell` above makes the type visible
     // to the shell's QML engine (qmllint can't resolve shell-internal
     // modules in isolation — that's a tooling limitation, not a contract
@@ -44,7 +44,7 @@ NIconButton {
     icon: "clipboard-data"
     // No `?? ""` fallback on tr() — the translation system returns the key
     // itself on a miss, which is the correct fallback per the upstream
-    // AGENTS.md (noctalia-dev/noctalia-plugins). Adding `?? ""` silently
+    // AGENTS.md (diutalia-dev/diutalia-plugins). Adding `?? ""` silently
     // swallows misses and hides broken keys from translators.
     tooltipText: pluginApi?.tr("bar.tooltip")
     tooltipDirection: BarService.getTooltipDirection(screen?.name)

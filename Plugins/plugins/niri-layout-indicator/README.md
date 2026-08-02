@@ -4,8 +4,8 @@
 ![screenshot](screenshot_02.png)
 ![screenshot](screenshot_03.png)
 
-Keyboard layout indicator and switcher for Noctalia Shell on niri.
-> Built for niri + Noctalia Shell on Wayland.
+Keyboard layout indicator and switcher for Diutalia Shell on niri.
+> Built for niri + Diutalia Shell on Wayland.
 
 ---
 ## ✨ Features
@@ -20,7 +20,7 @@ Keyboard layout indicator and switcher for Noctalia Shell on niri.
   - Toggle display mode (text / flag)
   - Change middle-click behavior
   - Open plugin settings
-- Native Noctalia look and feel
+- Native Diutalia look and feel
 
 ---
 ## 🌍 Translations
@@ -32,14 +32,14 @@ Keyboard layout indicator and switcher for Noctalia Shell on niri.
 ## ⚙️ Requirements
 
 - [niri](https://github.com/YaLTeR/niri)
-- Noctalia Shell
+- Diutalia Shell
 
 ---
 ## 📦 Installation
 
-Install the plugin from the Noctalia Plugin Store:
+Install the plugin from the Diutalia Plugin Store:
 
-1. Open Noctalia Settings.
+1. Open Diutalia Settings.
 2. Go to Plugins.
 3. Search for **Niri Layout Indicator**.
 4. Press **Install**.

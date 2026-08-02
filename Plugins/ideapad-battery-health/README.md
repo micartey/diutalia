@@ -1,6 +1,6 @@
 # Ideapad Battery Health
 
-A plugin for Noctalia Shell to control the battery preservation mode on Ideapad laptops, helping extend battery lifespan. This plugin only works if your laptop supports battery conservation mode (as exported by the kernel in sysfs). The plugin looks like this in action:
+A plugin for Diutalia Shell to control the battery preservation mode on Ideapad laptops, helping extend battery lifespan. This plugin only works if your laptop supports battery conservation mode (as exported by the kernel in sysfs). The plugin looks like this in action:
 
 ![Preview](preview.png)
 
@@ -50,10 +50,10 @@ This script will:
 
 ```bash
 # Toggle panel
-qs -c noctalia-shell ipc call plugin:ideapad-battery-health togglePanel
+qs -c diutalia-shell ipc call plugin:ideapad-battery-health togglePanel
 
 # Set preservation mode (0 for disabled, 1 for enabled)
-qs -c noctalia-shell ipc call plugin:ideapad-battery-health set <value>
+qs -c diutalia-shell ipc call plugin:ideapad-battery-health set <value>
 ```
 
 ## Troubleshooting
@@ -66,7 +66,7 @@ qs -c noctalia-shell ipc call plugin:ideapad-battery-health set <value>
 ## Requirements
 
 - Ideapad laptop with battery conservation mode support
-- Noctalia 3.6.0 or later
+- Diutalia 3.6.0 or later
 - Linux kernel exposing battery conservation mode via sysfs
 
 ## Files

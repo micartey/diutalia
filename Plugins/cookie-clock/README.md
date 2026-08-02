@@ -1,4 +1,4 @@
-# Cookie Clock for Noctalia Shell
+# Cookie Clock for Diutalia Shell
 
 A simple desktop clock widget. Trying to be port of the Illogical Impulse's cookie styled clock.
 
@@ -9,7 +9,7 @@ A simple desktop clock widget. Trying to be port of the Illogical Impulse's cook
 Requires `git`
 
 ```
-git clone https://github.com/elrondforwin/noctalia-cookie-clock.git ~/.config/noctalia/plugins/cookie-clock
+git clone https://github.com/elrondforwin/noctalia-cookie-clock.git ~/.config/diutalia/plugins/cookie-clock
 ```
 
 # License

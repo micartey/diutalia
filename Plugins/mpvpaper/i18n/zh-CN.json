@@ -55,7 +55,7 @@
     },
     "mpv_socket": {
       "title_label": "Mpvpaper套接字",
-      "title_description": "noctalia连接到的mpvpaper套接字",
+      "title_description": "diutalia连接到的mpvpaper套接字",
       "input_placeholder": "例如：/tmp/mpv-socket"
     },
     "actions": {

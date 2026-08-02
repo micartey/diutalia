@@ -29,7 +29,7 @@ PanelWindow {
 
   WlrLayershell.layer: WlrLayer.Overlay
   WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
-  WlrLayershell.namespace: "noctalia-plugin-manager-add-to-bar-" + (screen?.name || "unknown")
+  WlrLayershell.namespace: "diutalia-plugin-manager-add-to-bar-" + (screen?.name || "unknown")
   WlrLayershell.exclusionMode: ExclusionMode.Ignore
 
   function show(items) {

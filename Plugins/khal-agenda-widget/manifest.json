@@ -2,7 +2,7 @@
   "id": "khal-agenda-widget",
   "name": "Khal Agenda Info",
   "version": "1.0.3",
-  "minNoctaliaVersion": "4.6.6",
+  "minDiutaliaVersion": "4.6.6",
   "author": "Simon",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

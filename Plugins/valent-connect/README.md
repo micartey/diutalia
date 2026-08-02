@@ -1,4 +1,4 @@
-# 📱 Valent Connect Plugin for Noctalia
+# 📱 Valent Connect Plugin for Diutalia
 
 Integrate your mobile devices via the Valent backend. This plugin provides a seamless UI to interact with your phone, powered by Valent (an implementation of the KDE Connect protocol for GNOME/GTK environments).
 
@@ -63,7 +63,7 @@ spawn-at-startup "valent" "--gapplication-service"
 
 1. Install the **KDE Connect** app on your phone (Android/iOS).
 2. Ensure your phone and desktop are on the same network.
-3. Open the Valent Connect panel in Noctalia.
+3. Open the Valent Connect panel in Diutalia.
 4. Select your device and click **Pair**.
 5. Accept the pairing request on your phone.
 
@@ -89,7 +89,7 @@ spawn-at-startup "valent" "--gapplication-service"
 
 ## Credits 💖
 
-This plugin is heavily based on the excellent [KDE Connect](https://github.com/WerWolv/noctalia-kde-connect) plugin created by **WerWolv**. 
+This plugin is heavily based on the excellent [KDE Connect](https://github.com/WerWolv/noctalia-kde-connect) plugin created by **WerWolv**.
 
 A huge thank you to **WerWolv** for their incredible work on the original implementation, on which this plugin is heavily based on.
 ---

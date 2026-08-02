@@ -1,6 +1,6 @@
-# Catwalk Plugin for Noctalia
+# Catwalk Plugin for Diutalia
 
-A cute animated cat for your Noctalia bar that reacts to your system's CPU usage.
+A cute animated cat for your Diutalia bar that reacts to your system's CPU usage.
 
 ## Features
 
@@ -15,11 +15,11 @@ A cute animated cat for your Noctalia bar that reacts to your system's CPU usage
 
 ## Installation
 
-This plugin is part of the `noctalia-plugins` repository.
+This plugin is part of the `diutalia-plugins` repository.
 
 ## Configuration
 
-Access the plugin settings in Noctalia to configure:
+Access the plugin settings in Diutalia to configure:
 
 - **Minimum CPU Threshold**: Set the CPU usage percentage (5-25%) above which the cat starts running. Below this, it stays idle with "Zz" animation.
 
@@ -31,4 +31,4 @@ Access the plugin settings in Noctalia to configure:
 
 ## Requirements
 
-- Noctalia 3.6.0 or later
+- Diutalia 3.6.0 or later

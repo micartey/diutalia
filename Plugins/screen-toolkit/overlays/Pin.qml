@@ -75,7 +75,7 @@ Item {
             WlrLayershell.layer:         WlrLayer.Top
             WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
             WlrLayershell.exclusionMode: ExclusionMode.Ignore
-            WlrLayershell.namespace:     "noctalia-pin"
+            WlrLayershell.namespace:     "diutalia-pin"
             mask: Region { item: maskRect }
             Rectangle {
                 id: maskRect

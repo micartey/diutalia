@@ -1,6 +1,6 @@
-# Assistant Panel Plugin for Noctalia Shell
+# Assistant Panel Plugin for Diutalia Shell
 
-An AI Chat and Translation panel plugin for Noctalia Shell, inspired by the sidebar in [end-4's config](https://github.com/end-4/dots-hyprland).
+An AI Chat and Translation panel plugin for Diutalia Shell, inspired by the sidebar in [end-4's config](https://github.com/end-4/dots-hyprland).
 
 ## Demo
 
@@ -24,8 +24,8 @@ https://github.com/user-attachments/assets/0d1fb5eb-0b16-4ff4-a6ed-f78c196f756f
 
 ## Installation
 
-1. Copy the `assistant-panel` folder to `~/.config/noctalia/plugins/`
-2. Restart Noctalia Shell
+1. Copy the `assistant-panel` folder to `~/.config/diutalia/plugins/`
+2. Restart Diutalia Shell
 3. Enable the plugin in Settings > Plugins
 4. Add the bar widget in Settings > Bar
 
@@ -69,13 +69,13 @@ API keys can also be configured via environment variables. **Environment variabl
 
 | Variable | Description |
 |----------|-------------|
-| `NOCTALIA_AP_GOOGLE_API_KEY` | Google Gemini API key |
-| `NOCTALIA_AP_OPENAI_COMPATIBLE_API_KEY` | OpenAI Compatible API key |
-| `NOCTALIA_AP_DEEPL_API_KEY` | DeepL translator API key |
+| `DIUTALIA_AP_GOOGLE_API_KEY` | Google Gemini API key |
+| `DIUTALIA_AP_OPENAI_COMPATIBLE_API_KEY` | OpenAI Compatible API key |
+| `DIUTALIA_AP_DEEPL_API_KEY` | DeepL translator API key |
 
 Example (add to your shell profile):
 ```bash
-export NOCTALIA_AP_GOOGLE_API_KEY="your-api-key-here"
+export DIUTALIA_AP_GOOGLE_API_KEY="your-api-key-here"
 ```
 
 When an API key is set via environment variable:
@@ -89,28 +89,28 @@ Control the plugin from the command line:
 
 ```bash
 # Toggle panel visibility
-qs -c noctalia-shell ipc call plugin:assistant-panel toggle
+qs -c diutalia-shell ipc call plugin:assistant-panel toggle
 
 # Open panel
-qs -c noctalia-shell ipc call plugin:assistant-panel open
+qs -c diutalia-shell ipc call plugin:assistant-panel open
 
 # Close panel
-qs -c noctalia-shell ipc call plugin:assistant-panel close
+qs -c diutalia-shell ipc call plugin:assistant-panel close
 
 # Send a message
-qs -c noctalia-shell ipc call plugin:assistant-panel send "Hello, how are you?"
+qs -c diutalia-shell ipc call plugin:assistant-panel send "Hello, how are you?"
 
 # Clear chat history
-qs -c noctalia-shell ipc call plugin:assistant-panel clear
+qs -c diutalia-shell ipc call plugin:assistant-panel clear
 
 # Translate text
-qs -c noctalia-shell ipc call plugin:assistant-panel translateText "Hello world" "es"
+qs -c diutalia-shell ipc call plugin:assistant-panel translateText "Hello world" "es"
 
 # Change provider
-qs -c noctalia-shell ipc call plugin:assistant-panel setProvider "openai_compatible"
+qs -c diutalia-shell ipc call plugin:assistant-panel setProvider "openai_compatible"
 
 # Change model
-qs -c noctalia-shell ipc call plugin:assistant-panel setModel "gpt-4o-mini"
+qs -c diutalia-shell ipc call plugin:assistant-panel setModel "gpt-4o-mini"
 ```
 
 ## Keybinding Examples
@@ -119,13 +119,13 @@ Add to your compositor configuration:
 
 ### Hyprland
 ```conf
-bind = SUPER, A, exec, qs -c noctalia-shell ipc call plugin:assistant-panel toggle
+bind = SUPER, A, exec, qs -c diutalia-shell ipc call plugin:assistant-panel toggle
 ```
 
 ### Niri
 ```kdl
 binds {
-    Mod+A { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:assistant-panel" "toggle"; }
+    Mod+A { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:assistant-panel" "toggle"; }
 }
 ```
 
@@ -170,4 +170,4 @@ MIT License - see repository for details.
 ## Credits
 
 - Inspired by [dots-hyprland](https://github.com/end-4/dots-hyprland) sidebar implementation
-- Built for [Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell)
+- Built for [Diutalia Shell](https://github.com/noctalia-dev/noctalia-shell)

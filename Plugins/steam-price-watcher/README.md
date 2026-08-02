@@ -72,12 +72,12 @@ In the panel (click the widget):
 
 - **API**: Uses Steam Store API (`store.steampowered.com/api/appdetails`)
 - **Currency**: Prices are fetched in BRL (Brazilian Real)
-- **Data Storage**: Settings are stored in Noctalia's plugin configuration
+- **Data Storage**: Settings are stored in Diutalia's plugin configuration
 - **Notifications**: Uses notify-send for desktop notifications
 
 ## Requirements
 
-- Noctalia Shell v3.6.0 or higher
+- Diutalia Shell v3.6.0 or higher
 - Internet connection for API access
 - `curl` command-line tool (for API requests)
 - `notify-send` (for desktop notifications)
@@ -114,7 +114,7 @@ Lokize
 
 ## License
 
-This plugin follows the same license as Noctalia Shell.
+This plugin follows the same license as Diutalia Shell.
 
 ## Tips
 

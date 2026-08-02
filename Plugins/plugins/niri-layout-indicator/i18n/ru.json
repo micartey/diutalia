@@ -8,7 +8,7 @@
       "text": "Текст: en, ru",
       "flag": "Флаг: 🇺🇸, 🇷🇺"
     },
-    "keybind-command": "qs -c \"noctalia-shell\" ipc call plugin:keybind-cheatsheet toggle",
+    "keybind-command": "qs -c \"diutalia-shell\" ipc call plugin:keybind-cheatsheet toggle",
     "middle": {
       "title": "Действие средней кнопки",
       "description": "Выберите действие при нажатии средней кнопкой мыши по виджету.",

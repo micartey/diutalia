@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update Noctalia's global wallpaper cache entry for a monitor.
+# Update Diutalia's global wallpaper cache entry for a monitor.
 # Args:
 #   1: screen name
 #   2: screenshot path
@@ -9,7 +9,7 @@ set -eu
 
 screen_name="${1:-}"
 screenshot_path="${2:-}"
-cache_file="$HOME/.cache/noctalia/wallpapers.json"
+cache_file="$HOME/.cache/diutalia/wallpapers.json"
 
 if [ -z "$screen_name" ] || [ -z "$screenshot_path" ]; then
   exit 1

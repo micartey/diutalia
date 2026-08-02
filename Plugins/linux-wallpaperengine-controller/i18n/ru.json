@@ -218,7 +218,7 @@
     "reloadSkippedNoWallpaper": "Обои не настроены, поэтому перезагружать нечего",
     "reloaded": "Движок обоев перезагружен",
     "stopped": "Движок обоев остановлен",
-    "wallpaperColorsApplied": "Цвета обоев применены к Noctalia",
+    "wallpaperColorsApplied": "Цвета обоев применены к Diutalia",
     "wallpaperColorsCached": "Цвета обоев сохранены для этого дисплея",
     "wallpaperColorsEngineUnavailable": "Для генерации цветов обоев требуется доступный linux-wallpaperengine",
     "wallpaperColorsFailed": "Не удалось извлечь цвета из выбранных обоев",

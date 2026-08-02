@@ -11,7 +11,7 @@ import qs.Widgets
 // Visual contract: matches the official NotificationHistoryPanel conventions
 // (NBox-wrapped header with icon + title + action buttons, mSurfaceVariant
 // card rows, pointSize-based typography). See the reference panel at
-// $XDG_CONFIG_HOME/quickshell/noctalia-shell/Modules/Panels/NotificationHistory/
+// $XDG_CONFIG_HOME/quickshell/diutalia-shell/Modules/Panels/NotificationHistory/
 // NotificationHistoryPanel.qml — the style tokens here mirror its header row,
 // empty-state layout, and list-item card treatment so the plugin feels native.
 //
@@ -27,7 +27,7 @@ Item {
     // Accept keyboard focus so Keys.onPressed (defined further down) receives
     // `/` and Escape when the user hasn't explicitly focused another widget.
     // The same pattern is used by the shell's NotificationHistoryPanel,
-    // SettingsContent, and SessionMenu — all Noctalia panels that handle
+    // SettingsContent, and SessionMenu — all Diutalia panels that handle
     // top-level key events.
     focus: true
 
@@ -781,7 +781,7 @@ Item {
             // Wrapping the title row in an NBox mirrors the notification panel's
             // `headerBox`. The card gives the header a visual anchor distinct
             // from the surface below and aligns the icon/title/action cluster
-            // with Noctalia's "chrome" convention used across native panels.
+            // with Diutalia's "chrome" convention used across native panels.
             //
             // The card holds two rows driven by an inner ColumnLayout:
             //   1. `header`   — icon + title + wipe + close actions.
@@ -903,7 +903,7 @@ Item {
             }
 
             // Search input ----------------------------------------------------
-            // NTextInput is the Noctalia-styled wrapper around TextField. It
+            // NTextInput is the Diutalia-styled wrapper around TextField. It
             // brings a focus-aware outlined frame, an inline magnifying-glass
             // icon, and a built-in clear (x) button that appears when the
             // field has content — matching the shell's own settings search
@@ -1101,11 +1101,11 @@ Item {
             // History list (Text / Files tabs) --------------------------------
             //
             // Raw ListView (not qs.Widgets.NListView) by deliberate exception to
-            // the noctalia-plugins AGENTS.md "prefer N* widgets" rule: the
+            // the diutalia-plugins AGENTS.md "prefer N* widgets" rule: the
             // acceptance test requires delegate recycling (`reuseItems: true`)
             // for 100+ entry performance, and NListView does not forward that
             // property through its alias list (checked against the widget source
-            // in $XDG_CONFIG_HOME/quickshell/noctalia-shell/Widgets/NListView.qml
+            // in $XDG_CONFIG_HOME/quickshell/diutalia-shell/Widgets/NListView.qml
             // — aliases cover model/delegate/spacing/currentIndex/contentY and
             // similar, but `reuseItems` is absent). Adopting NListView would
             // regress the ClipboardItem delegate allocation characteristics on
@@ -1167,7 +1167,7 @@ Item {
             // Delegates use compact: true so ClipboardItem renders as an image
             // fill with a hover-reveal delete overlay instead of a text row.
             //
-            // Uses NGridView (qs.Widgets) per the noctalia-plugins AGENTS.md
+            // Uses NGridView (qs.Widgets) per the diutalia-plugins AGENTS.md
             // "prefer N* widgets" rule. cellWidth / cellHeight are set on the
             // NGridView directly — it forwards them to the inner GridView.
             NGridView {

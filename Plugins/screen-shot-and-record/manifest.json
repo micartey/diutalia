@@ -2,7 +2,7 @@
   "id": "screen-shot-and-record",
   "name": "ScreenShot & Record",
   "version": "1.0.5",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "author": "Pulsar",
   "license": "GPL-3.0-or-later",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

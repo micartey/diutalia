@@ -1,13 +1,13 @@
 # Obsidian Provider
 ![splash](preview.png)
 
-## A Noctalia launcher provider for quickly switching between Obsidian vaults.
+## A Diutalia launcher provider for quickly switching between Obsidian vaults.
 
 ### Preview:
 ![preview](recording.gif)
 ## Features
 
-- Browse and open all your Obsidian vaults from the Noctalia launcher
+- Browse and open all your Obsidian vaults from the Diutalia launcher
 - Sorted by most recently accessed
 - Fuzzy search by vault name
 - Badge indicator on vaults currently open in Obsidian
@@ -29,4 +29,4 @@ Vaults also appear in global search when **Include in main search** is enabled.
 ## Requirements
 
 - [Obsidian](https://obsidian.md) installed (any distribution)
-- Noctalia ≥ 4.5.0
+- Diutalia ≥ 4.5.0

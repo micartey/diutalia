@@ -26,7 +26,7 @@ PanelWindow {
 
   WlrLayershell.layer: WlrLayer.Overlay
   WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
-  WlrLayershell.namespace: "noctalia-sticky-notes-expanded-" + (screen?.name || "unknown")
+  WlrLayershell.namespace: "diutalia-sticky-notes-expanded-" + (screen?.name || "unknown")
   WlrLayershell.exclusionMode: ExclusionMode.Ignore
 
   function openFor(targetScreen, targetNoteId, targetContent, targetColor) {

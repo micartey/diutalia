@@ -1,6 +1,6 @@
 # Mullvad VPN
 
-Noctalia plugin for controlling Mullvad VPN through the `mullvad` CLI. Provides a bar widget, a panel with relay picker and quick toggles, and a settings page.
+Diutalia plugin for controlling Mullvad VPN through the `mullvad` CLI. Provides a bar widget, a panel with relay picker and quick toggles, and a settings page.
 
 ## Features
 
@@ -15,7 +15,7 @@ Noctalia plugin for controlling Mullvad VPN through the `mullvad` CLI. Provides 
 
 ## Requirements
 
-- Noctalia Shell >= 4.0.0
+- Diutalia Shell >= 4.0.0
 - `mullvad` CLI (`mullvad-cli` 2026.x or newer) and `mullvad-daemon` running
 - An active Mullvad account (the plugin does not handle login; use `mullvad account login <number>`)
 
@@ -56,10 +56,10 @@ tray icon and autostart entry.
 ## IPC
 
 ```sh
-qs -c noctalia-shell ipc call plugin:mullvad status
-qs -c noctalia-shell ipc call plugin:mullvad toggle
-qs -c noctalia-shell ipc call plugin:mullvad setLocation se sto
-qs -c noctalia-shell ipc call plugin:mullvad setLockdown true
+qs -c diutalia-shell ipc call plugin:mullvad status
+qs -c diutalia-shell ipc call plugin:mullvad toggle
+qs -c diutalia-shell ipc call plugin:mullvad setLocation se sto
+qs -c diutalia-shell ipc call plugin:mullvad setLockdown true
 ```
 
 ## License

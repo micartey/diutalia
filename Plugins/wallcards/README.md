@@ -26,7 +26,7 @@ pacman -S ffmpeg mpvpaper imagemagick
 Control the plugin from the command line:
 
 ```sh
-qs -c noctalia-shell ipc call plugin:wallcards toggle
+qs -c diutalia-shell ipc call plugin:wallcards toggle
 ```
 
 ## Keybinding Examples
@@ -36,7 +36,7 @@ Add to your compositor configuration:
 ### Hyprland
 
 ```conf
-bind = SUPER, A, exec, qs -c noctalia-shell ipc call plugin:wallcards toggle
+bind = SUPER, A, exec, qs -c diutalia-shell ipc call plugin:wallcards toggle
 ```
 
 ### Keybinds
@@ -96,7 +96,7 @@ Scroll wheel also works for navigation.
 
 ## Configuration
 
-All settings are available through the plugin settings panel in Noctalia. They can also be edited directly in `settings.json` in the plugin directory `~/.config/noctalia/plugins/wallcards`.
+All settings are available through the plugin settings panel in Diutalia. They can also be edited directly in `settings.json` in the plugin directory `~/.config/diutalia/plugins/wallcards`.
 
 | Setting | Description |
 | --- | --- |
@@ -132,4 +132,4 @@ MIT License - see repository for details.
 ## Credits
 
 - Inspired by [ilyamiro](https://github.com/ilyamiro/nixos-configuration) and [liixini](https://github.com/liixini/skwd)
-- Built for [Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell)
+- Built for [Diutalia Shell](https://github.com/noctalia-dev/noctalia-shell)

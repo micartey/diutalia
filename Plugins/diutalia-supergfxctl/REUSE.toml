@@ -1,5 +1,5 @@
 version = 1
-SPDX-PackageName = "noctalia-supergfxctl"
+SPDX-PackageName = "diutalia-supergfxctl"
 SPDX-PackageSupplier = "https://github.com/cod3ddot/noctalia-supergfxctl"
 
 [[annotations]]

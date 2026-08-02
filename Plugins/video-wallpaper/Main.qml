@@ -170,7 +170,7 @@ Item {
 
 
             /***************************
-            * NOCTALIA WALLPAPER
+            * DIUTALIA WALLPAPER
             ***************************/
             InnerService {
                 pluginApi: root.pluginApi

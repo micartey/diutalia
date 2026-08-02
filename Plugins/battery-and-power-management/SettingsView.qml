@@ -46,7 +46,7 @@ ColumnLayout {
     }
 
     // All palette colors
-    readonly property var noctaliaPalette: [
+    readonly property var diutaliaPalette: [
         Color.mPrimary, Color.mSecondary, Color.mTertiary, Color.mError,
         Color.mSurface, Color.mSurfaceVariant, Color.mOutline
     ]
@@ -94,7 +94,7 @@ ColumnLayout {
 
                 Repeater {
                     id: powerSaverColor
-                    model: root.noctaliaPalette
+                    model: root.diutaliaPalette
 
                     Rectangle {
                         //width: 28
@@ -141,7 +141,7 @@ ColumnLayout {
 
                 Repeater {
                     id: performanceColor
-                    model: root.noctaliaPalette
+                    model: root.diutaliaPalette
 
                     Rectangle {
                         //width: 28

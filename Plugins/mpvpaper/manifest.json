@@ -2,7 +2,7 @@
   "id": "mpvpaper",
   "name": "Mpvpaper",
   "version": "1.6.4",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "author": "spiros132",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

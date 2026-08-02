@@ -4,7 +4,7 @@
     "version": "1.0.2",
     "description": "Open Neovim Sessions",
     "tags": ["Launcher", "Development"],
-    "minNoctaliaVersion": "4.5.0",
+    "minDiutaliaVersion": "4.5.0",
     "author": "Krendil",
     "official": false,
     "license": "MIT",

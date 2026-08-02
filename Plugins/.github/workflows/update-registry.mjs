@@ -71,7 +71,7 @@ function extractRegistryEntry(manifest, dirPath) {
     author: manifest.author,
     description: manifest.description,
     repository: manifest.repository,
-    minNoctaliaVersion: manifest.minNoctaliaVersion,
+    minDiutaliaVersion: manifest.minDiutaliaVersion,
     license: manifest.license,
     tags: manifest.tags || [],
     lastUpdated: getLastCommitDate(manifestPath)

@@ -22,7 +22,7 @@ Item {
   readonly property var selectedDevice: BatteryService.isDevicePresent(BatteryService.findDevice(deviceNativePath)) ? BatteryService.findDevice(deviceNativePath) : BatteryService.primaryDevice
   readonly property var primaryDevice: selectedDevice
   readonly property bool showPowerProfiles: cfg.showPowerProfiles ?? defaults.showPowerProfiles ?? false
-  readonly property bool showNoctaliaPerformance: cfg.showNoctaliaPerformance ?? defaults.showNoctaliaPerformance ?? false
+  readonly property bool showDiutaliaPerformance: cfg.showDiutaliaPerformance ?? defaults.showDiutaliaPerformance ?? false
   readonly property bool powerProfileAvailable: PowerProfileService.available
   readonly property var powerProfiles: [PowerProfile.PowerSaver, PowerProfile.Balanced, PowerProfile.Performance]
   readonly property bool profilesAvailable: PowerProfileService.available
@@ -303,7 +303,7 @@ Item {
       NBox {
         Layout.fillWidth: true
         height: controlsLayout.implicitHeight + Style.margin2L
-        visible: root.showPowerProfiles || root.showNoctaliaPerformance
+        visible: root.showPowerProfiles || root.showDiutaliaPerformance
 
         ColumnLayout {
           id: controlsLayout
@@ -377,16 +377,16 @@ Item {
 
           NDivider {
             Layout.fillWidth: true
-            visible: root.showPowerProfiles && PowerProfileService.available && root.showNoctaliaPerformance
+            visible: root.showPowerProfiles && PowerProfileService.available && root.showDiutaliaPerformance
           }
 
           RowLayout {
             Layout.fillWidth: true
             spacing: Style.marginS
-            visible: root.showNoctaliaPerformance
+            visible: root.showDiutaliaPerformance
 
             NText {
-              text: I18n.tr("toast.noctalia-performance.label")
+              text: I18n.tr("toast.diutalia-performance.label")
               pointSize: Style.fontSizeM
               font.weight: Style.fontWeightBold
               color: Color.mOnSurface
@@ -394,14 +394,14 @@ Item {
             }
 
             NIcon {
-              icon: PowerProfileService.noctaliaPerformanceMode ? "rocket" : "rocket-off"
+              icon: PowerProfileService.diutaliaPerformanceMode ? "rocket" : "rocket-off"
               pointSize: Style.fontSizeL
-              color: PowerProfileService.noctaliaPerformanceMode ? Color.mPrimary : Color.mOnSurfaceVariant
+              color: PowerProfileService.diutaliaPerformanceMode ? Color.mPrimary : Color.mOnSurfaceVariant
             }
 
             NToggle {
-              checked: PowerProfileService.noctaliaPerformanceMode
-              onToggled: checked => PowerProfileService.noctaliaPerformanceMode = checked
+              checked: PowerProfileService.diutaliaPerformanceMode
+              onToggled: checked => PowerProfileService.diutaliaPerformanceMode = checked
             }
           }
         }

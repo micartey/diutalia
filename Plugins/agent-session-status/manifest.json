@@ -2,7 +2,7 @@
   "id": "agent-session-status",
   "name": "Agent Session Status",
   "version": "1.0.0",
-  "minNoctaliaVersion": "4.6.6",
+  "minDiutaliaVersion": "4.6.6",
   "author": "nzlov",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

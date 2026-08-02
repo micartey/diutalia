@@ -35,7 +35,7 @@ When you add a new plugin:
    - `author`: Plugin author name
    - `description`: Brief plugin description
    - `repository`: Repository URL
-   - `minNoctaliaVersion`: Minimum Noctalia version required
+   - `minDiutaliaVersion`: Minimum Diutalia version required
    - `license`: License identifier (e.g., "MIT")
 
 3. The registry will automatically update when you push to main
@@ -49,7 +49,7 @@ The registry extracts these fields from each plugin's manifest:
 - `author`
 - `description`
 - `repository`
-- `minNoctaliaVersion`
+- `minDiutaliaVersion`
 - `license`
 
 Other manifest fields (like `entryPoints`, `dependencies`, `metadata`) are not included in the registry to keep it lightweight.

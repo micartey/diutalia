@@ -1,6 +1,6 @@
 # Translator
 
-A launcher provider plugin that allows you to quickly translate text directly from the Noctalia launcher.
+A launcher provider plugin that allows you to quickly translate text directly from the Diutalia launcher.
 
 ## Features
 
@@ -12,7 +12,7 @@ A launcher provider plugin that allows you to quickly translate text directly fr
 
 ## Usage
 
-1. Open the Noctalia launcher
+1. Open the Diutalia launcher
 2. Type `>translate` to enter translation mode
 3. Select a target language (or type the language code directly)
 4. Type the text you want to translate
@@ -92,16 +92,16 @@ You can quickly open the translator via IPC, which is useful for keybindings:
 ```bash
 # Toggle the translator launcher (opens with >translate )
 # Pass empty string "" to use default (no language pre-selected)
-qs -c noctalia-shell ipc call plugin:translator toggle "" ""
+qs -c diutalia-shell ipc call plugin:translator toggle "" ""
 
 # Open translator with a specific language (e.g., French)
-qs -c noctalia-shell ipc call plugin:translator toggle "fr" ""
+qs -c diutalia-shell ipc call plugin:translator toggle "fr" ""
 
 # You can use language codes or names (fr, french, français, etc.)
-qs -c noctalia-shell ipc call plugin:translator toggle "english" ""
+qs -c diutalia-shell ipc call plugin:translator toggle "english" ""
 
 # Open translator with text to be translated (e.g. selected text)
-qs -c noctalia-shell ipc call plugin:translator toggle "english" "$(wl-paste -n -p)"
+qs -c diutalia-shell ipc call plugin:translator toggle "english" "$(wl-paste -n -p)"
 ```
 
 ### Integration with Keybindings
@@ -113,22 +113,22 @@ Add this to your Window Manager's keybinds configuration:
 `spawn`
 
 ```json
-Super+T { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:translator" "toggle" "" "" }
-Super+Shift+T { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:translator" "toggle" "fr" "" }
+Super+T { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:translator" "toggle" "" "" }
+Super+Shift+T { spawn "qs" "-c" "diutalia-shell" "ipc" "call" "plugin:translator" "toggle" "fr" "" }
 ```
 
 `spawn-sh`
 
 ```json
-Super+T { spawn-sh "qs -c noctalia-shell ipc call plugin:translator toggle \"\" \"\"" }
-Super+Shift+T { spawn-sh "qs -c noctalia-shell ipc call plugin:translator toggle \"fr\" \"\"" }
+Super+T { spawn-sh "qs -c diutalia-shell ipc call plugin:translator toggle \"\" \"\"" }
+Super+Shift+T { spawn-sh "qs -c diutalia-shell ipc call plugin:translator toggle \"fr\" \"\"" }
 ```
 
 #### Sway
 
 ```json
-bindsym Super+t exec qs -c noctalia-shell ipc call plugin:translator toggle "" ""
-bindsym Super+Shift+t exec qs -c noctalia-shell ipc call plugin:translator toggle "fr" ""
+bindsym Super+t exec qs -c diutalia-shell ipc call plugin:translator toggle "" ""
+bindsym Super+Shift+t exec qs -c diutalia-shell ipc call plugin:translator toggle "fr" ""
 ```
 
 - With empty string `""`: Opens the launcher with `>translate ` already entered, ready for you to select a language and type text to translate.
@@ -137,5 +137,5 @@ bindsym Super+Shift+t exec qs -c noctalia-shell ipc call plugin:translator toggl
 
 ## Requirements
 
-- Noctalia 4.4.1 or later
+- Diutalia 4.4.1 or later
 - Internet connection (for translation requests)

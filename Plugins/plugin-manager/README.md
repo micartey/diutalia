@@ -1,6 +1,6 @@
 # Plugin Manager
 
-A full-featured plugin manager for Noctalia Shell with browsing, installation, and README viewer.
+A full-featured plugin manager for Diutalia Shell with browsing, installation, and README viewer.
 
 ## Features
 
@@ -30,7 +30,7 @@ pip install markdown-it-py
 Toggle the plugin manager panel:
 
 ```bash
-qs -c "noctalia-shell" ipc call plugin:plugin-manager toggle
+qs -c "diutalia-shell" ipc call plugin:plugin-manager toggle
 ```
 
 ## Screenshots

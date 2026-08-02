@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Markdown to JSON block parser for Noctalia's plugin README viewer.
+Markdown to JSON block parser for Diutalia's plugin README viewer.
 
 Parses markdown into a JSON array of typed blocks that QML can render
 with individual components, giving full control over styling.

@@ -85,13 +85,13 @@ Item {
   // $1 is the song URI (relative to MPD music_directory), passed as a safe shell argument.
   Process {
     id: coverProc
-    command: ["sh", "-c", 'mpc readpicture "$1" > /tmp/noctalia-mpd-cover', "sh", root.songFile]
+    command: ["sh", "-c", 'mpc readpicture "$1" > /tmp/diutalia-mpd-cover', "sh", root.songFile]
 
     stdout: StdioCollector {
       onStreamFinished: {
         // stdout is empty (binary was redirected to file); this fires when done.
         // Image.cache is false, so a source change always reloads from disk.
-        root.coverArtPath = "file:///tmp/noctalia-mpd-cover"
+        root.coverArtPath = "file:///tmp/diutalia-mpd-cover"
       }
     }
   }
@@ -99,13 +99,13 @@ Item {
   // Fetch cover art via mpc albumart, writing binary to a temp file.
   Process {
     id: coverArt
-    command: ["sh", "-c", 'mpc albumart "$1" > /tmp/noctalia-mpd-coverart', "sh", root.songFile]
+    command: ["sh", "-c", 'mpc albumart "$1" > /tmp/diutalia-mpd-coverart', "sh", root.songFile]
 
     stdout: StdioCollector {
       onStreamFinished: {
         // stdout is empty (binary was redirected to file); this fires when done.
         // Image.cache is false, so a source change always reloads from disk.
-        root.coverArtPath = "file:///tmp/noctalia-mpd-coverart"
+        root.coverArtPath = "file:///tmp/diutalia-mpd-coverart"
       }
     }
   }

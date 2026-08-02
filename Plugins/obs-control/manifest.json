@@ -3,7 +3,7 @@
   "name": "OBS Control",
   "version": "0.1.2",
   "author": "ayagmar",
-  "description": "OBS recording, replay, and stream status widget for Noctalia.",
+  "description": "OBS recording, replay, and stream status widget for Diutalia.",
   "tags": [
     "Bar",
     "Panel",
@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "dependencies": {
     "plugins": []
   },

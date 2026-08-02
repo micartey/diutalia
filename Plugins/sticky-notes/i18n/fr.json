@@ -45,7 +45,7 @@
       "label": "Jeton GitHub",
       "desc": "Jeton d'accès personnel avec permission gist.",
       "placeholder": "ghp_xxx",
-      "help": "Le plugin crée ou réutilise un gist privé nommé `noctalia-sticky-notes`. Chaque note est stockée sous forme de fichier dont le nom est l'ID de la note."
+      "help": "Le plugin crée ou réutilise un gist privé nommé `diutalia-sticky-notes`. Chaque note est stockée sous forme de fichier dont le nom est l'ID de la note."
     }
   },
   "sync": {

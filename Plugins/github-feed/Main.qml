@@ -9,7 +9,7 @@ Item {
 
     property var pluginApi: null
 
-    readonly property bool debugMode: Quickshell.env("NOCTALIA_DEBUG") === "1"
+    readonly property bool debugMode: Quickshell.env("DIUTALIA_DEBUG") === "1"
 
     function logDebug(msg) {
         if (root.debugMode) Logger.d("GitHubFeed", msg)

@@ -12,7 +12,7 @@ import qs.Commons
 import qs.Widgets
 import qs.Modules.Bar.Extras
 import qs.Services.UI
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 
 /**
 	Controll center showing the current GPU mode, with an optional badge when a pending

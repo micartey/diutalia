@@ -2,7 +2,7 @@
   "id": "ideapad-battery-health",
   "name": "Ideapad Battery Health",
   "version": "1.0.1",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "author": "Christophe Branchereau",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

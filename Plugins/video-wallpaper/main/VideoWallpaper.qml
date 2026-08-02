@@ -46,7 +46,7 @@ PanelWindow {
     implicitHeight: screenHeight
     visible: enabled && currentWallpaper != ""
 
-    WlrLayershell.namespace: `noctalia-wallpaper-video-${screenName}`
+    WlrLayershell.namespace: `diutalia-wallpaper-video-${screenName}`
     WlrLayershell.layer: WlrLayer.Background
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
 

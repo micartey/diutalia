@@ -45,7 +45,7 @@
       "label": "GitHub Token",
       "desc": "Personal access token with gist permission.",
       "placeholder": "ghp_xxx",
-      "help": "The plugin creates or reuses a private gist named `noctalia-sticky-notes`. Each note is stored as one file whose filename is the note id."
+      "help": "The plugin creates or reuses a private gist named `diutalia-sticky-notes`. Each note is stored as one file whose filename is the note id."
     }
   },
   "sync": {

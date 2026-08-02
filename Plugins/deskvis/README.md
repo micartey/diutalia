@@ -1,6 +1,6 @@
 # DeskVis
 
-A transparent desktop audio visualizer widget for Noctalia. Displays real-time audio spectrum with three visual modes and four growth directions, all symmetric around the center axis.
+A transparent desktop audio visualizer widget for Diutalia. Displays real-time audio spectrum with three visual modes and four growth directions, all symmetric around the center axis.
 
 ![DeskVis preview](preview.png)
 
@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/d2d32185-24ca-4b10-8c0e-1be221d433ed
 
 ## Requirements
 
-- Noctalia v4.6.6 or later
+- Diutalia v4.6.6 or later
 
 ## Settings
 

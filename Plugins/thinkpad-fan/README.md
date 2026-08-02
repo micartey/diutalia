@@ -1,6 +1,6 @@
-# Noctalia Fan & Thermal Control Plugin (`thinkpad-fan`)
+# Diutalia Fan & Thermal Control Plugin (`thinkpad-fan`)
 
-A resilient system utility plugin designed for the **Noctalia** desktop shell environment. It monitors embedded system temperatures and maps hardware overrides to manual fan speeds directly through secure sysfs platform pathways without escalation prompts.
+A resilient system utility plugin designed for the **Diutalia** desktop shell environment. It monitors embedded system temperatures and maps hardware overrides to manual fan speeds directly through secure sysfs platform pathways without escalation prompts.
 
 ## Features
 --------
@@ -38,7 +38,7 @@ Open the plugin settings (right-click the widget → **Widget Settings**) to con
 
 Grant group write parameters over systemic thermal interfaces by applying the setup script:
 
-    cd ~/.config/noctalia/plugins/thinkpad-fan/
+    cd ~/.config/diutalia/plugins/thinkpad-fan/
     chmod +x setup_permissions.sh
     ./setup_permissions.sh
 

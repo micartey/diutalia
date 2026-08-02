@@ -25,7 +25,7 @@ Item {
   property bool isTranslating: false
   property string translationError: ""
 
-  // Cache directory for state (messages, activeTab) - use global noctalia cache
+  // Cache directory for state (messages, activeTab) - use global diutalia cache
   readonly property string cacheDir: typeof Settings !== 'undefined' && Settings.cacheDir ? Settings.cacheDir + "plugins/assistant-panel/" : ""
   readonly property string stateCachePath: cacheDir + "state.json"
 
@@ -61,8 +61,8 @@ Item {
 
   // Environment variable API keys - priority over settings
   readonly property var envApiKeys: ({
-      [Constants.Providers.GOOGLE]: Quickshell.env("NOCTALIA_AP_GOOGLE_API_KEY") || "",
-      [Constants.Providers.OPENAI_COMPATIBLE]: Quickshell.env("NOCTALIA_AP_OPENAI_COMPATIBLE_API_KEY") || ""
+      [Constants.Providers.GOOGLE]: Quickshell.env("DIUTALIA_AP_GOOGLE_API_KEY") || "",
+      [Constants.Providers.OPENAI_COMPATIBLE]: Quickshell.env("DIUTALIA_AP_OPENAI_COMPATIBLE_API_KEY") || ""
     })
 
   // API Key Priority: Environment Variable > Local Settings
@@ -72,7 +72,7 @@ Item {
   readonly property bool apiKeyManagedByEnv: envApiKey !== ""
 
   // DeepL translator env var support
-  readonly property string envDeeplApiKey: Quickshell.env("NOCTALIA_AP_DEEPL_API_KEY") || ""
+  readonly property string envDeeplApiKey: Quickshell.env("DIUTALIA_AP_DEEPL_API_KEY") || ""
   readonly property real temperature: pluginApi?.pluginSettings?.ai?.temperature || 0.7
   readonly property string systemPrompt: pluginApi?.pluginSettings?.ai?.systemPrompt || ""
 

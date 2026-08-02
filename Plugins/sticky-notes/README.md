@@ -1,6 +1,6 @@
 # 📝 Sticky Notes
 
-Sticky Notes is a lightweight sticky notes plugin for [Noctalia Shell](https://github.com/noctalia-dev/noctalia-shell), like OneNote's Sticky Notes but support **Markdown**.
+Sticky Notes is a lightweight sticky notes plugin for [Diutalia Shell](https://github.com/noctalia-dev/noctalia-shell), like OneNote's Sticky Notes but support **Markdown**.
 
 It allows you to quickly jot down thoughts, code snippets, and to-do lists in beautiful pastel-colored floating cards straight from your system bar.
 
@@ -8,10 +8,10 @@ It allows you to quickly jot down thoughts, code snippets, and to-do lists in be
 
 ## IPC
 
-Use Noctalia IPC to control the panel:
+Use Diutalia IPC to control the panel:
 
 ```bash
-qs -c noctalia-shell ipc call plugin:sticky-notes toggle
+qs -c diutalia-shell ipc call plugin:sticky-notes toggle
 ```
 
 ---
@@ -48,7 +48,7 @@ qs -c noctalia-shell ipc call plugin:sticky-notes toggle
   - Multi-line ```` Code blocks ```` with smooth gray backgrounds.
   - 4-space indented code blocks.
 - **Links & Images**:
-  - Inline Links: `[Noctalia](https://example.com "Title")`
+  - Inline Links: `[Diutalia](https://example.com "Title")`
   - Inline Images: `![Alt Text](url "Title")` (Large images intelligently cap at 280px to protect UI geometry).
   - Reference Links/Images: `[Link][id]` coupled with `[id]: url`.
   - Autolinks: `<http://example.com>` or `<email@example.com>`.

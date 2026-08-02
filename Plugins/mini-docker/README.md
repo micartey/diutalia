@@ -1,6 +1,6 @@
-# Container Manager Plugin for Noctalia
+# Container Manager Plugin for Diutalia
 
-A plugin to manage Docker containers and volumes directly from your Noctalia bar.
+A plugin to manage Docker containers and volumes directly from your Diutalia bar.
 
 ## Features
 
@@ -11,11 +11,11 @@ A plugin to manage Docker containers and volumes directly from your Noctalia bar
 
 ## Installation
 
-This plugin is part of the `noctalia-plugins` repository.
+This plugin is part of the `diutalia-plugins` repository.
 
 ## Configuration
 
-Access the plugin settings in Noctalia to configure:
+Access the plugin settings in Diutalia to configure:
 
 - **Refresh Interval**: How often to update the container and volume lists (1-30 seconds)
 
@@ -28,7 +28,7 @@ Access the plugin settings in Noctalia to configure:
 
 ## Requirements
 
-- Noctalia 3.6.0 or later
+- Diutalia 3.6.0 or later
 - Docker installed and running
 
 ## Todos

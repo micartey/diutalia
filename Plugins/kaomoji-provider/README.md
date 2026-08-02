@@ -1,6 +1,6 @@
 # Kaomoji Provider
 
-A launcher provider plugin that adds kaomoji emoticon browsing and search to the Noctalia launcher.
+A launcher provider plugin that adds kaomoji emoticon browsing and search to the Diutalia launcher.
 
 ## Features
 
@@ -11,14 +11,14 @@ A launcher provider plugin that adds kaomoji emoticon browsing and search to the
 
 ## Usage
 
-1. Open the Noctalia launcher
+1. Open the Diutalia launcher
 2. Type `>kaomoji` to enter kaomoji mode
 3. Browse categories or add a search term after the command (e.g., `>kaomoji cat`)
 4. Click on a kaomoji to copy it to your clipboard
 
 ## IPC
 ```bash
-qs -c noctalia-shell ipc call plugin:kaomoji toggle
+qs -c diutalia-shell ipc call plugin:kaomoji toggle
 ```
 
 ## Categories
@@ -27,5 +27,5 @@ qs -c noctalia-shell ipc call plugin:kaomoji toggle
 
 ## Requirements
 
-- Noctalia 3.9.0 or later
+- Diutalia 3.9.0 or later
 - `wl-copy` (for clipboard support)

@@ -53,7 +53,7 @@ Item {
         }
 
         if(!changed) {
-            WallpaperService.changeWallpaper(WallpaperService.noctaliaDefaultWallpaper, undefined);
+            WallpaperService.changeWallpaper(WallpaperService.diutaliaDefaultWallpaper, undefined);
         }
     }
 }

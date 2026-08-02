@@ -31,7 +31,7 @@ Item {
 
   property string currentProvider: "youtube"
   property string currentSortBy: "date"
-  property string downloadDirectory: Quickshell.env("HOME") + "/Music/Noctalia"
+  property string downloadDirectory: Quickshell.env("HOME") + "/Music/Diutalia"
   property int downloadCacheMaxMb: 0
   readonly property string previewMetadataMode: pluginApi?.pluginSettings?.previewMetadataMode
       ?? root.defaults.previewMetadataMode
@@ -126,7 +126,7 @@ Item {
 
   readonly property string helperPath: Qt.resolvedUrl("musicctl.sh").toString().replace("file://", "")
   readonly property string cacheDir: Quickshell.env("MUSIC_CACHE_DIR")
-      || ((Quickshell.env("XDG_CACHE_HOME") || (Quickshell.env("HOME") + "/.cache")) + "/noctalia/plugins/music-search")
+      || ((Quickshell.env("XDG_CACHE_HOME") || (Quickshell.env("HOME") + "/.cache")) + "/diutalia/plugins/music-search")
   readonly property string statePath: root.cacheDir + "/state.json"
   readonly property string libraryPath: root.cacheDir + "/library.json"
   readonly property string settingsPath: root.cacheDir + "/settings.json"
@@ -2030,7 +2030,7 @@ Item {
       var settings = JSON.parse(text);
       root.currentProvider = settings.activeProvider || "youtube";
       root.currentSortBy = settings.sortBy || "date";
-      root.downloadDirectory = settings.downloadDirectory || (Quickshell.env("HOME") + "/Music/Noctalia");
+      root.downloadDirectory = settings.downloadDirectory || (Quickshell.env("HOME") + "/Music/Diutalia");
       root.downloadCacheMaxMb = settings.downloadCacheMaxMb || 0;
       root.ytPlayerClient = settings.ytPlayerClient || "android";
     } catch (error) {

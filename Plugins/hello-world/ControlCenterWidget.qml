@@ -6,7 +6,7 @@ NIconButtonHot {
   property ShellScreen screen
   property var pluginApi: null
 
-  icon: "noctalia"
+  icon: "diutalia"
   tooltipText: "Hello World"
   onClicked: {
     if (pluginApi) {

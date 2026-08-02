@@ -1,6 +1,6 @@
 .pragma library
 
-var GIST_DESCRIPTION = "noctalia-sticky-notes";
+var GIST_DESCRIPTION = "diutalia-sticky-notes";
 var EMPTY_FILE_NAME = ".empty";
 var API_BASE_URL = "https://api.github.com";
 

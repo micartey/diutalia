@@ -16,7 +16,7 @@ Variants {
 
     required property ShellScreen modelData
 
-    active: modelData && (!PowerProfileService.noctaliaPerformanceMode || !Settings.data.noctaliaPerformance.disableWallpaper)
+    active: modelData && (!PowerProfileService.diutaliaPerformanceMode || !Settings.data.diutaliaPerformance.disableWallpaper)
 
     sourceComponent: PanelWindow {
       id: root
@@ -212,7 +212,7 @@ Variants {
       screen: modelData
       WlrLayershell.layer: WlrLayer.Background
       WlrLayershell.exclusionMode: ExclusionMode.Ignore
-      WlrLayershell.namespace: "noctalia-parallax-" + (screen?.name || "unknown")
+      WlrLayershell.namespace: "diutalia-parallax-" + (screen?.name || "unknown")
 
       anchors {
         bottom: true

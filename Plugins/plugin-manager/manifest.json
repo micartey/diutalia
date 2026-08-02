@@ -2,11 +2,11 @@
   "id": "plugin-manager",
   "name": "Plugin Manager",
   "version": "1.0.1",
-  "minNoctaliaVersion": "4.6.6",
+  "minDiutaliaVersion": "4.6.6",
   "author": "blacku",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
-  "description": "A full-featured plugin manager with browsing, installation, and README viewer for Noctalia plugins.",
+  "description": "A full-featured plugin manager with browsing, installation, and README viewer for Diutalia plugins.",
   "tags": [
     "Bar",
     "Panel",

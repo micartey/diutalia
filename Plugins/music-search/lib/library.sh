@@ -96,7 +96,7 @@ _play_track_state_phase() {
         --speed="$desired_speed"
         --log-file="$LOG_FILE"
         --input-ipc-server="$SOCKET_FILE"
-        --title="Noctalia music-search"
+        --title="Diutalia music-search"
         "$playback_source"
       )
 
@@ -145,7 +145,7 @@ _play_track_state_phase() {
       --speed="$desired_speed"
       --log-file="$LOG_FILE"
       --input-ipc-server="$SOCKET_FILE"
-      --title="Noctalia music-search"
+      --title="Diutalia music-search"
       "$url"
     )
 

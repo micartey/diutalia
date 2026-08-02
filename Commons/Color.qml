@@ -7,7 +7,7 @@ import qs.Commons
 import qs.Services.Power
 
 /*
-Noctalia is not strictly a Material Design project, it supports both some predefined
+Diutalia is not strictly a Material Design project, it supports both some predefined
 color schemes and dynamic color generation from the wallpaper.
 
 We ultimately decided to use a restricted set of colors that follows the
@@ -349,13 +349,13 @@ Singleton {
 
   // Adaptive opacity calculation: automatically makes light mode more transparent
   function adaptiveOpacity(baseOpacity) {
-    if (PowerProfileService.noctaliaPerformanceMode)
+    if (PowerProfileService.diutaliaPerformanceMode)
       return 1.0;
     return Settings.data.colorSchemes.darkMode ? baseOpacity : Math.pow(baseOpacity, 1.5);
   }
 
   function smartAlpha(baseColor, minAlpha = 0.4) {
-    if (PowerProfileService.noctaliaPerformanceMode)
+    if (PowerProfileService.diutaliaPerformanceMode)
       return baseColor;
 
     if (!Settings.data.ui.translucentWidgets)
@@ -392,7 +392,7 @@ Singleton {
   ]
 
   // --------------------------------
-  // Default colors: Noctalia (default) dark — must match Assets/ColorScheme/Noctalia-default
+  // Default colors: Diutalia (default) dark — must match Assets/ColorScheme/Diutalia-default
   QtObject {
     id: defaultColors
 

@@ -16,6 +16,6 @@ The panel refreshes automatically every 5 seconds. You can also trigger a manual
 
 ## Requirements
 
-- **Noctalia Shell** ≥ 3.6.0
+- **Diutalia Shell** ≥ 3.6.0
 - **NetworkManager** with `nmcli`
 - **nm-connection-editor** to edit and create connections

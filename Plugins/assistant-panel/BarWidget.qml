@@ -29,7 +29,7 @@ Item {
     var provider = pluginApi?.pluginSettings?.ai?.provider || Constants.Providers.GOOGLE;
 
     // Check environment variable first (generic key check)
-    var envVarName = provider === Constants.Providers.GOOGLE ? "NOCTALIA_AP_GOOGLE_API_KEY" : "NOCTALIA_AP_OPENAI_COMPATIBLE_API_KEY";
+    var envVarName = provider === Constants.Providers.GOOGLE ? "DIUTALIA_AP_GOOGLE_API_KEY" : "DIUTALIA_AP_OPENAI_COMPATIBLE_API_KEY";
 
     var envKey = Quickshell.env(envVarName) || "";
     if (envKey !== "")

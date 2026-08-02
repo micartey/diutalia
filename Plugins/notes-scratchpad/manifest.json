@@ -2,7 +2,7 @@
   "id": "notes-scratchpad",
   "name": "Notes Scratchpad",
   "version": "1.1.6",
-  "minNoctaliaVersion": "3.7.1",
+  "minDiutaliaVersion": "3.7.1",
   "author": "apt-get",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

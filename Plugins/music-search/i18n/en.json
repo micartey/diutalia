@@ -242,7 +242,7 @@
     "playUrl": "Play URL",
     "saveUrl": "Save URL to library",
     "saveUrlMp3": "Save URL as mp3",
-    "downloadDesc": "Download to ~/Music/Noctalia"
+    "downloadDesc": "Download to ~/Music/Diutalia"
   },
   "bar_widget": {
     "tooltipIdle": "Open music panel",

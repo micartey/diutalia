@@ -1,7 +1,7 @@
 # Sys-Info Widget
 ![Preview](preview.png)
 
-A theme aware Noctalia desktop plugin that display system information.
+A theme aware Diutalia desktop plugin that display system information.
 
 ## Features
 Shows the running distribution, kernel and uptime, updated every minute.
@@ -10,7 +10,7 @@ Shows the running distribution, kernel and uptime, updated every minute.
 None
 
 ## Requirements
-- **Noctalia Shell**: 3.6.0 or later.
+- **Diutalia Shell**: 3.6.0 or later.
 - **System Dependencies**:
 
 ## Technical Details

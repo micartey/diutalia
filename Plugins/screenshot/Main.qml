@@ -3,7 +3,7 @@ import Quickshell
 import Quickshell.Io
 import qs.Commons
 import qs.Services.UI
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 
 Item {
     id: root

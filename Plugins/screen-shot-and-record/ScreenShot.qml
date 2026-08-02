@@ -14,7 +14,7 @@ PanelWindow {
     color: "transparent"
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
-    WlrLayershell.namespace: "noctalia-shell:regionSelector"
+    WlrLayershell.namespace: "diutalia-shell:regionSelector"
     exclusionMode: ExclusionMode.Ignore
     anchors {
         left: true

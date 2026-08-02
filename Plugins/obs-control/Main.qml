@@ -18,7 +18,7 @@ Item {
   readonly property string homeDir: Quickshell.env("HOME") ?? ""
   readonly property string runtimeDir: Quickshell.env("XDG_RUNTIME_DIR") ?? "/tmp"
   readonly property string userName: Quickshell.env("USER") ?? "user"
-  readonly property string managedStatePath: `${runtimeDir}/noctalia-obs-control-${userName}.json`
+  readonly property string managedStatePath: `${runtimeDir}/diutalia-obs-control-${userName}.json`
   readonly property string configuredVideosPath: (settings.videosPath ?? defaults.videosPath ?? "").trim()
   readonly property string videosOpener: (settings.videosOpener ?? defaults.videosOpener ?? "xdg-open").trim()
   readonly property string defaultVideosPath: Quickshell.env("XDG_VIDEOS_DIR") ?? `${homeDir}/Videos`

@@ -24,7 +24,7 @@ NIconButton {
   property var layouts: []
   property var contextMenuModel: []
 
-  // Stolen from a native-looking Noctalia plugin:
+  // Stolen from a native-looking Diutalia plugin:
   // this is the important bit for correct bar height.
   baseSize: Style.getCapsuleHeightForScreen(screen?.name)
   applyUiScale: false

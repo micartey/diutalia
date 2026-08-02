@@ -2,7 +2,7 @@
   "id": "slowbongo",
   "name": "Slow Bongo",
   "version": "0.8.0",
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "author": "tui",
   "description": "A bongo cat that sits in your bar and slaps when you type.",
   "license": "MIT",

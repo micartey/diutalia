@@ -1,6 +1,6 @@
 # IP monitoring bar widget
 
-Display your current IP in noctalia bar. 
+Display your current IP in diutalia bar.
 
 # Features
 

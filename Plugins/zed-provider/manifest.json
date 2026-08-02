@@ -7,7 +7,7 @@
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A zed provider for opening project easier using zed code editor",
   "tags": ["Launcher", "Developer"],
-  "minNoctaliaVersion": "3.6.0",
+  "minDiutaliaVersion": "3.6.0",
   "entryPoints": {
     "main": "Main.qml",
     "launcherProvider": "ZedProvider.qml"

@@ -1,8 +1,8 @@
-# noctalia-supergfxctl
+# diutalia-supergfxctl
 
-Minimum noctalia version: `3.8.2`
+Minimum diutalia version: `3.8.2`
 
-Brings GPU control to your noctalia shell.  
+Brings GPU control to your diutalia shell.  
 Available modes are detected automatically. Current mode is highlighted in the main color, pending mode will be in tertiary.
 
 > [!IMPORTANT]
@@ -11,7 +11,7 @@ Available modes are detected automatically. Current mode is highlighted in the m
 
 Made possible by [supergfxctl](https://gitlab.com/asus-linux/supergfxctl).  
 Thanks [asusctl](https://gitlab.com/asus-linux/asusctl), [rog-control-center](https://gitlab.com/asus-linux/asusctl/-/tree/main/rog-control-center) for code inspiration.
-Check out [noctalia](https://github.com/noctalia-dev/noctalia-shell) for a great shell.
+Check out [diutalia](https://github.com/noctalia-dev/noctalia-shell) for a great shell.
 
 ## Quick development setup
 

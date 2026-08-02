@@ -40,7 +40,7 @@
       "needs_restart": "Redémarrage d'OBS nécessaire",
       "offline": "Hors ligne",
       "connected_hint": "Clic gauche {primaryAction}. Clic droit bascule l'enregistrement, clic milieu bascule la relecture, et le panneau expose les actions de streaming et de sauvegarde.",
-      "qt_websockets_missing_hint": "Le support Qt WebSockets est manquant dans ce runtime Quickshell. Installez qt6-websockets, puis redémarrez Noctalia pour activer les contrôles OBS.",
+      "qt_websockets_missing_hint": "Le support Qt WebSockets est manquant dans ce runtime Quickshell. Installez qt6-websockets, puis redémarrez Diutalia pour activer les contrôles OBS.",
       "config_missing_hint": "La configuration WebSocket d'OBS est manquante ou désactivée. Ouvrez OBS, activez obs-websocket, puis redémarrez ou actualisez le plugin.",
       "disconnected_hint": "Le contrôle WebSocket est indisponible pour le moment. Lancez ou redémarrez OBS pour restaurer les actions rapides.",
       "recording_elapsed": "Temps d'enregistrement",
@@ -87,9 +87,9 @@
     },
     "runtime": {
       "qt_websockets_missing_title": "Qt WebSockets manquant",
-      "qt_websockets_missing": "Installez qt6-websockets et redémarrez Noctalia pour activer le contrôle OBS.",
+      "qt_websockets_missing": "Installez qt6-websockets et redémarrez Diutalia pour activer le contrôle OBS.",
       "websocket_config_missing_title": "WebSocket OBS non configuré",
-      "websocket_config_missing": "Activez obs-websocket dans OBS, puis actualisez ou redémarrez Noctalia."
+      "websocket_config_missing": "Activez obs-websocket dans OBS, puis actualisez ou redémarrez Diutalia."
     },
     "poll_interval": {
       "label": "Intervalle d'actualisation",

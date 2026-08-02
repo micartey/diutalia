@@ -267,7 +267,7 @@ jobs:
                   issues=$((issues + 1))
                 fi
                 if echo "$line" | grep -E "^(Text|Button|Checkbox|Switch) *\{" >/dev/null; then
-                  print_line "$h_priority" "$line_index" 'Always prefer to use noctalia-widgets instead of qml widgets to keep it consistent with the shell. For example instead of `Text`, use `NText`' "$line"
+                  print_line "$h_priority" "$line_index" 'Always prefer to use diutalia-widgets instead of qml widgets to keep it consistent with the shell. For example instead of `Text`, use `NText`' "$line"
                   issues=$((issues + 1))
                 fi
                 if echo "$line" | grep -E "applyUiScale: *false" >/dev/null; then

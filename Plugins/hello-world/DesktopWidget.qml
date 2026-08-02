@@ -22,7 +22,7 @@ DraggableDesktopWidget {
     spacing: Style.marginS
 
     NIcon {
-      icon: "noctalia"
+      icon: "diutalia"
       pointSize: Style.fontSizeXXL
       Layout.alignment: Qt.AlignHCenter
     }

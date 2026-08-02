@@ -10,16 +10,16 @@ This plugin requires [fd](https://github.com/sharkdp/fd#installation) to be inst
 
 **Access from launcher:**
 
-Type `>file` in the Noctalia launcher to activate file search.
+Type `>file` in the Diutalia launcher to activate file search.
 
 **Toggle file search:**
 
 ```bash
-noctalia-shell ipc call plugin:file-search toggle
+diutalia-shell ipc call plugin:file-search toggle
 ```
 
 **Search with pre-filled query:**
 
 ```bash
-noctalia-shell ipc call plugin:file-search search "eko"
+diutalia-shell ipc call plugin:file-search search "eko"
 ```

@@ -61,7 +61,7 @@
     },
     "mpv_socket": {
       "title_label": "Socket mpvpaper",
-      "title_description": "Le socket mpvpaper auquel Noctalia se connecte.",
+      "title_description": "Le socket mpvpaper auquel Diutalia se connecte.",
       "input_placeholder": "Exemple : /tmp/mpv-socket"
     },
     "hardware_acceleration": {

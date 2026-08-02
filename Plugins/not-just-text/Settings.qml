@@ -47,7 +47,7 @@ ColumnLayout {
         visible: root.editListEnabled && !root.editFortuneEnabled
         label: pluginApi?.tr("settings.textFile.label")
         description: pluginApi?.tr("settings.textFile.desc")
-        placeholderText: "~/.config/noctalia/plugins/not-just-text/examples.txt"
+        placeholderText: "~/.config/diutalia/plugins/not-just-text/examples.txt"
         text: root.editTextFile
         onTextChanged: root.editTextFile = text
     }

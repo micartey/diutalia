@@ -1,6 +1,6 @@
 # RU Menu
 
-A simple plugin showing UCLouvain's Restaurants Universitaires weekly menus from the comfort of the Noctalia bar.
+A simple plugin showing UCLouvain's Restaurants Universitaires weekly menus from the comfort of the Diutalia bar.
 
 ## Features
 

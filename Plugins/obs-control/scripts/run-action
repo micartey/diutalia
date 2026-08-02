@@ -50,4 +50,4 @@ case "${1:-}" in
     ;;
 esac
 
-exec qs -c noctalia-shell ipc call plugin:obs-control "$command"
+exec qs -c diutalia-shell ipc call plugin:obs-control "$command"

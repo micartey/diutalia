@@ -58,7 +58,7 @@ Item {
 
           // Large hello message
           NIcon {
-            icon: "noctalia"
+            icon: "diutalia"
             Layout.alignment: Qt.AlignHCenter
             pointSize: Style.fontSizeXXL * 3 * Style.uiScaleRatio
           }
@@ -221,7 +221,7 @@ Item {
             spacing: Style.marginS
 
             NText {
-              text: "$ qs -c noctalia-shell ipc call plugin:hello-world setMessage \"Bonjour\""
+              text: "$ qs -c diutalia-shell ipc call plugin:hello-world setMessage \"Bonjour\""
               font.pointSize: Style.fontSizeS
               font.family: Settings.data.ui.fontFixed
               color: Color.mPrimary
@@ -230,7 +230,7 @@ Item {
             }
 
             NText {
-              text: "$ qs -c noctalia-shell ipc call plugin:hello-world toggle"
+              text: "$ qs -c diutalia-shell ipc call plugin:hello-world toggle"
               font.pointSize: Style.fontSizeS
               font.family: Settings.data.ui.fontFixed
               color: Color.mPrimary

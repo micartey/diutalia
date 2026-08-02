@@ -379,7 +379,7 @@ Item {
     }
 
     IpcHandler {
-        target: "plugin:noctalia-calculator"
+        target: "plugin:diutalia-calculator"
         function toggle() {
             if (pluginApi) {
                 pluginApi.withCurrentScreen(screen => {

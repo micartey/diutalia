@@ -1,23 +1,5 @@
 [
   {
-    "labelKey": "panels.about.changelog-on-startup",
-    "descriptionKey": "panels.about.changelog-on-startup-desc",
-    "widget": "NToggle",
-    "tab": 21,
-    "tabLabel": "panels.about.title",
-    "subTab": 0,
-    "subTabLabel": "common.info"
-  },
-  {
-    "labelKey": "panels.about.telemetry-enabled",
-    "descriptionKey": "panels.about.telemetry-desc",
-    "widget": "NToggle",
-    "tab": 21,
-    "tabLabel": "panels.about.title",
-    "subTab": 0,
-    "subTabLabel": "common.info"
-  },
-  {
     "labelKey": "panels.audio.devices-output-device-label",
     "descriptionKey": "panels.audio.devices-output-device-description",
     "widget": "NLabel",
@@ -1314,8 +1296,8 @@
     "subTabLabel": "common.general"
   },
   {
-    "labelKey": "panels.hooks.noctalia-started-label",
-    "descriptionKey": "panels.hooks.noctalia-started-description",
+    "labelKey": "panels.hooks.diutalia-started-label",
+    "descriptionKey": "panels.hooks.diutalia-started-description",
     "widget": "HookRow",
     "tab": 20,
     "tabLabel": "panels.hooks.title",
@@ -2328,8 +2310,8 @@
     "subTabLabel": "system-monitor.title"
   },
   {
-    "labelKey": "panels.system.noctalia-performance-disable-wallpaper-label",
-    "descriptionKey": "panels.system.noctalia-performance-disable-wallpaper-description",
+    "labelKey": "panels.system.diutalia-performance-disable-wallpaper-label",
+    "descriptionKey": "panels.system.diutalia-performance-disable-wallpaper-description",
     "widget": "NToggle",
     "tab": 18,
     "tabLabel": "panels.system.title",
@@ -2337,8 +2319,8 @@
     "subTabLabel": "common.performance"
   },
   {
-    "labelKey": "panels.system.noctalia-performance-disable-desktop-widgets-label",
-    "descriptionKey": "panels.system.noctalia-performance-disable-desktop-widgets-description",
+    "labelKey": "panels.system.diutalia-performance-disable-desktop-widgets-label",
+    "descriptionKey": "panels.system.diutalia-performance-disable-desktop-widgets-description",
     "widget": "NToggle",
     "tab": 18,
     "tabLabel": "panels.system.title",

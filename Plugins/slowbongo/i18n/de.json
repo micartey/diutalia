@@ -13,7 +13,7 @@
     "tappy-mode": "Tappy Modus",
     "tappy-mode-desc": "Lass die Katze im Takt der Musik mit den Pfoten klopfen",
     "mpris-filter": "MPRIS Filterung",
-    "mpris-filter-desc": "Reagiert nur auf Audio, wenn ein nicht auf der Blacklist stehender Mediaplayer abgespielt wird (verwendet die Noctalia-Shell Audio Blacklist)",
+    "mpris-filter-desc": "Reagiert nur auf Audio, wenn ein nicht auf der Blacklist stehender Mediaplayer abgespielt wird (verwendet die Diutalia-Shell Audio Blacklist)",
     "evtest-installed": "evtest ist installiert",
     "evtest-not-installed": "evtest ist nicht installiert",
     "in-input-group": "Benutzer ist in der input Gruppe",

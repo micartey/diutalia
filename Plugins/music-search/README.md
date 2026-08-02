@@ -37,20 +37,20 @@ The internal plugin ID remains `music` for IPC compatibility.
 ## IPC usage
 
 ```bash
-qs -c noctalia-shell ipc call plugin:music launcher
-qs -c noctalia-shell ipc call plugin:music panel
-qs -c noctalia-shell ipc call plugin:music play "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-qs -c noctalia-shell ipc call plugin:music save "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-qs -c noctalia-shell ipc call plugin:music seek 90
-qs -c noctalia-shell ipc call plugin:music stop
+qs -c diutalia-shell ipc call plugin:music launcher
+qs -c diutalia-shell ipc call plugin:music panel
+qs -c diutalia-shell ipc call plugin:music play "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+qs -c diutalia-shell ipc call plugin:music save "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+qs -c diutalia-shell ipc call plugin:music seek 90
+qs -c diutalia-shell ipc call plugin:music stop
 ```
 
 ## Data files
 
-- By default, runtime data lives under `~/.cache/noctalia/plugins/music-search/`
-- `~/.cache/noctalia/plugins/music-search/library.json` stores saved tracks and playback stats
-- `~/.cache/noctalia/plugins/music-search/playlists.json` stores playlists
-- `~/.cache/noctalia/plugins/music-search/queue.json` stores the built-in persistent queue
-- `~/.cache/noctalia/plugins/music-search/state.json` stores current playback state
-- `~/.cache/noctalia/plugins/music-search/settings.json` stores local user state
+- By default, runtime data lives under `~/.cache/diutalia/plugins/music-search/`
+- `~/.cache/diutalia/plugins/music-search/library.json` stores saved tracks and playback stats
+- `~/.cache/diutalia/plugins/music-search/playlists.json` stores playlists
+- `~/.cache/diutalia/plugins/music-search/queue.json` stores the built-in persistent queue
+- `~/.cache/diutalia/plugins/music-search/state.json` stores current playback state
+- `~/.cache/diutalia/plugins/music-search/settings.json` stores local user state
 - Set `MUSIC_CACHE_DIR` to override the default cache directory

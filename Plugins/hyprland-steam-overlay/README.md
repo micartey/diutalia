@@ -1,4 +1,4 @@
-# Steam Overlay for Noctalia
+# Steam Overlay for Diutalia
 
 > ## ⚠️ DEPRECATED — not maintained from Hyprland 0.55+
 >
@@ -13,7 +13,7 @@
 > layout so it still works on Hyprland 0.55, but **no further updates are
 > planned**. Use at your own discretion.
 
-Steam overlay plugin for Noctalia/Quickshell with automatic window management using Hyprland special workspace.
+Steam overlay plugin for Diutalia/Quickshell with automatic window management using Hyprland special workspace.
 
 ## Features
 
@@ -27,14 +27,14 @@ Steam overlay plugin for Noctalia/Quickshell with automatic window management us
 
 ## Installation
 
-1. Copy the plugin to your Noctalia plugins directory:
+1. Copy the plugin to your Diutalia plugins directory:
 ```bash
-cp -r steam-overlay ~/.config/noctalia/plugins/
+cp -r steam-overlay ~/.config/diutalia/plugins/
 ```
 
 2. Restart Quickshell:
 ```bash
-pkill -f "qs.*noctalia" && qs -c noctalia-shell &
+pkill -f "qs.*diutalia" && qs -c diutalia-shell &
 ```
 
 ## Usage
@@ -46,17 +46,17 @@ Click the gamepad icon in your top bar to toggle the Steam overlay.
 
 hyprlang config (`~/.config/hypr/hyprland.conf`):
 ```
-bind = SUPER, G, exec, qs -c noctalia-shell ipc call plugin:hyprland-steam-overlay toggle
+bind = SUPER, G, exec, qs -c diutalia-shell ipc call plugin:hyprland-steam-overlay toggle
 ```
 
 Lua config (`~/.config/hypr/hyprland.lua`, Hyprland 0.55+):
 ```lua
-hl.bind("SUPER + G", hl.dsp.exec_cmd("qs -c noctalia-shell ipc call plugin:hyprland-steam-overlay toggle"))
+hl.bind("SUPER + G", hl.dsp.exec_cmd("qs -c diutalia-shell ipc call plugin:hyprland-steam-overlay toggle"))
 ```
 
 ### Via IPC Command
 ```bash
-qs -c noctalia-shell ipc call plugin:hyprland-steam-overlay toggle
+qs -c diutalia-shell ipc call plugin:hyprland-steam-overlay toggle
 ```
 
 ## How It Works
@@ -107,7 +107,7 @@ custom layout API (0.55+) tile them. This auto-reflows on window add/remove
 
 1. Copy the layout next to your Lua config:
    ```bash
-   cp ~/.config/noctalia/plugins/hyprland-steam-overlay/steam-layout.lua ~/.config/hypr/steam-layout.lua
+   cp ~/.config/diutalia/plugins/hyprland-steam-overlay/steam-layout.lua ~/.config/hypr/steam-layout.lua
    ```
 2. In `~/.config/hypr/hyprland.lua` add:
    ```lua
@@ -125,7 +125,7 @@ Edit the width ratios at the top of `steam-layout.lua` to taste.
 
 ## Requirements
 
-- Noctalia/Quickshell 3.6.0+
+- Diutalia/Quickshell 3.6.0+
 - Hyprland compositor (hyprlang or Lua config — both supported)
 - Steam
 - `jq` for JSON parsing

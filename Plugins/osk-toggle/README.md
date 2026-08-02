@@ -1,6 +1,6 @@
 # OSK Toggle
 
-A [Noctalia](https://github.com/noctalia-dev/noctalia) bar widget for toggling an on-screen keyboard. Supports **Squeekboard** and **wvkbd**, with automatic backend detection.
+A [Diutalia](https://github.com/noctalia-dev/noctalia) bar widget for toggling an on-screen keyboard. Supports **Squeekboard** and **wvkbd**, with automatic backend detection.
 
 ## Features
 
@@ -11,7 +11,7 @@ A [Noctalia](https://github.com/noctalia-dev/noctalia) bar widget for toggling a
 
 ## Requirements
 
-- Noctalia ≥ 4.4.3
+- Diutalia ≥ 4.4.3
 - One of:
   - **Squeekboard** — must be running and accessible via D-Bus (`sm.puri.OSK0`); requires `gsettings` and `dconf`
   - **wvkbd** — any binary variant (`wvkbd-mobintl`, `wvkbd-comp`, `wvkbd-abc`, etc.) on your `PATH`
@@ -61,12 +61,12 @@ The plugin takes ownership of the wvkbd process: on load it kills any pre-existi
 
 ### OSK closes when opening settings from the bar (touchscreen)
 
-When opening plugin settings from within the bar or shell interface on a touchscreen, the on-screen keyboard may close or stop receiving input. Opening settings through the general Noctalia settings panel works fine. This is a shell-level bug unrelated to this plugin.
+When opening plugin settings from within the bar or shell interface on a touchscreen, the on-screen keyboard may close or stop receiving input. Opening settings through the general Diutalia settings panel works fine. This is a shell-level bug unrelated to this plugin.
 
 **Workaround** until a fix lands upstream: open the following file with a text editor (requires root):
 
 ```
-/etc/xdg/quickshell/noctalia-shell/Modules/MainScreen/PopupMenuWindow.qml
+/etc/xdg/quickshell/diutalia-shell/Modules/MainScreen/PopupMenuWindow.qml
 ```
 
 Find line 39 and change `OnDemand` to `Exclusive`:

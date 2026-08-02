@@ -430,7 +430,7 @@ ColumnLayout {
 
             NText {
                 Layout.fillWidth: true
-                text: "Refresh: qs -c noctalia-shell ipc call plugin:github-feed refresh"
+                text: "Refresh: qs -c diutalia-shell ipc call plugin:github-feed refresh"
                 pointSize: Style.fontSizeXS
                 font.family: Settings.data.ui.fontFixed
                 color: Color.mOnSurfaceVariant
@@ -439,7 +439,7 @@ ColumnLayout {
 
             NText {
                 Layout.fillWidth: true
-                text: "Toggle panel: qs -c noctalia-shell ipc call plugin:github-feed toggle"
+                text: "Toggle panel: qs -c diutalia-shell ipc call plugin:github-feed toggle"
                 pointSize: Style.fontSizeXS
                 font.family: Settings.data.ui.fontFixed
                 color: Color.mOnSurfaceVariant

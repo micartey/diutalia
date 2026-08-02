@@ -1,7 +1,7 @@
 # Khal Agenda Widget
 ![Preview](preview.png)
 
-A theme aware Noctalia desktop plugin that displays agenda information.
+A theme aware Diutalia desktop plugin that displays agenda information.
 
 ## Features
 Shows upcoming events for the next 7 days of events.
@@ -11,7 +11,7 @@ Icon click to open the full calendar.
 None
 
 ## Requirements
-- **Noctalia Shell**: 3.6.0 or later.
+- **Diutalia Shell**: 3.6.0 or later.
 - **System Dependencies**: khal
 
 ## Technical Details

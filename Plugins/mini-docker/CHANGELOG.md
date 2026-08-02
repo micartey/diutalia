@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-12-13
 
 ### Added
-- **Initial Release**: Complete Docker container management plugin for Noctalia
+- **Initial Release**: Complete Docker container management plugin for Diutalia
 - **Bar Widget**: Shows running container count in the status bar
 - **Container Management**: List, start, stop, and remove containers
 - **Volume Management**: View and manage Docker volumes
@@ -51,5 +51,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Technical
 - **QtQuick/QML**: Modern UI framework integration
-- **Quickshell**: Native Noctalia plugin architecture
+- **Quickshell**: Native Diutalia plugin architecture
 - **Docker CLI Integration**: Direct command execution for reliability

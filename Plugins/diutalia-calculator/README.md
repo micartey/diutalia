@@ -1,6 +1,6 @@
-# noctalia-calculator
+# diutalia-calculator
 
-A theme-aware calculator plugin for Noctalia on Niri, with a bar widget, floating panel, keyboard support, and a clean UI that follows the active shell colors.
+A theme-aware calculator plugin for Diutalia on Niri, with a bar widget, floating panel, keyboard support, and a clean UI that follows the active shell colors.
 
 ## Preview
 
@@ -32,7 +32,7 @@ A theme-aware calculator plugin for Noctalia on Niri, with a bar widget, floatin
 
 ## Files
 
-- `AdvancedMath.js`: math evaluation library (from noctalia-shell Helpers)
+- `AdvancedMath.js`: math evaluation library (from diutalia-shell Helpers)
 - `Main.qml`: calculator logic
 - `BarWidget.qml`: bar widget entry point
 - `Panel.qml`: floating calculator panel

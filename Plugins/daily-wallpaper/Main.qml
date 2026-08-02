@@ -90,7 +90,7 @@ Item {
                 }
             },
             applyWallpaper: {
-                command: ["qs", "-c", "noctalia-shell", "ipc", "call", "wallpaper", "set", task.wpFile],
+                command: ["qs", "-c", "diutalia-shell", "ipc", "call", "wallpaper", "set", task.wpFile],
                 next: () => "cleanup"
             },
             cleanup: {
@@ -164,7 +164,7 @@ Item {
             throw new Error("HOME environment variable is not available");
         }
 
-        const wpDir = `${homeDir}/.config/noctalia/plugins/daily-wallpaper/downloads`;
+        const wpDir = `${homeDir}/.config/diutalia/plugins/daily-wallpaper/downloads`;
         const wpFile = `${wpDir}/${prefix}-${dateString}.jpg`;
 
         root.wallpaperTask = {

@@ -1,6 +1,6 @@
 # Hello World Plugin
 
-A demonstration plugin for Noctalia Shell that showcases bar widget, desktop widget, control center widget, panel, and custom settings functionalities.
+A demonstration plugin for Diutalia Shell that showcases bar widget, desktop widget, control center widget, panel, and custom settings functionalities.
 
 ## Features
 

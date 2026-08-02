@@ -1,6 +1,6 @@
 # NetBird Plugin
 
-A NetBird VPN status plugin for Noctalia that shows your NetBird connection status in the menu bar.
+A NetBird VPN status plugin for Diutalia that shows your NetBird connection status in the menu bar.
 
 > **Disclaimer:** This is a community-created plugin built on top of the NetBird CLI tool. It is not affiliated with, endorsed by, or officially connected to NetBird GmbH.
 
@@ -52,36 +52,36 @@ The JSON output from `netbird status --json` provides all the peer details, conn
 
 ## IPC Commands
 
-You can control the NetBird plugin via the command line using the Noctalia IPC interface.
+You can control the NetBird plugin via the command line using the Diutalia IPC interface.
 
 ### General Usage
 ```bash
-qs -c noctalia-shell ipc call plugin:netbird <command>
+qs -c diutalia-shell ipc call plugin:netbird <command>
 ```
 
 ### Available Commands
 
 | Command | Description | Example |
 |---|---|---|
-| `toggle` | Toggle NetBird connection (connect/disconnect) | `qs -c noctalia-shell ipc call plugin:netbird toggle` |
-| `status` | Get current NetBird status | `qs -c noctalia-shell ipc call plugin:netbird status` |
-| `refresh` | Force refresh NetBird status | `qs -c noctalia-shell ipc call plugin:netbird refresh` |
+| `toggle` | Toggle NetBird connection (connect/disconnect) | `qs -c diutalia-shell ipc call plugin:netbird toggle` |
+| `status` | Get current NetBird status | `qs -c diutalia-shell ipc call plugin:netbird status` |
+| `refresh` | Force refresh NetBird status | `qs -c diutalia-shell ipc call plugin:netbird refresh` |
 
 ### Examples
 
 **Connect to NetBird:**
 ```bash
-qs -c noctalia-shell ipc call plugin:netbird toggle
+qs -c diutalia-shell ipc call plugin:netbird toggle
 ```
 
 **Check current status:**
 ```bash
-qs -c noctalia-shell ipc call plugin:netbird status
+qs -c diutalia-shell ipc call plugin:netbird status
 ```
 
 **Force refresh status:**
 ```bash
-qs -c noctalia-shell ipc call plugin:netbird refresh
+qs -c diutalia-shell ipc call plugin:netbird refresh
 ```
 
 ## Usage

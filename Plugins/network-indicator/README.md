@@ -1,6 +1,6 @@
-# NetworkIndicator Plugin for Noctalia
+# NetworkIndicator Plugin for Diutalia
 
-A Noctalia bar widget that displays current network upload (TX) and download (RX) activity. Includes optional live throughput values and a hover-activated graph panel.
+A Diutalia bar widget that displays current network upload (TX) and download (RX) activity. Includes optional live throughput values and a hover-activated graph panel.
 
 ## Features
 
@@ -12,7 +12,7 @@ A Noctalia bar widget that displays current network upload (TX) and download (RX
 
 ## Installation
 
-This plugin is part of the `noctalia-plugins` repository.
+This plugin is part of the `diutalia-plugins` repository.
 
 ## Configuration
 
@@ -29,17 +29,17 @@ Access settings through the widget's context menu.
 
 ## Usage
 
-- Add the widget to your Noctalia bar.
+- Add the widget to your Diutalia bar.
 - Left-click the widget to open the network graph panel.
 - Right-click the widget to access settings.
 - Configure the plugin settings as required.
 
 ## Requirements
 
-- Noctalia 4.7.6 or later.
+- Diutalia 4.7.6 or later.
 
 ## Technical Details
 
 - The widget reads `SystemStatService.txSpeed` and `SystemStatService.rxSpeed`; the polling interval is determined by that service.
-- The graph panel uses `SystemStatService.rxSpeedHistory` and `SystemStatService.txSpeedHistory` with `NGraph` from the Noctalia Shell.
-- Unfortunately, the update interval `SystemStatService.networkIntervalMs` is currently hardcoded to `3000` by Noctalia.
+- The graph panel uses `SystemStatService.rxSpeedHistory` and `SystemStatService.txSpeedHistory` with `NGraph` from the Diutalia Shell.
+- Unfortunately, the update interval `SystemStatService.networkIntervalMs` is currently hardcoded to `3000` by Diutalia.

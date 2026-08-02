@@ -2,11 +2,11 @@
   "id": "simple-notes",
   "name": "Simple Notes",
   "version": "1.0.5",
-  "minNoctaliaVersion": "3.7.1",
+  "minDiutaliaVersion": "3.7.1",
   "author": "fusuyfusuy",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",
-  "description": "A simple note taking plugin for Noctalia Shell.",
+  "description": "A simple note taking plugin for Diutalia Shell.",
   "tags": [
     "Bar",
     "Panel",

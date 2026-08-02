@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Io
 import qs.Commons
 import qs.Services.Compositor
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 import qs.Services.System
 import qs.Services.UI
 import qs.Widgets
@@ -29,7 +29,7 @@ ColumnLayout {
   }
 
   property string latestVersion: GitHubService.latestVersion
-  property string currentVersion: UpdateService.currentVersion
+  property string currentVersion: Settings.version
   property string commitInfo: ""
   property string qsVersion: ""
   property string qsRevision: ""
@@ -38,28 +38,38 @@ ColumnLayout {
   readonly property int gigaB: (1024 * 1024 * 1024)
   readonly property int gigaD: (1000 * 1000 * 1000)
 
+  function compareVersions(a, b) {
+    const aParts = a.replace(/^v/, "").split('.').map(x => parseInt(x) || 0);
+    const bParts = b.replace(/^v/, "").split('.').map(x => parseInt(x) || 0);
+    for (let i = 0; i < 3; i++) {
+      if ((aParts[i] || 0) !== (bParts[i] || 0))
+        return (aParts[i] || 0) > (bParts[i] || 0) ? 1 : -1;
+    }
+    return 0;
+  }
+
   // Update status: compare versions
   readonly property bool updateAvailable: {
     if (!root.latestVersion || !root.currentVersion || root.latestVersion === I18n.tr("common.unknown"))
       return false;
-    return UpdateService.compareVersions(root.latestVersion, root.currentVersion) > 0 && !root.isGitVersion;
+    return root.compareVersions(root.latestVersion, root.currentVersion) > 0 && !root.isGitVersion;
   }
   readonly property bool isUpToDate: {
     if (!root.latestVersion || !root.currentVersion || root.latestVersion === I18n.tr("common.unknown"))
       return false;
-    return UpdateService.compareVersions(root.latestVersion, root.currentVersion) <= 0;
+    return root.compareVersions(root.latestVersion, root.currentVersion) <= 0;
   }
 
   readonly property bool qsUpdateAvailable: {
     if (!GitHubService.latestQSVersion || !root.qsVersion || GitHubService.latestQSVersion === I18n.tr("common.unknown"))
       return false;
-    return UpdateService.compareVersions(GitHubService.latestQSVersion, root.qsVersion) > 0;
+    return root.compareVersions(GitHubService.latestQSVersion, root.qsVersion) > 0;
   }
 
   readonly property bool qsIsUpToDate: {
     if (!GitHubService.latestQSVersion || !root.qsVersion || GitHubService.latestQSVersion === I18n.tr("common.unknown"))
       return false;
-    return UpdateService.compareVersions(GitHubService.latestQSVersion, root.qsVersion) <= 0;
+    return root.compareVersions(GitHubService.latestQSVersion, root.qsVersion) <= 0;
   }
 
   // System info properties
@@ -90,45 +100,8 @@ ColumnLayout {
     return lines.join(sep);
   }
 
-  function getTelemetryPayload() {
-    const screens = Quickshell.screens || [];
-    const scales = CompositorService.displayScales || {};
-    const monitors = [];
-    for (let i = 0; i < screens.length; i++) {
-      const screen = screens[i];
-      const name = screen.name || "Unknown";
-      const scaleData = scales[name];
-      const scaleValue = (typeof scaleData === "object" && scaleData !== null) ? (scaleData.scale || 1.0) : (scaleData || 1.0);
-      monitors.push({
-                      width: screen.width || 0,
-                      height: screen.height || 0,
-                      scale: scaleValue
-                    });
-    }
-    return {
-      instanceId: TelemetryService.getInstanceId(),
-      version: UpdateService.currentVersion,
-      compositor: TelemetryService.getCompositorType(),
-      os: HostService.osPretty || "Unknown",
-      ramGb: Math.round((root.getModule("Memory")?.result?.total || 0) / root.gigaB),
-      monitors: monitors,
-      ui: {
-        scaleRatio: Settings.data.general.scaleRatio,
-        fontDefaultScale: Settings.data.ui.fontDefaultScale,
-        fontFixedScale: Settings.data.ui.fontFixedScale
-      }
-    };
-  }
-
-  function copyTelemetryData() {
-    const payload = getTelemetryPayload();
-    const json = JSON.stringify(payload, null, 2);
-    Quickshell.execDetached(["wl-copy", json]);
-    ToastService.showNotice(I18n.tr("panels.about.telemetry-title"), I18n.tr("panels.about.telemetry-data-copied"));
-  }
-
   function copyInfoToClipboard() {
-    let info = "Noctalia Shell: " + root.currentVersion;
+    let info = "Diutalia Shell: " + root.currentVersion;
     if (root.isGitVersion && root.commitInfo) {
       info += " (" + root.commitInfo + ")";
     }
@@ -136,7 +109,7 @@ ColumnLayout {
 
     if (root.qsVersion) {
       let qsV = root.qsVersion.startsWith("v") ? root.qsVersion : "v" + root.qsVersion;
-      info += "Noctalia QS: " + qsV;
+      info += "Diutalia QS: " + qsV;
       if (root.qsRevision) {
         info += " (" + root.qsRevision + ")";
       }
@@ -198,9 +171,9 @@ ColumnLayout {
         var shellDir = Quickshell.shellDir || "";
         Logger.d("VersionSubTab", "Component.onCompleted - NixOS detected, shellDir:", shellDir);
         if (shellDir) {
-          // Extract commit hash from path like: /nix/store/...-noctalia-shell-2025-11-30_225e6d3/share/noctalia-shell
-          // Pattern matches: noctalia-shell-YYYY-MM-DD_<commit_hash>
-          var match = shellDir.match(/noctalia-shell-\d{4}-\d{2}-\d{2}_([0-9a-f]{7,})/i);
+          // Extract commit hash from path like: /nix/store/...-diutalia-shell-2025-11-30_225e6d3/share/diutalia-shell
+          // Pattern matches: diutalia-shell-YYYY-MM-DD_<commit_hash>
+          var match = shellDir.match(/diutalia-shell-\d{4}-\d{2}-\d{2}_([0-9a-f]{7,})/i);
           if (match && match[1]) {
             // Use first 7 characters of the commit hash
             root.commitInfo = match[1].substring(0, 7);
@@ -258,10 +231,10 @@ ColumnLayout {
     onExited: function (exitCode) {
       if (exitCode === 0) {
         var output = stdout.text.trim();
-        // Format (old): "noctalia-qs 0.3.0, revision abc12345, distributed by: ..."
-        // Format (new): "noctalia-qs 0.0.9 (revision b602b69c81d96a1d7c645328feb7b1e1d4b7b7a4, distributed by Unset)"
-        // Only set if this is actually noctalia-qs; leave empty for upstream quickshell
-        var match = output.match(/noctalia-qs\s+(\S+?)[\s,(]+revision\s*([0-9a-f]*)/i);
+        // Format (old): "diutalia-qs 0.3.0, revision abc12345, distributed by: ..."
+        // Format (new): "diutalia-qs 0.0.9 (revision b602b69c81d96a1d7c645328feb7b1e1d4b7b7a4, distributed by Unset)"
+        // Only set if this is actually diutalia-qs; leave empty for upstream quickshell
+        var match = output.match(/diutalia-qs\s+(\S+?)[\s,(]+revision\s*([0-9a-f]*)/i);
         if (match) {
           root.qsVersion = match[1];
           root.qsRevision = match[2] ? match[2].substring(0, 9) : "";
@@ -324,9 +297,9 @@ ColumnLayout {
     Layout.alignment: Qt.AlignHCenter
     spacing: Style.marginXL
 
-    // Noctalia logo
+    // Diutalia logo
     Image {
-      source: "../../../../../Assets/noctalia.svg"
+      source: "../../../../../Assets/diutalia.svg"
       width: 96 * Style.uiScaleRatio
       height: width
       fillMode: Image.PreserveAspectFit
@@ -375,7 +348,7 @@ ColumnLayout {
 
     ColumnLayout {
       NHeader {
-        label: "Noctalia Shell"
+        label: "Diutalia Shell"
       }
 
       // Versions
@@ -386,7 +359,7 @@ ColumnLayout {
 
         // Installed Version (Shell)
         NText {
-          text: "Noctalia Shell:"
+          text: "Diutalia Shell:"
           color: Color.mOnSurfaceVariant
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         }
@@ -463,7 +436,7 @@ ColumnLayout {
         // Latest Version (Shell)
         NText {
           visible: root.updateAvailable
-          text: I18n.tr("panels.about.noctalia-available")
+          text: I18n.tr("panels.about.diutalia-available")
           color: Color.mOnSurfaceVariant
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         }
@@ -485,7 +458,7 @@ ColumnLayout {
         // Quickshell Version
         NText {
           visible: root.qsVersion !== ""
-          text: "Noctalia QS:"
+          text: "Diutalia QS:"
           color: Color.mOnSurfaceVariant
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         }
@@ -557,7 +530,7 @@ ColumnLayout {
         // Latest Quickshell Version
         NText {
           visible: root.qsUpdateAvailable
-          text: I18n.tr("panels.about.noctalia-available")
+          text: I18n.tr("panels.about.diutalia-available")
           color: Color.mOnSurfaceVariant
           Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         }
@@ -580,20 +553,7 @@ ColumnLayout {
     rowSpacing: Style.marginM
     columnSpacing: Style.marginM
 
-    columns: (changelogBtn.implicitWidth + copyBtn.implicitWidth + supportBtn.implicitWidth + 2 * columnSpacing) < root.width ? 3 : 1
-
-    NButton {
-      id: changelogBtn
-      icon: "sparkles"
-      text: I18n.tr("panels.about.changelog")
-      outlined: true
-      Layout.alignment: Qt.AlignHCenter
-      onClicked: {
-        var screen = PanelService.openedPanel?.screen || SettingsPanelService.settingsWindow?.screen || PanelService.findScreenForPanels();
-        SettingsPanelService.close(screen);
-        UpdateService.viewChangelog(screen);
-      }
-    }
+    columns: (copyBtn.implicitWidth + supportBtn.implicitWidth + columnSpacing) < root.width ? 2 : 1
 
     NButton {
       id: copyBtn
@@ -615,14 +575,6 @@ ColumnLayout {
         ToastService.showNotice(I18n.tr("panels.about.support"), I18n.tr("toast.donation-opened"));
       }
     }
-  }
-
-  NToggle {
-    Layout.fillWidth: true
-    label: I18n.tr("panels.about.changelog-on-startup")
-    description: I18n.tr("panels.about.changelog-on-startup-desc")
-    checked: Settings.data.general.showChangelogOnStartup
-    onToggled: checked => Settings.data.general.showChangelogOnStartup = checked
   }
 
   // System Information Section
@@ -947,39 +899,4 @@ ColumnLayout {
     }
   }
 
-  // Telemetry Section
-  NDivider {
-    Layout.fillWidth: true
-    Layout.topMargin: Style.marginL
-  }
-
-  NHeader {
-    label: I18n.tr("panels.about.telemetry-title")
-  }
-
-  NToggle {
-    Layout.fillWidth: true
-    label: I18n.tr("panels.about.telemetry-enabled")
-    description: I18n.tr("panels.about.telemetry-desc")
-    checked: Settings.data.general.telemetryEnabled
-    onToggled: checked => Settings.data.general.telemetryEnabled = checked
-  }
-
-  RowLayout {
-    spacing: Style.marginM
-
-    NButton {
-      icon: "eye"
-      text: I18n.tr("panels.about.telemetry-show-data")
-      outlined: true
-      onClicked: root.copyTelemetryData()
-    }
-
-    NButton {
-      icon: "shield-lock"
-      text: I18n.tr("panels.about.privacy-policy")
-      outlined: true
-      onClicked: Quickshell.execDetached(["xdg-open", "https://noctalia.dev/privacy"])
-    }
-  }
 }

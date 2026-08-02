@@ -42,7 +42,7 @@ DraggableDesktopWidget {
     readonly property int clockMinute: sysClock.minutes
     readonly property int clockSecond: sysClock.seconds
 
-    // ---- Colors (from Noctalia theme) ----
+    // ---- Colors (from Diutalia theme) ----
     readonly property bool isDark: typeof Settings !== "undefined" && Settings.data && Settings.data.colorSchemes ? Settings.data.colorSchemes.darkMode : true
     readonly property color colBackground: Color.mSurfaceVariant
     readonly property color colOnBackground: Color.mOnSurfaceVariant

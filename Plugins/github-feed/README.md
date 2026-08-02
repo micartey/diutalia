@@ -1,4 +1,4 @@
-# GitHub Feed Plugin for Noctalia
+# GitHub Feed Plugin for Diutalia
 
 Display GitHub activity from users you follow and activity on your own repositories.
 
@@ -33,7 +33,7 @@ Display GitHub activity from users you follow and activity on your own repositor
 
 ## Configuration
 
-1. Open Noctalia settings
+1. Open Diutalia settings
 2. Navigate to the GitHub Feed plugin
 3. Enter your GitHub username
 4. Enter your Personal Access Token
@@ -76,12 +76,12 @@ The plugin uses GitHub's GraphQL API with parallel requests for maximum speed:
 
 Refresh feed:
 ```bash
-qs -c noctalia-shell ipc call plugin:github-feed refresh
+qs -c diutalia-shell ipc call plugin:github-feed refresh
 ```
 
 Toggle panel:
 ```bash
-qs -c noctalia-shell ipc call plugin:github-feed toggle
+qs -c diutalia-shell ipc call plugin:github-feed toggle
 ```
 
 ## Event Types
@@ -100,12 +100,12 @@ qs -c noctalia-shell ipc call plugin:github-feed toggle
 
 Events are cached in:
 ```
-~/.config/noctalia/plugins/github-feed/cache/events.json
+~/.config/diutalia/plugins/github-feed/cache/events.json
 ```
 
 Avatars are cached in:
 ```
-~/.config/noctalia/plugins/github-feed/cache/avatars/
+~/.config/diutalia/plugins/github-feed/cache/avatars/
 ```
 
 To force a fresh fetch, delete the cache directory and refresh.

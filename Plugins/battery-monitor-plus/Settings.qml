@@ -15,7 +15,7 @@ ColumnLayout {
   property string valueDisplayMode: cfg.displayMode ?? defaults.displayMode ?? "graphic-clean"
   property string valueDeviceNativePath: cfg.deviceNativePath ?? defaults.deviceNativePath ?? "__default__"
   property bool valueShowPowerProfiles: cfg.showPowerProfiles ?? defaults.showPowerProfiles ?? false
-  property bool valueShowNoctaliaPerformance: cfg.showNoctaliaPerformance ?? defaults.showNoctaliaPerformance ?? false
+  property bool valueShowDiutaliaPerformance: cfg.showDiutaliaPerformance ?? defaults.showDiutaliaPerformance ?? false
   property bool valueHideIfNotDetected: cfg.hideIfNotDetected ?? defaults.hideIfNotDetected ?? true
   property bool valueHideIfIdle: cfg.hideIfIdle ?? defaults.hideIfIdle ?? false
   property int valueRefreshIntervalSeconds: cfg.refreshIntervalSeconds ?? defaults.refreshIntervalSeconds ?? 5
@@ -101,11 +101,11 @@ ColumnLayout {
   }
 
   NToggle {
-    label: I18n.tr("bar.battery.show-noctalia-performance-label")
-    description: I18n.tr("bar.battery.show-noctalia-performance-description")
-    checked: root.valueShowNoctaliaPerformance
-    defaultValue: defaults.showNoctaliaPerformance ?? false
-    onToggled: checked => root.valueShowNoctaliaPerformance = checked
+    label: I18n.tr("bar.battery.show-diutalia-performance-label")
+    description: I18n.tr("bar.battery.show-diutalia-performance-description")
+    checked: root.valueShowDiutaliaPerformance
+    defaultValue: defaults.showDiutaliaPerformance ?? false
+    onToggled: checked => root.valueShowDiutaliaPerformance = checked
   }
 
   NDivider {
@@ -158,7 +158,7 @@ ColumnLayout {
     pluginApi.pluginSettings.displayMode = root.valueDisplayMode;
     pluginApi.pluginSettings.deviceNativePath = root.valueDeviceNativePath;
     pluginApi.pluginSettings.showPowerProfiles = root.valueShowPowerProfiles;
-    pluginApi.pluginSettings.showNoctaliaPerformance = root.valueShowNoctaliaPerformance;
+    pluginApi.pluginSettings.showDiutaliaPerformance = root.valueShowDiutaliaPerformance;
     pluginApi.pluginSettings.hideIfNotDetected = root.valueHideIfNotDetected;
     pluginApi.pluginSettings.hideIfIdle = root.valueHideIfIdle;
     pluginApi.pluginSettings.refreshIntervalSeconds = root.valueRefreshIntervalSeconds;

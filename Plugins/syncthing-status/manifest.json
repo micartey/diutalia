@@ -2,7 +2,7 @@
   "id": "syncthing-status",
   "name": "Syncthing Status",
   "version": "1.0.1",
-  "minNoctaliaVersion": "4.4.0",
+  "minDiutaliaVersion": "4.4.0",
   "author": "Pir0c0pter0",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

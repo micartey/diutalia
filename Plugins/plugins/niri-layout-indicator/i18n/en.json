@@ -8,7 +8,7 @@
       "text": "Text: en, ru",
       "flag": "Flag: 🇺🇸, 🇷🇺"
     },
-    "keybind-command": "qs -c \"noctalia-shell\" ipc call plugin:keybind-cheatsheet toggle",
+    "keybind-command": "qs -c \"diutalia-shell\" ipc call plugin:keybind-cheatsheet toggle",
     "middle": {
       "title": "Middle click action",
       "description": "Choose what happens when you middle-click the widget.",

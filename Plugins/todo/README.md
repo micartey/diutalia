@@ -1,6 +1,6 @@
 # Todo List
 
-A simple todo list manager plugin for Noctalia Shell with multiple interfaces and IPC support.
+A simple todo list manager plugin for Diutalia Shell with multiple interfaces and IPC support.
 
 ## Features
 
@@ -42,22 +42,22 @@ Control the todo list from external scripts using Quickshell IPC:
 
 ```bash
 # Add a new todo to the default page with medium priority (text)
-qs -c noctalia-shell ipc call plugin:todo addTodoDefault "Buy groceries"
+qs -c diutalia-shell ipc call plugin:todo addTodoDefault "Buy groceries"
 
 # Add a new todo (text, pageId, priority)
-qs -c noctalia-shell ipc call plugin:todo addTodo "Buy groceries" 0 "medium"
+qs -c diutalia-shell ipc call plugin:todo addTodo "Buy groceries" 0 "medium"
 
 # Toggle a todo's completion status (by ID)
-qs -c noctalia-shell ipc call plugin:todo toggleTodo "1234567890"
+qs -c diutalia-shell ipc call plugin:todo toggleTodo "1234567890"
 
 # Remove a specific todo (by ID)
-qs -c noctalia-shell ipc call plugin:todo removeTodo "1234567890"
+qs -c diutalia-shell ipc call plugin:todo removeTodo "1234567890"
 
 # Clear all completed todos
-qs -c noctalia-shell ipc call plugin:todo clearCompleted
+qs -c diutalia-shell ipc call plugin:todo clearCompleted
 
 # Toggle the panel
-qs -c noctalia-shell ipc call plugin:todo togglePanel
+qs -c diutalia-shell ipc call plugin:todo togglePanel
 ```
 
 ## Configuration

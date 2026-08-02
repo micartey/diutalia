@@ -1,6 +1,6 @@
 # Home Assistant
 
-Monitor and control your Home Assistant entities directly from the Noctalia bar.
+Monitor and control your Home Assistant entities directly from the Diutalia bar.
 
 ## Features
 
@@ -14,7 +14,7 @@ Monitor and control your Home Assistant entities directly from the Noctalia bar.
 
 ## Requirements
 
-- **Noctalia Shell** ≥ 3.6.0
+- **Diutalia Shell** ≥ 3.6.0
 - **System package:** `qt6-websockets`
 - **Home Assistant** with WebSocket API enabled (enabled by default)
 - A Home Assistant **Long-Lived Access Token**
@@ -31,9 +31,9 @@ environment.systemPackages = [ pkgs.qt6.qtwebsockets ];
 
 ## Installation
 
-### Via Noctalia Plugin Manager (recommended)
+### Via Diutalia Plugin Manager (recommended)
 
-1. Open Noctalia Settings → **Plugins** tab
+1. Open Diutalia Settings → **Plugins** tab
 2. Find **Home Assistant** in the plugin list and click **Install**
 3. Enable the plugin and add the widget to your bar
 
@@ -41,26 +41,26 @@ environment.systemPackages = [ pkgs.qt6.qtwebsockets ];
 
 ```bash
 # Clone into your plugins directory
-git clone https://github.com/noctalia-dev/noctalia-plugins ~/.config/noctalia/plugins/hassio
+git clone https://github.com/noctalia-dev/noctalia-plugins ~/.config/diutalia/plugins/hassio
 
 # Add to plugins.json
 ```
 
-Then add to `~/.config/noctalia/plugins.json` under `"states"`:
+Then add to `~/.config/diutalia/plugins.json` under `"states"`:
 ```json
 "hassio": {
     "enabled": true
 }
 ```
 
-Restart Noctalia:
+Restart Diutalia:
 ```bash
-killall qs && qs -p ~/.config/noctalia/noctalia-shell
+killall qs && qs -p ~/.config/diutalia/diutalia-shell
 ```
 
 ## Configuration
 
-1. Open **Noctalia Settings → Plugins → Home Assistant → Configure**
+1. Open **Diutalia Settings → Plugins → Home Assistant → Configure**
 2. Enter your **Home Assistant URL** (e.g. `http://homeassistant.local:8123` or `http://192.168.1.x:8123`)
 3. Enter your **Long-Lived Access Token**
 4. Click **Save**
@@ -70,7 +70,7 @@ killall qs && qs -p ~/.config/noctalia/noctalia-shell
 1. Open Home Assistant in your browser
 2. Go to your **Profile** (bottom-left avatar)
 3. Scroll down to **Long-Lived Access Tokens**
-4. Click **Create Token**, give it a name (e.g. `Noctalia`)
+4. Click **Create Token**, give it a name (e.g. `Diutalia`)
 5. Copy the token and paste it into the plugin settings
 
 ## Usage
@@ -170,7 +170,7 @@ hassio/
 
 **Entities not appearing after pinning**
 - The plugin reads `supported_color_modes` for light capability detection - requires HA 2022.5 or newer
-- Check the Noctalia logs: `NOCTALIA_DEBUG=1 qs -c noctalia-shell 2>&1 | grep HASS`
+- Check the Diutalia logs: `DIUTALIA_DEBUG=1 qs -c diutalia-shell 2>&1 | grep HASS`
 
 **Color temperature not working**
 - This plugin uses `color_temp_kelvin` (requires HA 2022.9+). Older HA versions using mireds only are not supported.

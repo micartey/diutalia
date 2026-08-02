@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Switch between Obsidian vaults from the launcher.",
   "tags": ["Launcher", "Productivity"],
-  "minNoctaliaVersion": "4.5.0",
+  "minDiutaliaVersion": "4.5.0",
   "author": "0b10headedcalf",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

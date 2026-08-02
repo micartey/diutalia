@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
 import qs.Commons
-import qs.Services.Noctalia
+import qs.Services.Diutalia
 import qs.Services.UI
 import qs.Widgets
 
@@ -132,7 +132,7 @@ ColumnLayout {
 
                 Image {
                   anchors.centerIn: parent
-                  source: "../../../../../Assets/noctalia.svg"
+                  source: "../../../../../Assets/diutalia.svg"
                   width: parent.width * 0.75
                   height: width
                   fillMode: Image.PreserveAspectFit

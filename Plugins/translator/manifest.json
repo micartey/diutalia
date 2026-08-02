@@ -2,7 +2,7 @@
   "id": "translator",
   "name": "Translator",
   "version": "1.2.6",
-  "minNoctaliaVersion": "4.4.1",
+  "minDiutaliaVersion": "4.4.1",
   "author": "Cleboost",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

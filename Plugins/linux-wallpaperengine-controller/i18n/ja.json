@@ -218,7 +218,7 @@
     "reloadSkippedNoWallpaper": "壁紙が設定されていないため、再読み込みする内容がありません",
     "reloaded": "壁紙エンジンを再読み込みしました",
     "stopped": "壁紙エンジンを停止しました",
-    "wallpaperColorsApplied": "壁紙の色を Noctalia に適用しました",
+    "wallpaperColorsApplied": "壁紙の色を Diutalia に適用しました",
     "wallpaperColorsCached": "このディスプレイ用の壁紙カラーを保存しました",
     "wallpaperColorsEngineUnavailable": "壁紙の色を生成するには linux-wallpaperengine が利用可能である必要があります",
     "wallpaperColorsFailed": "選択した壁紙から色を抽出できませんでした",

@@ -102,7 +102,7 @@ ColumnLayout {
         enabled: root.active
         Layout.fillWidth: true
         label: pluginApi?.tr("settings.mpv_socket.title_label") || "Mpvpaper socket"
-        description: pluginApi?.tr("settings.mpv_socket.title_description") || "The mpvpaper socket that noctalia connects to"
+        description: pluginApi?.tr("settings.mpv_socket.title_description") || "The mpvpaper socket that diutalia connects to"
         placeholderText: pluginApi?.tr("settings.mpv_socket.input_placeholder") || "Example: /tmp/mpv-socket"
         text: root.mpvSocket
         onTextChanged: root.mpvSocket = text

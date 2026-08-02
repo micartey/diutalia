@@ -7,7 +7,7 @@
     "Launcher",
     "Utility"
   ],
-  "minNoctaliaVersion": "4.4.1",
+  "minDiutaliaVersion": "4.4.1",
   "author": "Daddeffe",
   "license": "MIT",
   "repository": "https://github.com/noctalia-dev/noctalia-plugins",

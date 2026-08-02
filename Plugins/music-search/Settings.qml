@@ -10,7 +10,7 @@ ColumnLayout {
   property var pluginApi: null
   readonly property var mainInstance: pluginApi?.mainInstance ?? null
   readonly property var defaults: pluginApi?.manifest?.metadata?.defaultSettings ?? ({})
-  readonly property string defaultDownloadDirectory: Quickshell.env("HOME") + "/Music/Noctalia"
+  readonly property string defaultDownloadDirectory: Quickshell.env("HOME") + "/Music/Diutalia"
   readonly property string currentProvider: root.mainInstance?.currentProvider ?? "youtube"
   readonly property string currentSortBy: root.mainInstance?.currentSortBy ?? "date"
   readonly property string currentYtPlayerClient: root.mainInstance?.ytPlayerClient ?? "android"

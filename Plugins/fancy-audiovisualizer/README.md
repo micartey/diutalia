@@ -1,22 +1,22 @@
 # Fancy Audiovisualizer
 
-A circular audio visualizer desktop widget for Noctalia Shell with shader-based rendering and multiple visualization modes.
+A circular audio visualizer desktop widget for Diutalia Shell with shader-based rendering and multiple visualization modes.
 
 ## Features
 
 - **Multiple Visualization Modes**: Bars, Wave, Rings, or combinations (Bars+Rings, Wave+Rings, All)
 - **Shader-Based Rendering**: Smooth, GPU-accelerated visualization using custom fragment shaders
-- **Theme Integration**: Automatically uses Noctalia theme colors, with optional custom color override
+- **Theme Integration**: Automatically uses Diutalia theme colors, with optional custom color override
 - **Configurable Appearance**: Adjust sensitivity, rotation speed, bar width, ring opacity, bloom intensity, and more
 - **Idle Fade**: Optional fade-out when no audio is playing
 
 ## Installation
 
-This plugin is part of the `noctalia-plugins` repository.
+This plugin is part of the `diutalia-plugins` repository.
 
 ## Configuration
 
-Access the plugin settings in Noctalia to configure the following options:
+Access the plugin settings in Diutalia to configure the following options:
 
 - **Visualization Mode**: Choose between Bars, Wave, Rings, Bars+Rings, Wave+Rings, or All
 - **Wave Thickness**: Thickness of the wave visualization (when enabled)
@@ -31,8 +31,8 @@ Access the plugin settings in Noctalia to configure the following options:
 
 ## Usage
 
-Add the widget to your desktop via the Noctalia desktop widgets interface. The visualizer responds to system audio.
+Add the widget to your desktop via the Diutalia desktop widgets interface. The visualizer responds to system audio.
 
 ## Requirements
 
-- Noctalia 3.7.2 or later
+- Diutalia 3.7.2 or later

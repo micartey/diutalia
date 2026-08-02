@@ -31,7 +31,7 @@ On Niri, you can bind it to a keyboard shortcut by adding an entry to your `bind
 
 ```kdl
 binds {
-    Mod+P { spawn "qs" "ipc" "-c" "noctalia-shell" "call" "plugin:display-settings" "toggle"; }
+    Mod+P { spawn "qs" "ipc" "-c" "diutalia-shell" "call" "plugin:display-settings" "toggle"; }
     // ...
 }
 ```

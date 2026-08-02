@@ -218,7 +218,7 @@
     "reloadSkippedNoWallpaper": "目前未設定壁紙，因此無需重新載入",
     "reloaded": "壁紙引擎已重新載入",
     "stopped": "壁紙引擎已停止",
-    "wallpaperColorsApplied": "已將壁紙顏色套用到 Noctalia",
+    "wallpaperColorsApplied": "已將壁紙顏色套用到 Diutalia",
     "wallpaperColorsCached": "已為此顯示器快取壁紙顏色",
     "wallpaperColorsEngineUnavailable": "需要可用的 linux-wallpaperengine 才能產生壁紙顏色",
     "wallpaperColorsFailed": "無法從所選壁紙中擷取顏色",

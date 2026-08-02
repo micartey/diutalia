@@ -34,10 +34,10 @@ User-owned ports are listed first, followed by system ports.
 
 ```bash
 # Refresh port scan
-qs -c noctalia-shell ipc call plugin:port-monitor refresh
+qs -c diutalia-shell ipc call plugin:port-monitor refresh
 
 # Toggle panel
-qs -c noctalia-shell ipc call plugin:port-monitor toggle
+qs -c diutalia-shell ipc call plugin:port-monitor toggle
 ```
 
 ## Requirements

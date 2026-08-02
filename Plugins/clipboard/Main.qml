@@ -60,7 +60,7 @@ Item {
 
     // Base directory for all plugin-owned runtime files. Using the cache
     // directory keeps mutable state out of the user's config tree.
-    readonly property string dataDir: (Quickshell.env("HOME") || "") + "/.cache/noctalia/plugins/clipboard"
+    readonly property string dataDir: (Quickshell.env("HOME") || "") + "/.cache/diutalia/plugins/clipboard"
 
     // Absolute path to the pinned JSON file. Resolved at construction so
     // both pinnedFile.path and the save function below read the same value.
@@ -140,7 +140,7 @@ Item {
     // user copies the same text again (same id stays in cliphist).
     //
     // Persistence: the map is mirrored to
-    // ~/.cache/noctalia/plugins/clipboard/copied-at.json so that
+    // ~/.cache/diutalia/plugins/clipboard/copied-at.json so that
     // timestamps survive shell restarts. Without persistence every id is
     // stamped `now` on first observation after a restart and the whole
     // list renders as "just now" (issue: persist-copied-at). The file is
@@ -459,7 +459,7 @@ Item {
     // an external edit (or a save from this same plugin) re-fires onLoaded
     // so pinnedItems stays consistent with the on-disk file.
     //
-    // atomicWrites: true is the Noctalia default for FileView. Keeping it
+    // atomicWrites: true is the Diutalia default for FileView. Keeping it
     // explicit here documents the policy — a partially-written pinned.json
     // on crash would be worse than losing the last pin, so atomic swap is
     // the right tradeoff.
@@ -508,7 +508,7 @@ Item {
             // FileViewError enum values (from Quickshell.Io): 0=Success,
             // 1=Unknown, 2=FileNotFound, 3=PermissionDenied, 4=NotAFile.
             // Comparing against the integer avoids importing the singleton
-            // and matches the idiom used in Noctalia's own Settings.qml.
+            // and matches the idiom used in Diutalia's own Settings.qml.
             if (error !== 2) {
                 Logger.w("Clipboard Plugin", "pinned.json load failed:", error);
             }
@@ -726,7 +726,7 @@ Item {
     // --- IPC surface ---------------------------------------------------------
     //
     // Registers external commands callable via:
-    //   qs -c noctalia-shell ipc call plugin:clipboard <handler>
+    //   qs -c diutalia-shell ipc call plugin:clipboard <handler>
     //
     // The target string's plugin suffix must match manifest.json `id`
     // exactly — a mismatch makes the IPC call a silent no-op.
@@ -1022,7 +1022,7 @@ Item {
     }
 
     // Render a byte count as a short human-readable string. Binary units
-    // (1024-step) match the Noctalia convention for disk-reported sizes.
+    // (1024-step) match the Diutalia convention for disk-reported sizes.
     // 0 → "0 B"; negative returns "" (the "no size" sentinel — keep in
     // sync with the delegate's visibility check).
     function humanSize(bytes) {

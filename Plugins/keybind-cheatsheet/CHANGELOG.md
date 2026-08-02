@@ -143,19 +143,19 @@ Addresses review feedback on PR #725 from @countgitmick.
 
 **Settings not saved when opened from panel**
 - Fixed settings changes being silently discarded when the settings window was opened via the panel button
-- `saveSettings()` was declared on an inner `ColumnLayout` instead of the root `Item`, making it invisible to the Noctalia shell
+- `saveSettings()` was declared on an inner `ColumnLayout` instead of the root `Item`, making it invisible to the Diutalia shell
 - With the previous direct-mutation approach this went unnoticed; after switching to the edit-copy pattern saves now work correctly from all entry points
 
 ### Code Quality
 
 **Settings: edit-copy pattern**
 - Replaced direct `pluginSettings` mutation in `onTextChanged` handlers with proper edit-copy properties (`editWindowWidth`, `editWindowHeight`, `editAutoHeight`, `editColumnCount`, `editModKeyVariable`, `editHyprlandConfigPath`, `editNiriConfigPath`)
-- Changes are committed to `pluginSettings` only when the user clicks Save, matching Noctalia plugin conventions
+- Changes are committed to `pluginSettings` only when the user clicks Save, matching Diutalia plugin conventions
 
 **i18n: corrected structure**
 - Removed `"keybind-cheatsheet"` top-level wrapper from all 20 language JSON files
 - Removed `"keybind-cheatsheet."` prefix from all 50 `tr()` calls across all QML files
-- Structure now matches the Noctalia plugin i18n specification
+- Structure now matches the Diutalia plugin i18n specification
 
 **Removed dead code**
 - Deleted unused `parseNiriConfig()` function (118 lines) superseded by `parseNiriFileContent()` in v3.1.0

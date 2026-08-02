@@ -1,6 +1,6 @@
 # Not Just Text
 
-A Noctalia bar widget that displays a short message — either custom text, a random quote from `fortune`, or a random entry from a text file you provide.
+A Diutalia bar widget that displays a short message — either custom text, a random quote from `fortune`, or a random entry from a text file you provide.
 
 ## Features
 

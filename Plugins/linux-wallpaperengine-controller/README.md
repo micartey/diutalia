@@ -1,6 +1,6 @@
 # Linux WallpaperEngine Controller
 
-A Noctalia plugin that provides a Wallpaper-Engine wallpaper selector powered by your locally installed `linux-wallpaperengine`, with multi-display targeting, runtime controls, extra property editing, and compatibility checks.
+A Diutalia plugin that provides a Wallpaper-Engine wallpaper selector powered by your locally installed `linux-wallpaperengine`, with multi-display targeting, runtime controls, extra property editing, and compatibility checks.
 
 ## Features
 
@@ -9,7 +9,7 @@ A Noctalia plugin that provides a Wallpaper-Engine wallpaper selector powered by
 - Apply wallpapers to all displays or select a specific display target
 - Sidebar preview with wallpaper badges for resolution, type, dynamic/static state, and possible compatibility issues
 - Runtime controls for scaling, clamp mode, volume, mute, audio reactive effects, mouse input, and parallax
-- Optional `Sync wallpaper colors` flow that generates per-display color screenshots and applies Noctalia wallpaper colors for the configured source monitor
+- Optional `Sync wallpaper colors` flow that generates per-display color screenshots and applies Diutalia wallpaper colors for the configured source monitor
 - Settings resource tools to view and clear color image cache (while preserving cache entries for currently online displays)
 - 5 translations: en, ja, ru, zh-CN, zh-TW
 
@@ -49,10 +49,10 @@ qs ipc call plugin:linux-wallpaperengine-controller reload
 - If the extra properties section is empty, that wallpaper may not expose supported editable properties
 - If the engine fails to start, recheck your GPU / OpenGL environment.
 - If wallpaper colors are enabled and a display was recently changed, apply once on that display to refresh its cached color screenshot
-- For runtime logs, start the shell with debug enabled: `NOCTALIA_DEBUG=1 qs -c noctalia-shell`
+- For runtime logs, start the shell with debug enabled: `DIUTALIA_DEBUG=1 qs -c diutalia-shell`
 
 ## Notes
 
 - This plugin does not bundle the wallpaper engine or any wallpapers. It works by calling your locally installed `linux-wallpaperengine` and using Wallpaper Engine workshop wallpapers you have already downloaded.
 - If no wallpaper matches the current search or filters, the panel will show a filtered empty state instead of the generic source-folder message.
-- Color screenshot cache files are stored under `~/.cache/noctalia/plugins/linux-wallpaperengine-controller/` and are reused per display/wallpaper when possible.
+- Color screenshot cache files are stored under `~/.cache/diutalia/plugins/linux-wallpaperengine-controller/` and are reused per display/wallpaper when possible.

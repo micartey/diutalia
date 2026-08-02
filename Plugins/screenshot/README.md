@@ -1,6 +1,6 @@
 # Screenshot Plugin
 
-A simple screenshot plugin for Noctalia Shell that provides a button in the bar to quickly take screenshots. Automatically detects your compositor and uses the appropriate tool.
+A simple screenshot plugin for Diutalia Shell that provides a button in the bar to quickly take screenshots. Automatically detects your compositor and uses the appropriate tool.
 
 ## Features
 
@@ -20,16 +20,16 @@ A simple screenshot plugin for Noctalia Shell that provides a button in the bar 
 - **Sway**:
   - **grimshot** - Screenshot helper script for wlroots compositors
     - Usually provided by `sway-contrib` or your distro's Sway extras package
-- Noctalia 3.6.0 or later
+- Diutalia 3.6.0 or later
 
 ## Installation
 
-1. Copy this plugin to your Noctalia plugins directory:
+1. Copy this plugin to your Diutalia plugins directory:
    ```bash
-   cp -r screenshot ~/.config/noctalia/plugins/
+   cp -r screenshot ~/.config/diutalia/plugins/
    ```
 
-2. Add the widget to your bar through Noctalia settings
+2. Add the widget to your bar through Diutalia settings
 
 ## Usage
 
@@ -60,13 +60,13 @@ When clicked, the plugin will:
 Control the plugin via command line:
 ```bash
 # Screenshot of screen
-qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot output 
+qs -c diutalia-shell ipc call plugin:screenshot takeScreenshot output
 
 # Screenshot of window
-qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot window
+qs -c diutalia-shell ipc call plugin:screenshot takeScreenshot window
 
 # Screenshot of region
-qs -c noctalia-shell ipc call plugin:screenshot takeScreenshot region
+qs -c diutalia-shell ipc call plugin:screenshot takeScreenshot region
 ```
 
 ## License

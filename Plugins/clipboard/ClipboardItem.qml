@@ -9,7 +9,7 @@ import qs.Widgets
 // Visual contract: matches the NotificationHistoryPanel item treatment —
 // a rounded mSurfaceVariant card with internal margins, primary-color
 // focus border, no hover fill. See the reference delegate in
-// $XDG_CONFIG_HOME/quickshell/noctalia-shell/Modules/Panels/NotificationHistory/
+// $XDG_CONFIG_HOME/quickshell/diutalia-shell/Modules/Panels/NotificationHistory/
 // NotificationHistoryPanel.qml (Rectangle with radius: Style.radiusM and
 // color: Color.mSurfaceVariant). This keeps clipper rows looking like
 // native notification rows so the panel reads as part of the shell.
@@ -244,7 +244,7 @@ Item {
     // thickness on hover or selection — a variable border.width causes
     // inset geometry changes that shift content (bug #3 regression fix).
     //
-    // Uses NBox (qs.Widgets) per the noctalia-plugins AGENTS.md rule that
+    // Uses NBox (qs.Widgets) per the diutalia-plugins AGENTS.md rule that
     // rounded surfaces should use the shared widget rather than a raw
     // Rectangle. `forceOpaque: true` disables NBox's default
     // `Color.smartAlpha(color)` adjustment so the pressed-state alpha we
@@ -362,7 +362,7 @@ Item {
         // dimmed) + right-aligned size. Laid out as a row inside the
         // outer RowLayout so it coexists cleanly with the trailing
         // delete button. The NIcon + inner ColumnLayout mirrors the
-        // icon-left / two-line-text-right pattern used by the Noctalia
+        // icon-left / two-line-text-right pattern used by the Diutalia
         // notification panel.
         //
         // See docs/specs/file-items.md for the full rendering contract.
