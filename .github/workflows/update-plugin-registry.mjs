@@ -4,28 +4,29 @@
  * Update Registry Script
  *
  * Scans all plugin directories for manifest.json files and generates
- * an updated registry.json with plugin metadata.
+ * an updated Plugins/registry.json with plugin metadata.
  */
 
 import { execSync } from 'child_process'
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'fs'
-import { dirname, join, resolve } from 'path'
+import { dirname, join, relative, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const REGISTRY_VERSION = 1;
-const ROOT_DIR = join(__dirname, '..', '..');
-const REGISTRY_PATH = join(ROOT_DIR, 'registry.json');
+const REPO_ROOT = join(__dirname, '..', '..');
+const PLUGINS_DIR = join(REPO_ROOT, 'Plugins');
+const REGISTRY_PATH = join(PLUGINS_DIR, 'registry.json');
 
 /**
  * Get the last commit date for a file using git
  */
 function getLastCommitDate(filePath) {
   try {
-    const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
-      cwd: ROOT_DIR,
+    const result = execSync(`git log -1 --format=%cI -- "${relative(REPO_ROOT, filePath)}"`, {
+      cwd: REPO_ROOT,
       encoding: 'utf8'
     }).trim();
     return result || null;
@@ -84,7 +85,7 @@ function extractRegistryEntry(manifest, dirPath) {
 function scanPlugins() {
   const plugins = [];
 
-  const items = readdirSync(ROOT_DIR, { withFileTypes: true });
+  const items = readdirSync(PLUGINS_DIR, { withFileTypes: true });
 
   for (const item of items) {
     // Skip non-directories and hidden/special directories
@@ -93,7 +94,7 @@ function scanPlugins() {
       continue;
     }
 
-    const dirPath = join(ROOT_DIR, item.name);
+    const dirPath = join(PLUGINS_DIR, item.name);
 
     if (isPluginDirectory(dirPath)) {
       const manifest = readPluginManifest(dirPath);
@@ -109,7 +110,7 @@ function scanPlugins() {
 }
 
 /**
- * Generate the registry.json content
+ * Generate the Plugins/registry.json content
  */
 function generateRegistry(plugins) {
   // Sort plugins by ID for consistent output

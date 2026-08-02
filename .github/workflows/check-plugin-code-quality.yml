@@ -6,7 +6,7 @@ on:
       - synchronize
       - reopened
     paths:
-      - "**.qml"
+      - "Plugins/**/*.qml"
 permissions:
   contents: read
   pull-requests: write

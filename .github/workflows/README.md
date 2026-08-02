@@ -2,16 +2,16 @@
 
 This directory contains automation scripts for maintaining the plugin registry.
 
-## update-registry.mjs
+## update-plugin-registry.mjs
 
-Automatically scans plugin directories and updates `registry.json` with current plugin metadata.
+Automatically scans plugin directories and updates `Plugins/registry.json` with current plugin metadata.
 
 ### How It Works
 
-1. Scans all directories in the repository root
+1. Scans directories in `Plugins/`
 2. Looks for `manifest.json` in each directory
 3. Extracts registry-relevant fields (id, name, version, author, etc.)
-4. Generates an updated `registry.json` with all discovered plugins
+4. Generates an updated `Plugins/registry.json` with all discovered plugins
 5. Sorts plugins alphabetically by ID for consistent output
 
 ### Automatic Updates
@@ -21,7 +21,7 @@ The script runs automatically via GitHub Actions when:
 - Changes are pushed to the `main` branch
 - Manually triggered via workflow dispatch
 
-See [`.github/workflows/update-registry.yml`](../.github/workflows/update-registry.yml) for workflow details.
+See [`update-plugin-registry.yml`](update-plugin-registry.yml) for workflow details.
 
 ## Adding New Plugins
 

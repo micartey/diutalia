@@ -6,7 +6,7 @@ on:
       - synchronize
       - reopened
     paths:
-      - "**/manifest.json"
+      - "Plugins/**/manifest.json"
 permissions:
   contents: read
   pull-requests: write

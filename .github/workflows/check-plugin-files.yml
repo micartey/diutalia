@@ -2,6 +2,8 @@ name: Check First Plugin has Correct Files
 on:
   pull_request_target:
     types: [opened]
+    paths:
+      - 'Plugins/**'
 permissions:
   contents: read
   pull-requests: write
@@ -29,8 +31,8 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           # Get the folders from base and the folders from the head of the PR
-          base_folders=$(gh api "repos/$REPO/git/trees/$BASE_SHA" --jq '[ .tree[] | select(.type == "tree") | .path ]' || echo "undefined")
-          head_folders=$(gh api "repos/$REPO/git/trees/$HEAD_SHA" --jq '[ .tree[] | select(.type == "tree") | .path ]' || echo "undefined")
+          base_folders=$(gh api "repos/$REPO/git/trees/$BASE_SHA?recursive=1" --jq '[ .tree[] | select(.type == "tree" and (.path | test("^Plugins/[^/]+$"))) | .path ]' || echo "undefined")
+          head_folders=$(gh api "repos/$REPO/git/trees/$HEAD_SHA?recursive=1" --jq '[ .tree[] | select(.type == "tree" and (.path | test("^Plugins/[^/]+$"))) | .path ]' || echo "undefined")
 
           if [ "$base_folders" = "undefined" ] || [ "$head_folders" = "undefined" ]; then
             echo "Could not fetch tree folders from GitHub API"
@@ -45,7 +47,7 @@ jobs:
             exit 0
           fi
 
-          head_tree=$(gh api "repos/$REPO/git/trees/$HEAD_SHA")
+          head_tree=$(gh api "repos/$REPO/git/trees/$HEAD_SHA?recursive=1")
 
           # Do this for all added folders, usually only one
           for folder in $(echo "$added_folders" | jq -r '.[]')
@@ -59,8 +61,7 @@ jobs:
             )
 
             # Get all the files that exist in this PR
-            folder_sha=$(echo "$head_tree" | jq -r --arg folder "$folder" '.tree[] | select(.path == $folder and .type == "tree") | .sha')
-            files_in_pr=$(gh api "repos/$REPO/git/trees/$folder_sha" --jq '[ .tree[] | select(.type == "blob") | .path ]')
+            files_in_pr=$(echo "$head_tree" | jq --arg folder "$folder/" '[.tree[] | select(.type == "blob" and (.path | startswith($folder))) | .path | ltrimstr($folder) | select(contains("/") | not)]')
 
             ## Check which required files are fulfilled
             for file in $(echo "$files_in_pr" | jq -r '.[]')
