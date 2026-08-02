@@ -1,16 +1,10 @@
 # Community palettes
 
-<p align="center">
-  <img src="https://assets.noctalia.dev/noctalia-logo.svg?v=2" alt="Noctalia Logo" style="width: 192px" />
-</p>
 
----
+A palette is the set of colors Diutalia paints itself with, and that
+templates push out to your other apps.
 
-A palette is the set of colors [Noctalia](https://github.com/noctalia-dev/noctalia) paints itself with, and that
-[templates](https://github.com/noctalia-dev/community-templates) push out to your other apps.
-
-This repo is the **community** palette source. Merged palettes are served from
-`https://api.noctalia.dev/palette/<name>` and appear in Settings -> Color scheme, where any user can pick them.
+This repo is the **community** palette source. Settings -> Color scheme, where any user can pick them.
 **PRs are welcome.**
 
 ## Layout
@@ -73,18 +67,16 @@ Each variant has 16 color roles plus a `terminal` block:
 
 Copy an existing palette as your starting point; every key above is required in both variants.
 
-**Colors are `#rrggbb`, exactly six hex digits.** No named colors, no shorthand, and **no alpha**: Noctalia drops a
+**Colors are `#rrggbb`, exactly six hex digits.** No named colors, no shorthand, and **no alpha**: Diutalia drops a
 value it cannot parse and the role silently falls back to something else, so `#00000020` does not give you a
 translucent shadow, it gives you a broken one. CI rejects anything that is not six hex digits.
 
 Every `mOnX` has to be legible on its `mX`. That is the whole job of those pairs, and it is what reviewers look at
 first.
 
-The [Theming docs](https://docs.noctalia.dev/v5/theming/) describe what each role drives.
-
 ## Test it before you PR
 
-Drop your JSON into the `palettes/` folder of your Noctalia config directory and point the config at it:
+Drop your JSON into the `palettes/` folder of your Diutalia config directory and point the config at it:
 
 ```toml
 [theme]
@@ -101,12 +93,5 @@ valid `#rrggbb`. It comments on the PR with anything it finds.
 
 - **One palette per PR.**
 - Pick a name that is not already taken in this repo.
-- Screenshots of Noctalia with your palette applied, in **both** dark and light (the PR template asks for these).
+- Screenshots of Diutalia with your palette applied, in **both** dark and light (the PR template asks for these).
 - Do not edit `registry.json`.
-
-## Help
-
-- [Documentation](https://docs.noctalia.dev)
-- [Discord](https://discord.noctalia.dev)
-- Bugs in Noctalia itself, rather than in a palette, belong in
-  [noctalia](https://github.com/noctalia-dev/noctalia/issues).

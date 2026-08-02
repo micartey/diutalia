@@ -169,7 +169,7 @@ jobs:
               fi
             done
 
-            # Every string leaf in a palette is a color, and Noctalia parses colors as
+            # Every string leaf in a palette is a color, and Diutalia parses colors as
             # exactly six hex digits. Anything else (a name, a short hex, an alpha byte)
             # is dropped at load time and the role silently falls back.
             while IFS= read -r bad_color; do

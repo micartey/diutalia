@@ -242,7 +242,7 @@ NIconButtonHot {
   "minDiutaliaVersion": "4.4.1",
   "author": "Author Name",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+  "repository": "https://github.com/micartey/diutalia",
   "description": "Concise description of what the plugin does",
   "tags": ["Bar", "Panel"],
   "entryPoints": {
@@ -266,7 +266,7 @@ NIconButtonHot {
 - `id` must match the folder name
 - `version` starts at `1.0.0`; bump appropriately on updates
 - `minDiutaliaVersion` — verify the features you use exist in that version
-- `repository` — always `https://github.com/noctalia-dev/noctalia-plugins` for PRs to this repo
+- `repository` — always `https://github.com/micartey/diutalia` for PRs to this repo
 - `tags` — use only tags from [README.md](./README.md#tags); include compositor tags if compositor-specific
 - `entryPoints` — only include the ones your plugin provides
 - `metadata.defaultSettings` — must contain defaults for every setting your plugin uses
@@ -376,7 +376,4 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `chore`
 
 ## Resources
 
-- [Official Plugins](https://github.com/noctalia-dev/noctalia-plugins) — study `hello-world` and `timer` first
-- [Plugin Documentation](https://docs.noctalia.dev/development/plugins/overview/)
-- [Development Guidelines](https://docs.noctalia.dev/development/guideline/)
-- [Diutalia Widgets](https://github.com/noctalia-dev/noctalia-shell/tree/main/Widgets) — all N* components
+- [Official Plugins](https://github.com/micartey/diutalia) — study `hello-world` and `timer` first

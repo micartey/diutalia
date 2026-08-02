@@ -4,7 +4,7 @@
 
 ## Screenshots
 
-Please attach screenshots of your palette applied in Noctalia for both themes:
+Please attach screenshots of your palette applied in Diutalia for both themes:
 
 ### Dark theme
 <!-- Paste screenshot(s) here -->
@@ -14,6 +14,6 @@ Please attach screenshots of your palette applied in Noctalia for both themes:
 
 ## Checklist
 
-- [ ] I have tested my palette in Noctalia with the **dark** theme
-- [ ] I have tested my palette in Noctalia with the **light** theme
+- [ ] I have tested my palette in Diutalia with the **dark** theme
+- [ ] I have tested my palette in Diutalia with the **light** theme
 - [ ] Screenshots for both themes are attached above
