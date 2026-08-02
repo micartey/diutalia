@@ -172,6 +172,20 @@ ColumnLayout {
         }
       }
     }
+
+    NValueSlider {
+      Layout.fillWidth: true
+      label: I18n.tr("panels.wallpaper.settings-desktop-blur-strength-label")
+      description: I18n.tr("panels.wallpaper.settings-desktop-blur-strength-description")
+      from: 0.0
+      to: 1.0
+      stepSize: 0.01
+      showReset: true
+      value: Settings.data.wallpaper.desktopBlur
+      onMoved: value => Settings.data.wallpaper.desktopBlur = value
+      text: (Settings.data.wallpaper.desktopBlur * 100).toFixed(0) + "%"
+      defaultValue: Settings.getDefaultValue("wallpaper.desktopBlur")
+    }
   }
 
   NDivider {

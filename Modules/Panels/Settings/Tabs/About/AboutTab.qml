@@ -20,16 +20,6 @@ ColumnLayout {
       tabIndex: 0
       checked: subTabBar.currentIndex === 0
     }
-    NTabButton {
-      text: I18n.tr("common.contributors")
-      tabIndex: 1
-      checked: subTabBar.currentIndex === 1
-    }
-    NTabButton {
-      text: I18n.tr("common.supporters")
-      tabIndex: 2
-      checked: subTabBar.currentIndex === 2
-    }
   }
 
   Item {
@@ -42,7 +32,5 @@ ColumnLayout {
     currentIndex: subTabBar.currentIndex
 
     VersionSubTab {}
-    ContributorsSubTab {}
-    SupportersSubTab {}
   }
 }

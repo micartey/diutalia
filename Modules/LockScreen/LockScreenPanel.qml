@@ -495,26 +495,10 @@ Item {
             readonly property int lockMainWeatherIconSide: Math.round(Style.fontSizeXXXL * Style.uiScaleRatio * 1.6)
 
             NIcon {
-              visible: !LocationService.taliaWeatherMascotActive || !weatherReady
               anchors.centerIn: parent
               icon: weatherReady ? LocationService.weatherSymbolFromCode(LocationService.data.weather.current_weather.weathercode) : "weather-cloud-off"
               pointSize: Style.fontSizeXXXL
               color: Color.mPrimary
-            }
-            Loader {
-              active: LocationService.taliaWeatherMascotActive && weatherReady
-              anchors.fill: parent
-              asynchronous: true
-              sourceComponent: Component {
-                Image {
-                  anchors.fill: parent
-                  fillMode: Image.PreserveAspectFit
-                  smooth: true
-                  mipmap: true
-                  asynchronous: true
-                  source: Qt.resolvedUrl(LocationService.taliaWeatherImageFromCode(LocationService.data.weather.current_weather.weathercode))
-                }
-              }
             }
           }
 
@@ -609,26 +593,10 @@ Item {
                 readonly property int lockForecastWeatherIconSide: Math.round(Style.fontSizeXL * Style.uiScaleRatio * 1.6)
 
                 NIcon {
-                  visible: !LocationService.taliaWeatherMascotActive
                   anchors.centerIn: parent
                   icon: LocationService.weatherSymbolFromCode(LocationService.data.weather.daily.weathercode[index])
                   pointSize: Style.fontSizeXL
                   color: Color.mOnSurfaceVariant
-                }
-                Loader {
-                  active: LocationService.taliaWeatherMascotActive
-                  anchors.fill: parent
-                  asynchronous: true
-                  sourceComponent: Component {
-                    Image {
-                      anchors.fill: parent
-                      fillMode: Image.PreserveAspectFit
-                      smooth: true
-                      mipmap: true
-                      asynchronous: true
-                      source: Qt.resolvedUrl(LocationService.taliaWeatherImageFromCode(LocationService.data.weather.daily.weathercode[index]))
-                    }
-                  }
                 }
               }
 

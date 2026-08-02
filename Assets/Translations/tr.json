@@ -1418,9 +1418,7 @@
       "weather-show-effects-description": "Hava durumu kartında ek görsel efektler (yağmur, kar veya şimşek gibi) gösterir.",
       "weather-show-effects-label": "Hava efektlerini göster",
       "weather-show-in-calendar-description": "Günlük hava durumu tahminini doğrudan takvim görünümünüzde gösterin.",
-      "weather-show-in-calendar-label": "Takvimde hava durumunu göster",
-      "weather-talia-mascot-always-description": "tabler icons yerine her zaman Talia emojis kullanın.",
-      "weather-talia-mascot-always-label": "Talia hava durumu emojilerini her zaman göster"
+      "weather-show-in-calendar-label": "Takvimde hava durumunu göster"
     },
     "lock-screen": {
       "allow-password-with-fprintd-description": "fprintd (parmak izi kimlik doğrulaması) etkin olduğunda, bu seçenek parmak izi yerine parolanızı kullanarak oturum açmanızı sağlar.",
