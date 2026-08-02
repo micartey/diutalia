@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "PaloMiku",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Control linux-wallpaperengine from Diutalia with per-screen wallpaper selection.",
   "tags": [
     "Bar",

@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.4.1",
   "author": "maxe",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Subscribe to ntfy topics and receive push notifications directly in your bar, with full theming support",
   "tags": [
     "Bar",

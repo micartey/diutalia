@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.1.2",
   "author": "j-1in",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "AI Chat and Translation panel",
   "tags": [
     "Bar",

@@ -6,7 +6,6 @@
   "author": "Diutalia Team",
   "official": true,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A simple Hello World plugin demonstrating functionalities. For developers only.",
   "tags": [
     "Development"

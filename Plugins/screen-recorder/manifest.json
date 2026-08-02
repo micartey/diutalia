@@ -6,7 +6,6 @@
   "author": "Diutalia Team",
   "official": true,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Hardware-accelerated screen recording using gpu-screen-recorder with customizable video and audio settings",
   "tags": [
     "Bar",

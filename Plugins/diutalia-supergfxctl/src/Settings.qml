@@ -19,7 +19,6 @@ ColumnLayout {
 
     spacing: Style.marginM
 
-    // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NText.qml
     NText {
         text: "ROG Control Center"
         color: Color.mSecondary
@@ -29,14 +28,12 @@ ColumnLayout {
     }
 
     RowLayout {
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIcon.qml
         NIcon {
             icon: "barrier-block"
             pointSize: Style.fontSizeL
             color: Color.mTertiary
         }
 
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NToggle.qml
         NToggle {
             Layout.fillWidth: true
             // TODO: enable once implemented
@@ -51,7 +48,6 @@ ColumnLayout {
     RowLayout {
         Layout.fillWidth: true
 
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NText.qml
         NText {
             text: "supergfxctl"
             color: Color.mSecondary
@@ -64,7 +60,6 @@ ColumnLayout {
         }
     }
 
-    // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NToggle.qml
     NToggle {
         Layout.fillWidth: true
         label: root.pluginApi.tr("settings.supergfxctl.patchPending.label")
@@ -74,14 +69,12 @@ ColumnLayout {
     }
 
     RowLayout {
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIcon.qml
         NIcon {
             icon: "flask"
             pointSize: Style.fontSizeL
             color: Color.mTertiary
         }
 
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NToggle.qml
         NToggle {
             Layout.fillWidth: true
             label: root.pluginApi.tr("settings.supergfxctl.polling.label")
@@ -105,7 +98,6 @@ ColumnLayout {
     RowLayout {
         Layout.fillWidth: true
 
-        // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NText.qml
         NText {
             text: "Miscellaneous"
             color: Color.mSecondary
@@ -118,7 +110,6 @@ ColumnLayout {
         }
     }
 
-    // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NToggle.qml
     NToggle {
         Layout.fillWidth: true
         label: root.pluginApi.tr("settings.debug.label")

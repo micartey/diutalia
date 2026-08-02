@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.4.1",
   "author": "blackteaextract",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Displays custom text, fortune quotes, or a random entry from a user-provided text file in the bar.",
   "tags": [
     "Bar",

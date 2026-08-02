@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "doughbran",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Workspace overview with live window previews and wallpaper backgrounds for Hyprland.",
   "tags": [
     "Hyprland",

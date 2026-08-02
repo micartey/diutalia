@@ -6,11 +6,11 @@
   "author": "tui",
   "description": "A bongo cat that sits in your bar and slaps when you type.",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "tags": [
     "Bar",
     "Audio",
-    "Fun"],
+    "Fun"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

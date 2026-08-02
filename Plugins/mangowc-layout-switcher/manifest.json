@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.1.2",
   "author": "atheeq-rhxn",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Switch between different mangowc layouts",
   "tags": [
     "Bar",

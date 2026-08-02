@@ -5,9 +5,12 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "Pozzoo",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Monitor and control Home Assistant entities from the bar. Requires qt6-websockets.",
-  "tags": ["Bar", "Panel", "Utility"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "Utility"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

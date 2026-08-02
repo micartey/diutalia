@@ -28,6 +28,5 @@
       "adaptScrollSpeed": true,
       "verticalRotationDirection": "auto"
     }
-  },
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins"
+  }
 }

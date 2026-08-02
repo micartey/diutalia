@@ -5,9 +5,13 @@
   "minDiutaliaVersion": "4.4.0",
   "author": "Pir0c0pter0",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Theme-aware Syncthing status plugin with bar and panel integration",
-  "tags": ["Bar", "Panel", "System", "Utility"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "System",
+    "Utility"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

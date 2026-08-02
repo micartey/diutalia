@@ -5,9 +5,13 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "fstanis",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "View live display settings from wlr-randr and permanent niri KDL output configuration",
-  "tags": ["Bar", "Panel", "System", "Utility"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "System",
+    "Utility"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

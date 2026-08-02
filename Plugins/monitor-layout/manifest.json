@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "Mathew-D",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Arrange multiple displays visually and change their resolutions from a Diutalia panel.",
   "tags": [
     "Bar",

@@ -6,7 +6,6 @@
   "author": "sapjax",
   "official": false,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A macOS-style hot corners plugin for Diutalia Shell.",
   "tags": [
     "Desktop",

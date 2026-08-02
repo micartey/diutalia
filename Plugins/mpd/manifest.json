@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "Ido Perlmuter",
   "license": "MIT",
-  "repository": "https://github.com/ido50/noctalia-mpd",
   "description": "MPD plugin for Diutalia",
   "tags": [
     "Bar",

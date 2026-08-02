@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.4.0",
   "author": "itscrystalline",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A plugin that allows you to run custom actions when battery state changes.",
   "tags": [
     "System"

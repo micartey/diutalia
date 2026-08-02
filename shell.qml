@@ -1,5 +1,5 @@
 /*
-* Diutalia – made by https://github.com/noctalia-dev
+ * Diutalia
 * Licensed under the MIT License.
 * Forks and modifications are allowed under the MIT License,
 * but proper credit must be given to the original author.
@@ -112,8 +112,6 @@ ShellRoot {
           PowerProfileService.init();
           HostService.init();
           NotificationRulesService.init();
-          GitHubService.init();
-          SupporterService.init();
           CustomButtonIPCService.init();
           IPCService.init(screenDetector);
 

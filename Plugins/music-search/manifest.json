@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "kevichi7",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Search YouTube, play audio in the background with mpv, and save favorites into a persistent library.",
   "tags": [
     "Bar",

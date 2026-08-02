@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.7.1",
   "author": "apt-get",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A simple scratchpad for quick notes.",
   "tags": [
     "Bar",

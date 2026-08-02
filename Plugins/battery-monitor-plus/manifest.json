@@ -5,9 +5,13 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "krteke",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Extended battery monitor with current power draw, remaining time, battery health, and current power profile.",
-  "tags": ["Bar", "Panel", "Indicator", "System"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "Indicator",
+    "System"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

@@ -5,9 +5,11 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "spiros132",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A plugin that allows you to have multiple setups for your desktop widgets based on the wallpaper.",
-  "tags": ["Fun", "System"],
+  "tags": [
+    "Fun",
+    "System"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "settings": "Settings.qml"

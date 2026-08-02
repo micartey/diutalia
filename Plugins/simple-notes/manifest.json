@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.7.1",
   "author": "fusuyfusuy",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A simple note taking plugin for Diutalia Shell.",
   "tags": [
     "Bar",

@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "Thomas Philippo",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Monitor your git repositories from the Diutalia bar. See open issues and pull requests at a glance, without leaving your desktop.",
   "tags": [
     "Development",

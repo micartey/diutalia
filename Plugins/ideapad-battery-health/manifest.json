@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "Christophe Branchereau",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Set the battery charging mode for ideapad laptop batteries, to extend battery lifespan",
   "tags": [
     "Bar",

@@ -5,9 +5,12 @@
   "minDiutaliaVersion": "4.4.0",
   "author": "Qholin",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Configurable Hyprland special workspaces indicator for the bar.",
-  "tags": ["Bar", "Productivity", "Hyprland"],
+  "tags": [
+    "Bar",
+    "Productivity",
+    "Hyprland"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

@@ -6,7 +6,6 @@
   "author": "Diutalia Team",
   "official": true,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A timer and stopwatch plugin for the bar & control center.",
   "tags": [
     "Bar",

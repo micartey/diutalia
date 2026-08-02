@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.5.0",
   "author": "ycf-anon",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A set of screen tools: color picker, annotate, record, pin, OCR, QR scanner, palette, measure, and webcam mirror (deps: README).",
   "tags": [
     "Panel",
@@ -42,5 +41,3 @@
     }
   }
 }
-
-

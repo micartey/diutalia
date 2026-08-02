@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.4.1",
   "author": "Cleboost",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Quick translate in launcher",
   "tags": [
     "Launcher"

@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "alxndrv",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Plugin for controlling Philips Hue lights from the taskbar",
   "tags": [
     "Bar",

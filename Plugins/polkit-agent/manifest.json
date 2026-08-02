@@ -6,7 +6,6 @@
   "author": "Diutalia Team <team@diutalia.dev>",
   "official": true,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Provides a Polkit authentication agent.",
   "tags": [
     "System",

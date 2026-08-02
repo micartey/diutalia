@@ -28,7 +28,6 @@ ColumnLayout {
     running: false
   }
 
-  property string latestVersion: GitHubService.latestVersion
   property string currentVersion: Settings.version
   property string commitInfo: ""
   property string qsVersion: ""
@@ -37,40 +36,6 @@ ColumnLayout {
   readonly property bool isGitVersion: root.currentVersion.endsWith("-git")
   readonly property int gigaB: (1024 * 1024 * 1024)
   readonly property int gigaD: (1000 * 1000 * 1000)
-
-  function compareVersions(a, b) {
-    const aParts = a.replace(/^v/, "").split('.').map(x => parseInt(x) || 0);
-    const bParts = b.replace(/^v/, "").split('.').map(x => parseInt(x) || 0);
-    for (let i = 0; i < 3; i++) {
-      if ((aParts[i] || 0) !== (bParts[i] || 0))
-        return (aParts[i] || 0) > (bParts[i] || 0) ? 1 : -1;
-    }
-    return 0;
-  }
-
-  // Update status: compare versions
-  readonly property bool updateAvailable: {
-    if (!root.latestVersion || !root.currentVersion || root.latestVersion === I18n.tr("common.unknown"))
-      return false;
-    return root.compareVersions(root.latestVersion, root.currentVersion) > 0 && !root.isGitVersion;
-  }
-  readonly property bool isUpToDate: {
-    if (!root.latestVersion || !root.currentVersion || root.latestVersion === I18n.tr("common.unknown"))
-      return false;
-    return root.compareVersions(root.latestVersion, root.currentVersion) <= 0;
-  }
-
-  readonly property bool qsUpdateAvailable: {
-    if (!GitHubService.latestQSVersion || !root.qsVersion || GitHubService.latestQSVersion === I18n.tr("common.unknown"))
-      return false;
-    return root.compareVersions(GitHubService.latestQSVersion, root.qsVersion) > 0;
-  }
-
-  readonly property bool qsIsUpToDate: {
-    if (!GitHubService.latestQSVersion || !root.qsVersion || GitHubService.latestQSVersion === I18n.tr("common.unknown"))
-      return false;
-    return root.compareVersions(GitHubService.latestQSVersion, root.qsVersion) <= 0;
-  }
 
   // System info properties
   property var systemInfo: null
@@ -373,86 +338,12 @@ ColumnLayout {
             font.weight: Style.fontWeightBold
           }
 
-          // Git commit in parentheses
           NText {
-            id: commitText
             visible: root.isGitVersion
             text: "(" + (root.commitInfo || I18n.tr("common.loading")) + ")"
-            color: commitMouseArea.containsMouse ? Color.mPrimary : Color.mOnSurfaceVariant
+            color: Color.mOnSurfaceVariant
             pointSize: Style.fontSizeXS
-            font.underline: commitMouseArea.containsMouse && root.commitInfo
-
-            MouseArea {
-              id: commitMouseArea
-              anchors.fill: parent
-              hoverEnabled: true
-              cursorShape: root.commitInfo ? Qt.PointingHandCursor : Qt.ArrowCursor
-              onEntered: {
-                if (root.commitInfo) {
-                  TooltipService.show(commitText, I18n.tr("panels.about.view-commit"));
-                }
-              }
-              onExited: TooltipService.hide()
-              onClicked: {
-                if (root.commitInfo) {
-                  Quickshell.execDetached(["xdg-open", "https://github.com/noctalia-dev/noctalia-shell/commit/" + root.commitInfo]);
-                }
-              }
-            }
           }
-
-          // Update status indicator
-          NIcon {
-            id: upToDateIcon
-            visible: root.isUpToDate
-            icon: "circle-check"
-            pointSize: Style.fontSizeM
-            color: Color.mPrimary
-
-            MouseArea {
-              anchors.fill: parent
-              hoverEnabled: true
-              onEntered: TooltipService.show(upToDateIcon, I18n.tr("panels.about.up-to-date"))
-              onExited: TooltipService.hide()
-            }
-          }
-
-          NIcon {
-            id: updateAvailableIcon
-            visible: root.updateAvailable
-            icon: "arrow-up-circle"
-            pointSize: Style.fontSizeS
-            color: Color.mPrimary
-
-            MouseArea {
-              anchors.fill: parent
-              hoverEnabled: true
-              onEntered: TooltipService.show(updateAvailableIcon, I18n.tr("panels.about.update-available"))
-              onExited: TooltipService.hide()
-            }
-          }
-        }
-
-        // Latest Version (Shell)
-        NText {
-          visible: root.updateAvailable
-          text: I18n.tr("panels.about.diutalia-available")
-          color: Color.mOnSurfaceVariant
-          Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-        }
-
-        NText {
-          visible: root.updateAvailable
-          text: root.latestVersion
-          color: Color.mOnSurface
-          font.weight: Style.fontWeightBold
-        }
-
-        // Divider-like spacing
-        Item {
-          visible: root.qsUpdateAvailable || root.updateAvailable
-          Layout.columnSpan: 2
-          Layout.preferredHeight: Style.marginXS
         }
 
         // Quickshell Version
@@ -473,76 +364,16 @@ ColumnLayout {
             font.weight: Style.fontWeightBold
           }
 
-          // Git revision in parentheses
           NText {
-            id: qsRevisionText
             visible: root.qsRevision !== ""
             text: "(" + root.qsRevision + ")"
-            color: qsRevisionMouseArea.containsMouse ? Color.mPrimary : Color.mOnSurfaceVariant
+            color: Color.mOnSurfaceVariant
             pointSize: Style.fontSizeXS
-            font.underline: qsRevisionMouseArea.containsMouse
-
-            MouseArea {
-              id: qsRevisionMouseArea
-              anchors.fill: parent
-              hoverEnabled: true
-              cursorShape: Qt.PointingHandCursor
-              onEntered: TooltipService.show(qsRevisionText, I18n.tr("panels.about.view-commit"))
-              onExited: TooltipService.hide()
-              onClicked: {
-                Quickshell.execDetached(["xdg-open", "https://github.com/noctalia-dev/noctalia-qs/commit/" + root.qsRevision]);
-              }
-            }
-          }
-
-          // Update status indicator
-          NIcon {
-            id: qsUpToDateIcon
-            visible: root.qsIsUpToDate
-            icon: "circle-check"
-            pointSize: Style.fontSizeM
-            color: Color.mPrimary
-
-            MouseArea {
-              anchors.fill: parent
-              hoverEnabled: true
-              onEntered: TooltipService.show(qsUpToDateIcon, I18n.tr("panels.about.up-to-date"))
-              onExited: TooltipService.hide()
-            }
-          }
-
-          NIcon {
-            id: qsUpdateAvailableIcon
-            visible: root.qsUpdateAvailable
-            icon: "arrow-up-circle"
-            pointSize: Style.fontSizeS
-            color: Color.mPrimary
-
-            MouseArea {
-              anchors.fill: parent
-              hoverEnabled: true
-              onEntered: TooltipService.show(qsUpdateAvailableIcon, I18n.tr("panels.about.update-available"))
-              onExited: TooltipService.hide()
-            }
-          }
-        }
-
-        // Latest Quickshell Version
-        NText {
-          visible: root.qsUpdateAvailable
-          text: I18n.tr("panels.about.diutalia-available")
-          color: Color.mOnSurfaceVariant
-          Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-        }
-
-        NText {
-          visible: root.qsUpdateAvailable
-          text: GitHubService.latestQSVersion
-          color: Color.mOnSurface
-          font.weight: Style.fontWeightBold
         }
       }
     }
+  }
+
   }
 
   GridLayout {
@@ -553,7 +384,7 @@ ColumnLayout {
     rowSpacing: Style.marginM
     columnSpacing: Style.marginM
 
-    columns: (copyBtn.implicitWidth + supportBtn.implicitWidth + columnSpacing) < root.width ? 2 : 1
+    columns: 1
 
     NButton {
       id: copyBtn
@@ -564,17 +395,6 @@ ColumnLayout {
       onClicked: root.copyInfoToClipboard()
     }
 
-    NButton {
-      id: supportBtn
-      icon: "heart"
-      text: I18n.tr("panels.about.support")
-      outlined: true
-      Layout.alignment: Qt.AlignHCenter
-      onClicked: {
-        Quickshell.execDetached(["xdg-open", "https://buymeacoffee.com/noctalia"]);
-        ToastService.showNotice(I18n.tr("panels.about.support"), I18n.tr("toast.donation-opened"));
-      }
-    }
   }
 
   // System Information Section

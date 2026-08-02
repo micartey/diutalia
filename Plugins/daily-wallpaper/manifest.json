@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "DigitallyRefined",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Fetches a new daily wallpaper from Bing or NASA",
   "tags": [
     "Desktop",

@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.0.0",
   "author": "notprayasmitra",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A pomodoro timer plugin to help boost productivity.",
   "tags": [
     "Bar",

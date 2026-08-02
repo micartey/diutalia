@@ -5,9 +5,11 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "Simon",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Shows Distribution, Kernel, Uptime and IP addresses.",
-  "tags": ["Desktop", "System"],
+  "tags": [
+    "Desktop",
+    "System"
+  ],
   "entryPoints": {
     "desktopWidget": "DesktopWidget.qml"
   },

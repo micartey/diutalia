@@ -4,7 +4,6 @@
   "version": "1.0.3",
   "minDiutaliaVersion": "4.1.2",
   "author": "yanekyuk",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "license": "MIT",
   "description": "Clipboard history panel with search, pinning, and image previews.",
   "tags": [

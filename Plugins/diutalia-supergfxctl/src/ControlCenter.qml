@@ -20,7 +20,6 @@ import qs.Services.Diutalia
 
 	Left click to open the plugin panel
  */
-// https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIconButton.qml
 NIconButton {
     id: root
 

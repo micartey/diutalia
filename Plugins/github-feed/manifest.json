@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "linuxmobile",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Display GitHub activity from users you follow and activity on your repos",
   "tags": [
     "Bar",

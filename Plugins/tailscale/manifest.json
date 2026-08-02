@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.0.0",
   "author": "nineluj",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Show Tailscale status in the menu bar and send/receive files via Taildrop.",
   "tags": [
     "Bar",

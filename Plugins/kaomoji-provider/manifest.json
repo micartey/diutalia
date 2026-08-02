@@ -3,12 +3,14 @@
   "name": "Kaomoji Provider",
   "version": "1.0.3",
   "description": "Browse and search kaomoji emoticons from the launcher",
-  "tags": ["Launcher", "Fun"],
+  "tags": [
+    "Launcher",
+    "Fun"
+  ],
   "minDiutaliaVersion": "4.4.1",
   "author": "Diutalia Team",
   "official": true,
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "entryPoints": {
     "main": "Main.qml",
     "launcherProvider": "LauncherProvider.qml"
@@ -18,7 +20,6 @@
   },
   "metadata": {
     "commandPrefix": "kaomoji",
-    "defaultSettings": {
-    }
+    "defaultSettings": {}
   }
 }

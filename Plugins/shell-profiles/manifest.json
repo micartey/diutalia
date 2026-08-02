@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "Archlexx",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Save, load, and manage Diutalia configuration profiles.",
   "tags": [
     "Bar",

@@ -5,9 +5,12 @@
   "minDiutaliaVersion": "4.0.0",
   "author": "NoFilterA1",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Toggle NVIDIA digital vibrance (color saturation) via nvibrant.",
-  "tags": ["Bar", "System", "Gaming"],
+  "tags": [
+    "Bar",
+    "System",
+    "Gaming"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

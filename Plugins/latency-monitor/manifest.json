@@ -3,7 +3,6 @@
   "name": "Latency Monitor",
   "version": "1.0.2",
   "minDiutaliaVersion": "4.1.0",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "author": "Borhaneddine GUEMIDI <guemidiborhane@gmail.com>",
   "license": "MIT",
   "description": "Network latency monitor — multi-host, windowed averages, sparkline graphs",

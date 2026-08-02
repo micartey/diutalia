@@ -5,9 +5,12 @@
   "minDiutaliaVersion": "4.7.6",
   "author": "tonigineer",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A `lively` network traffic indicator.",
-  "tags": ["Bar", "Network", "Indicator"],
+  "tags": [
+    "Bar",
+    "Network",
+    "Indicator"
+  ],
   "entryPoints": {
     "barWidget": "BarWidget.qml",
     "panel": "Panel.qml",
@@ -31,7 +34,12 @@
       "paddingLeft": 5,
       "paddingRight": 0,
       "layout": "vertical",
-      "slots": ["txSpeed", "txIcon", "rxSpeed", "rxIcon"]
+      "slots": [
+        "txSpeed",
+        "txIcon",
+        "rxSpeed",
+        "rxIcon"
+      ]
     }
   }
 }

@@ -99,7 +99,6 @@ stdenvNoCC.mkDerivation {
 
   meta = {
     description = "A sleek and minimal desktop shell thoughtfully crafted for Wayland, built with Quickshell.";
-    homepage = "https://github.com/noctalia-dev/noctalia-shell";
     license = lib.licenses.mit;
     mainProgram = "diutalia-shell";
   };

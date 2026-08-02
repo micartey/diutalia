@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "4.0.0",
   "author": "ToRvaLDz",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Switch monitor profiles from the bar. Shows the active profile and lets you switch between saved configurations.",
   "tags": [
     "Bar",

@@ -5,9 +5,11 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "Kermut572",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A simple plugin that fetches the current, past, and future weeks menu for UCLouvain's Restaurants Universitaires",
-  "tags": ["Bar", "Panel"],
+  "tags": [
+    "Bar",
+    "Panel"
+  ],
   "entryPoints": {
     "barWidget": "BarWidget.qml",
     "panel": "Panel.qml"

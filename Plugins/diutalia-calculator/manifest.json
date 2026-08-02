@@ -5,9 +5,12 @@
   "minDiutaliaVersion": "4.4.0",
   "author": "pir0c0pter0",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Theme-aware calculator plugin for Diutalia on Niri with bar widget, floating panel and keyboard support",
-  "tags": ["Bar", "Panel", "Utility"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "Utility"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

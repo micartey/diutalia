@@ -34,11 +34,6 @@
       "description": "The license this plugin is under. The diutalia-plugins repository is under the MIT license.",
       "examples": ["MIT", "GPL-3.0", "Apache-2.0"]
     },
-    "repository": {
-      "type": "string",
-      "description": "The git repository for your plugin.",
-      "examples": ["https://github.com/noctalia-dev/noctalia-plugins"]
-    },
     "description": {
       "type": "string",
       "description": "A brief description of what the plugin does. Recommended to keep this under 100 characters.",

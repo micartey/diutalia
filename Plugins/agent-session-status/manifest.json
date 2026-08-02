@@ -5,9 +5,14 @@
   "minDiutaliaVersion": "4.6.6",
   "author": "nzlov",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Runs a local MCP HTTP service for agents to report session status and shows active sessions in the bar.",
-  "tags": ["Bar", "Panel", "Development", "Indicator", "AI"],
+  "tags": [
+    "Bar",
+    "Panel",
+    "Development",
+    "Indicator",
+    "AI"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "barWidget": "BarWidget.qml",

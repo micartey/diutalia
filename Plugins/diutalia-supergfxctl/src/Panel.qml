@@ -146,7 +146,6 @@ Item {
             anchors.centerIn: parent
             spacing: Style.marginXS
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIcon.qml
             NIcon {
                 icon: root.pluginCore?.getModeIcon(mode) ?? ""
                 pointSize: Style.fontSizeL
@@ -157,7 +156,6 @@ Item {
                 }
             }
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NText.qml
             NText {
                 text: root.pluginCore?.getModeLabel(mode) ?? ""
                 pointSize: Style.fontSizeM
@@ -195,14 +193,12 @@ Item {
             anchors.margins: Style.marginM
             spacing: Style.marginM
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIcon.qml
             NIcon {
                 icon: root.pluginCore?.getModeIcon(pluginCore?.mode) ?? ""
                 pointSize: Style.fontSizeXXL
                 color: Color.mPrimary
             }
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NText.qml
             NText {
                 Layout.fillWidth: true
                 text: root.pluginApi?.tr("gpu") ?? ""
@@ -211,7 +207,6 @@ Item {
                 color: Color.mOnSurface
             }
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIconButton.qml
             NIconButton {
                 icon: root.pluginCore?.getActionIcon(root.pluginCore?.pendingAction) ?? ""
                 tooltipText: root.pluginCore?.getActionLabel(root.pluginCore?.pendingAction) ?? ""
@@ -222,7 +217,6 @@ Item {
                 onClicked: PanelService.getPanel("sessionMenuPanel", screen)?.toggle()
             }
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIconButton.qml
             NIconButton {
                 id: refreshButton
                 icon: "refresh"
@@ -242,7 +236,6 @@ Item {
                 }
             }
 
-            // https://github.com/noctalia-dev/noctalia-shell/blob/main/Widgets/NIconButton.qml
             NIconButton {
                 icon: "close"
                 tooltipText: I18n.tr("tooltips.close")

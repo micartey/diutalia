@@ -5,9 +5,10 @@
   "minDiutaliaVersion": "4.4.0",
   "author": "Qholin",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "A customizable parallax effect for the wallpaper based on the active workspace.",
-  "tags": ["Desktop"],
+  "tags": [
+    "Desktop"
+  ],
   "entryPoints": {
     "main": "Main.qml",
     "settings": "Settings.qml"

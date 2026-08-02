@@ -5,7 +5,6 @@
   "minDiutaliaVersion": "3.6.0",
   "author": "nZO",
   "license": "MIT",
-  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
   "description": "Connect to VPN via NetworkManager",
   "tags": [
     "Bar",
