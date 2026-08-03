@@ -36,6 +36,7 @@ Singleton {
     "cpu-intensive": "alert-octagon",
     "cpu-usage": "brand-speedtest",
     "cpu-temperature": "flame",
+    "gpu-usage": "device-desktop",
     "gpu-temperature": "device-desktop",
     "memory": "cpu",
     "performance": "gauge",

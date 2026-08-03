@@ -109,22 +109,22 @@ ColumnLayout {
       onValueChanged: Settings.data.systemMonitor.tempCriticalThreshold = value
     }
 
-    // GPU Temperature
+    // GPU Usage
     NText {
-      visible: SystemStatService.gpuAvailable
-      text: I18n.tr("panels.system-monitor.gpu-section-label")
+      visible: SystemStatService.gpuUsageAvailable
+      text: I18n.tr("system-monitor.gpu-usage")
       pointSize: Style.fontSizeM
     }
 
     NSpinBox {
-      visible: SystemStatService.gpuAvailable
+      visible: SystemStatService.gpuUsageAvailable
       Layout.alignment: Qt.AlignHCenter
       from: 0
-      to: 120
+      to: 100
       stepSize: 5
       value: Settings.data.systemMonitor.gpuWarningThreshold
       defaultValue: Settings.getDefaultValue("systemMonitor.gpuWarningThreshold")
-      suffix: "°C"
+      suffix: "%"
       onValueChanged: {
         Settings.data.systemMonitor.gpuWarningThreshold = value;
         if (Settings.data.systemMonitor.gpuCriticalThreshold < value) {
@@ -134,14 +134,14 @@ ColumnLayout {
     }
 
     NSpinBox {
-      visible: SystemStatService.gpuAvailable
+      visible: SystemStatService.gpuUsageAvailable
       Layout.alignment: Qt.AlignHCenter
       from: Settings.data.systemMonitor.gpuWarningThreshold
-      to: 120
+      to: 100
       stepSize: 5
       value: Settings.data.systemMonitor.gpuCriticalThreshold
       defaultValue: Settings.getDefaultValue("systemMonitor.gpuCriticalThreshold")
-      suffix: "°C"
+      suffix: "%"
       onValueChanged: Settings.data.systemMonitor.gpuCriticalThreshold = value
     }
 

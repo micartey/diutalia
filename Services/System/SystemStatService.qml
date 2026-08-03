@@ -47,6 +47,8 @@ Singleton {
   property real gpuTemp: 0
   property bool gpuAvailable: false
   property string gpuType: "" // "amd", "intel", "nvidia"
+  property real gpuUsage: 0
+  property bool gpuUsageAvailable: false
   property real memGb: 0
   property real memPercent: 0
   property real memTotalGb: 0
@@ -81,6 +83,7 @@ Singleton {
   property var cpuHistory: new Array(cpuHistoryLength).fill(0)
   property var cpuTempHistory: new Array(cpuHistoryLength).fill(40)  // Reasonable default temp
   property var gpuTempHistory: new Array(gpuHistoryLength).fill(40)  // Reasonable default temp
+  property var gpuUsageHistory: new Array(gpuHistoryLength).fill(0)
   property var memHistory: new Array(memHistoryLength).fill(0)
   property var diskHistories: ({}) // Keyed by mount path, initialized on first update
   property var rxSpeedHistory: new Array(networkHistoryLength).fill(0)
@@ -131,6 +134,14 @@ Singleton {
     if (h.length > gpuHistoryLength)
       h.shift();
     gpuTempHistory = h;
+  }
+
+  function pushGpuUsageHistory() {
+    let h = gpuUsageHistory.slice();
+    h.push(gpuUsage);
+    if (h.length > gpuHistoryLength)
+      h.shift();
+    gpuUsageHistory = h;
   }
 
   function pushMemHistory() {
@@ -208,8 +219,8 @@ Singleton {
   readonly property bool cpuCritical: cpuUsage >= cpuCriticalThreshold
   readonly property bool tempWarning: cpuTemp >= tempWarningThreshold
   readonly property bool tempCritical: cpuTemp >= tempCriticalThreshold
-  readonly property bool gpuWarning: gpuAvailable && gpuTemp >= gpuWarningThreshold
-  readonly property bool gpuCritical: gpuAvailable && gpuTemp >= gpuCriticalThreshold
+  readonly property bool gpuWarning: gpuUsageAvailable && gpuUsage >= gpuWarningThreshold
+  readonly property bool gpuCritical: gpuUsageAvailable && gpuUsage >= gpuCriticalThreshold
   readonly property bool memWarning: memPercent >= memWarningThreshold
   readonly property bool memCritical: memPercent >= memCriticalThreshold
   readonly property bool swapWarning: swapPercent >= swapWarningThreshold
@@ -428,6 +439,19 @@ Singleton {
     onTriggered: updateGpuTemperature()
   }
 
+  // Headless nvtop provides a consistent utilization source across GPU vendors.
+  Timer {
+    id: gpuUsageTimer
+    interval: root.gpuIntervalMs
+    repeat: true
+    running: root.shouldRun
+    triggeredOnStart: true
+    onTriggered: {
+      if (!gpuUsageProcess.running)
+        gpuUsageProcess.running = true;
+    }
+  }
+
   // --------------------------------------------
   // FileView components for reading system files
   FileView {
@@ -535,6 +559,38 @@ Singleton {
       onStreamFinished: {
         root.nproc = parseInt(text.trim());
       }
+    }
+  }
+
+  // One-shot JSON snapshot; nvtop exits after writing the current GPU stats.
+  Process {
+    id: gpuUsageProcess
+    command: ["nvtop", "-s"]
+    running: false
+
+    stdout: StdioCollector {
+      onStreamFinished: root.parseGpuUsage(text.trim())
+    }
+
+    onExited: function (exitCode) {
+      if (exitCode !== 0)
+        root.startGpuUsageFallback();
+    }
+  }
+
+  // Vendor-neutral fallback for systems with limited nvtop builds.
+  Process {
+    id: gpuUsageFallbackProcess
+    command: ["sh", "-c", "max=0; found=0; for path in /sys/class/drm/card*/device/gpu_busy_percent /sys/class/drm/card*/device/gt_busy_percent /sys/class/drm/card*/gt/gt*/rps_busy_percent /sys/class/drm/card*/device/gt/gt*/rps_busy_percent; do value=$(cat \"$path\" 2>/dev/null); case \"$value\" in ''|*[!0-9]*) continue;; esac; [ \"$value\" -gt \"$max\" ] && max=\"$value\"; found=1; done; [ \"$found\" -eq 1 ] && printf '%s%%\\n' \"$max\" || exit 1"]
+    running: false
+
+    stdout: StdioCollector {
+      onStreamFinished: root.parseGpuUsageFallback(text.trim())
+    }
+
+    onExited: function (exitCode) {
+      if (exitCode !== 0)
+        root.gpuUsageAvailable = false;
     }
   }
 
@@ -1025,6 +1081,56 @@ Singleton {
       root.loadAvg5 = parseFloat(parts[1]);
       root.loadAvg15 = parseFloat(parts[2]);
     }
+  }
+
+  // Use highest device usage so active dGPUs are represented on hybrid systems.
+  function parseGpuUsage(text) {
+    if (!text) {
+      root.startGpuUsageFallback();
+      return;
+    }
+
+    try {
+      const devices = JSON.parse(text.trim());
+      if (!Array.isArray(devices)) {
+        root.startGpuUsageFallback();
+        return;
+      }
+      let usage = -1;
+      for (const device of devices) {
+        const value = parseFloat(String(device.gpu_util || "").replace("%", ""));
+        if (!isNaN(value))
+          usage = Math.max(usage, value);
+      }
+
+      if (usage < 0) {
+        root.startGpuUsageFallback();
+        return;
+      }
+
+      root.gpuUsage = Math.max(0, Math.min(100, usage));
+      root.gpuUsageAvailable = true;
+      root.pushGpuUsageHistory();
+    } catch (error) {
+      root.startGpuUsageFallback();
+    }
+  }
+
+  function startGpuUsageFallback() {
+    if (!gpuUsageFallbackProcess.running)
+      gpuUsageFallbackProcess.running = true;
+  }
+
+  function parseGpuUsageFallback(text) {
+    const usage = parseFloat(String(text || "").replace("%", "").trim());
+    if (isNaN(usage)) {
+      root.gpuUsageAvailable = false;
+      return;
+    }
+
+    root.gpuUsage = Math.max(0, Math.min(100, usage));
+    root.gpuUsageAvailable = true;
+    root.pushGpuUsageHistory();
   }
 
   // -------------------------------------------------------

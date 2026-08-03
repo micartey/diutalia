@@ -144,6 +144,61 @@ SmartPanel {
         }
       }
 
+      // GPU usage card, available when nvtop returns a valid snapshot
+      NBox {
+        Layout.fillWidth: true
+        Layout.preferredHeight: panelContent.cardHeight
+        visible: SystemStatService.gpuUsageAvailable
+
+        ColumnLayout {
+          anchors.fill: parent
+          anchors.margins: Style.marginS
+          anchors.bottomMargin: Style.radiusM * 0.5
+          spacing: Style.marginXS
+
+          RowLayout {
+            Layout.fillWidth: true
+            spacing: Style.marginXS
+
+            NIcon {
+              icon: "gpu-usage"
+              pointSize: Style.fontSizeXS
+              color: Color.mPrimary
+            }
+
+            NText {
+              text: `${Math.round(SystemStatService.gpuUsage)}%`
+              pointSize: Style.fontSizeXS
+              color: Color.mPrimary
+              font.family: Settings.data.ui.fontFixed
+            }
+
+            Item {
+              Layout.fillWidth: true
+            }
+
+            NText {
+              text: I18n.tr("system-monitor.gpu-usage")
+              pointSize: Style.fontSizeXS
+              color: Color.mOnSurfaceVariant
+            }
+          }
+
+          NGraph {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            values: SystemStatService.gpuUsageHistory
+            minValue: 0
+            maxValue: 100
+            color: Color.mPrimary
+            strokeWidth: Math.max(1, Style.uiScaleRatio)
+            fill: true
+            fillOpacity: 0.15
+            updateInterval: SystemStatService.gpuIntervalMs
+          }
+        }
+      }
+
       // Memory Card (single-line + optional swap indicator)
       NBox {
         Layout.fillWidth: true
@@ -304,33 +359,6 @@ SmartPanel {
 
             NText {
               text: `${SystemStatService.loadAvg1.toFixed(2)} • ${SystemStatService.loadAvg5.toFixed(2)} • ${SystemStatService.loadAvg15.toFixed(2)}`
-              pointSize: Style.fontSizeXS
-              color: Color.mOnSurface
-              Layout.fillWidth: true
-              horizontalAlignment: Text.AlignRight
-            }
-          }
-
-          // GPU Temperature (only if available)
-          RowLayout {
-            Layout.fillWidth: true
-            spacing: Style.marginS
-            visible: SystemStatService.gpuAvailable
-
-            NIcon {
-              icon: "gpu-temperature"
-              pointSize: Style.fontSizeM
-              color: Color.mPrimary
-            }
-
-            NText {
-              text: I18n.tr("system-monitor.gpu-temp") + ":"
-              pointSize: Style.fontSizeXS
-              color: Color.mOnSurfaceVariant
-            }
-
-            NText {
-              text: `${Math.round(SystemStatService.gpuTemp)}°C`
               pointSize: Style.fontSizeXS
               color: Color.mOnSurface
               Layout.fillWidth: true

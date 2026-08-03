@@ -50,7 +50,7 @@ Item {
   readonly property bool showCpuCores: (widgetSettings.showCpuCores !== undefined) ? widgetSettings.showCpuCores : widgetMetadata.showCpuCores
   readonly property bool showCpuFreq: (widgetSettings.showCpuFreq !== undefined) ? widgetSettings.showCpuFreq : widgetMetadata.showCpuFreq
   readonly property bool showCpuTemp: (widgetSettings.showCpuTemp !== undefined) ? widgetSettings.showCpuTemp : widgetMetadata.showCpuTemp
-  readonly property bool showGpuTemp: (widgetSettings.showGpuTemp !== undefined) ? widgetSettings.showGpuTemp : widgetMetadata.showGpuTemp
+  readonly property bool showGpuUsage: (widgetSettings.showGpuUsage !== undefined) ? widgetSettings.showGpuUsage : (widgetSettings.showGpuTemp !== undefined ? widgetSettings.showGpuTemp : widgetMetadata.showGpuUsage)
   readonly property bool showMemoryUsage: (widgetSettings.showMemoryUsage !== undefined) ? widgetSettings.showMemoryUsage : widgetMetadata.showMemoryUsage
   readonly property bool showMemoryAsPercent: (widgetSettings.showMemoryAsPercent !== undefined) ? widgetSettings.showMemoryAsPercent : widgetMetadata.showMemoryAsPercent
   readonly property bool showSwapUsage: (widgetSettings.showSwapUsage !== undefined) ? widgetSettings.showSwapUsage : widgetMetadata.showSwapUsage
@@ -105,9 +105,8 @@ Item {
       rows.push([I18n.tr("system-monitor.cpu-temp"), `${Math.round(SystemStatService.cpuTemp)}°C`]);
     }
 
-    // GPU (if available)
-    if (SystemStatService.gpuAvailable) {
-      rows.push([I18n.tr("system-monitor.gpu-temp"), `${Math.round(SystemStatService.gpuTemp)}°C`]);
+    if (SystemStatService.gpuUsageAvailable) {
+      rows.push([I18n.tr("system-monitor.gpu-usage"), `${Math.round(SystemStatService.gpuUsage)}%`]);
     }
 
     // Load Average
@@ -145,8 +144,6 @@ Item {
   readonly property bool cpuCritical: showCpuUsage && SystemStatService.cpuCritical
   readonly property bool tempWarning: showCpuTemp && SystemStatService.tempWarning
   readonly property bool tempCritical: showCpuTemp && SystemStatService.tempCritical
-  readonly property bool gpuWarning: showGpuTemp && SystemStatService.gpuWarning
-  readonly property bool gpuCritical: showGpuTemp && SystemStatService.gpuCritical
   readonly property bool memWarning: showMemoryUsage && SystemStatService.memWarning
   readonly property bool memCritical: showMemoryUsage && SystemStatService.memCritical
   readonly property bool swapWarning: showSwapUsage && SystemStatService.swapWarning
@@ -439,18 +436,18 @@ Item {
         }
       }
 
-      // GPU Temperature Component
+      // GPU Usage Component
       Item {
-        id: gpuTempContainer
-        implicitWidth: gpuTempContent.implicitWidth
-        implicitHeight: gpuTempContent.implicitHeight
+        id: gpuUsageContainer
+        implicitWidth: gpuUsageContent.implicitWidth
+        implicitHeight: gpuUsageContent.implicitHeight
         Layout.preferredWidth: isVertical ? root.width : implicitWidth
         Layout.preferredHeight: compactMode ? implicitHeight : capsuleHeight
         Layout.alignment: isVertical ? Qt.AlignHCenter : Qt.AlignVCenter
-        visible: showGpuTemp && SystemStatService.gpuAvailable
+        visible: showGpuUsage && SystemStatService.gpuUsageAvailable
 
         GridLayout {
-          id: gpuTempContent
+          id: gpuUsageContent
           anchors.centerIn: parent
           flow: (isVertical && !compactMode) ? GridLayout.TopToBottom : GridLayout.LeftToRight
           rows: (isVertical && !compactMode) ? 2 : 1
@@ -466,26 +463,26 @@ Item {
             Layout.column: 0
 
             NIcon {
-              icon: "gpu-temperature"
+              icon: "gpu-usage"
               pointSize: iconSize
               applyUiScale: false
               x: Style.pixelAlignCenter(parent.width, width)
               y: Style.pixelAlignCenter(parent.height, contentHeight)
-              color: (gpuWarning || gpuCritical) ? SystemStatService.gpuColor : root.iconColor
+              color: root.iconColor
             }
           }
 
           // Text mode
           NText {
             visible: !compactMode
-            text: `${Math.round(SystemStatService.gpuTemp)}°`.padStart(paddingTemp, " ")
+            text: `${Math.round(SystemStatService.gpuUsage)}%`.padStart(paddingPercent, " ")
             family: fontFamily
             pointSize: barFontSize
             applyUiScale: false
             Layout.alignment: Qt.AlignCenter
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: (gpuWarning || gpuCritical) ? SystemStatService.gpuColor : root.textColor
+            color: root.textColor
             Layout.row: isVertical ? 0 : 0
             Layout.column: isVertical ? 0 : 1
           }
@@ -500,8 +497,7 @@ Item {
             Layout.column: 1
 
             onLoaded: {
-              item.ratio = Qt.binding(() => SystemStatService.gpuTemp / 100);
-              item.fillColor = Qt.binding(() => SystemStatService.gpuColor);
+              item.ratio = Qt.binding(() => SystemStatService.gpuUsage / 100);
             }
           }
         }

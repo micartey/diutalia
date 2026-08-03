@@ -38,7 +38,7 @@
           "showDiskAvailable": false,
           "showDiskUsage": false,
           "showDiskUsageAsPercent": false,
-          "showGpuTemp": true,
+          "showGpuUsage": true,
           "showLoadAverage": false,
           "showMemoryAsPercent": false,
           "showMemoryUsage": true,

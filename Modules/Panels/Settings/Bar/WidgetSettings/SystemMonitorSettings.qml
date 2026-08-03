@@ -29,7 +29,7 @@ ColumnLayout {
   property bool valueShowCpuCores: widgetData.showCpuCores !== undefined ? widgetData.showCpuCores : widgetMetadata.showCpuCores
   property bool valueShowCpuFreq: widgetData.showCpuFreq !== undefined ? widgetData.showCpuFreq : widgetMetadata.showCpuFreq
   property bool valueShowCpuTemp: widgetData.showCpuTemp !== undefined ? widgetData.showCpuTemp : widgetMetadata.showCpuTemp
-  property bool valueShowGpuTemp: widgetData.showGpuTemp !== undefined ? widgetData.showGpuTemp : widgetMetadata.showGpuTemp
+  property bool valueShowGpuUsage: widgetData.showGpuUsage !== undefined ? widgetData.showGpuUsage : (widgetData.showGpuTemp !== undefined ? widgetData.showGpuTemp : widgetMetadata.showGpuUsage)
   property bool valueShowLoadAverage: widgetData.showLoadAverage !== undefined ? widgetData.showLoadAverage : widgetMetadata.showLoadAverage
   property bool valueShowMemoryUsage: widgetData.showMemoryUsage !== undefined ? widgetData.showMemoryUsage : widgetMetadata.showMemoryUsage
   property bool valueShowMemoryAsPercent: widgetData.showMemoryAsPercent !== undefined ? widgetData.showMemoryAsPercent : widgetMetadata.showMemoryAsPercent
@@ -51,7 +51,8 @@ ColumnLayout {
     settings.showCpuCores = valueShowCpuCores;
     settings.showCpuFreq = valueShowCpuFreq;
     settings.showCpuTemp = valueShowCpuTemp;
-    settings.showGpuTemp = valueShowGpuTemp;
+    settings.showGpuUsage = valueShowGpuUsage;
+    delete settings.showGpuTemp;
     settings.showLoadAverage = valueShowLoadAverage;
     settings.showMemoryUsage = valueShowMemoryUsage;
     settings.showMemoryAsPercent = valueShowMemoryAsPercent;
@@ -194,17 +195,17 @@ ColumnLayout {
   }
 
   NToggle {
-    id: showGpuTemp
+    id: showGpuUsage
     Layout.fillWidth: true
-    label: I18n.tr("panels.system-monitor.gpu-section-label")
-    description: I18n.tr("bar.system-monitor.gpu-temperature-description")
-    checked: valueShowGpuTemp
+    label: I18n.tr("system-monitor.gpu-usage")
+    description: I18n.tr("bar.system-monitor.gpu-usage-description")
+    checked: valueShowGpuUsage
     onToggled: checked => {
-                 valueShowGpuTemp = checked;
-                 saveSettings();
-               }
-    visible: SystemStatService.gpuAvailable
-    defaultValue: widgetMetadata.showGpuTemp
+                  valueShowGpuUsage = checked;
+                  saveSettings();
+                }
+    visible: SystemStatService.gpuUsageAvailable
+    defaultValue: widgetMetadata.showGpuUsage
   }
 
   NToggle {
