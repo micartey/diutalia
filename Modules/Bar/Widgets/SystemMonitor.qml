@@ -64,7 +64,6 @@ Item {
 
   readonly property int paddingPercent: usePadding ? String("100%").length : 0
   readonly property int paddingTemp: usePadding ? String("999°").length : 0
-  readonly property int paddingCpuFreq: usePadding ? String("9.9").length : 0
   readonly property int paddingSpeed: usePadding ? String("9999G").length : 0
 
   readonly property real iconSize: Style.toOdd(capsuleHeight * 0.48)
@@ -314,33 +313,14 @@ Item {
         GridLayout {
           id: cpuFreqContent
           anchors.centerIn: parent
-          flow: (isVertical && !compactMode) ? GridLayout.TopToBottom : GridLayout.LeftToRight
-          rows: (isVertical && !compactMode) ? 2 : 1
-          columns: (isVertical && !compactMode) ? 1 : 2
+          rows: 1
+          columns: 1
           rowSpacing: Style.marginXXS
           columnSpacing: compactMode ? 3 : Style.marginXS
 
-          Item {
-            Layout.preferredWidth: iconSize
-            Layout.preferredHeight: (compactMode || isVertical) ? iconSize : capsuleHeight
-            Layout.alignment: Qt.AlignCenter
-            Layout.row: (isVertical && !compactMode) ? 1 : 0
-            Layout.column: 0
-
-            NIcon {
-              icon: "cpu-usage"
-              pointSize: iconSize
-              applyUiScale: false
-              x: Style.pixelAlignCenter(parent.width, width)
-              y: Style.pixelAlignCenter(parent.height, contentHeight)
-              color: root.iconColor
-            }
-          }
-
-          // Text mode
+          // Frequency is text in both compact and regular modes.
           NText {
-            visible: !compactMode
-            text: SystemStatService.cpuFreq.replace("Hz", "").replace(" ", "").padStart(paddingCpuFreq, " ")
+            text: SystemStatService.cpuFreq.replace(/\s*GHz$/, " GHz")
             family: fontFamily
             pointSize: barFontSize
             applyUiScale: false
@@ -348,22 +328,6 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: root.textColor
-            Layout.row: isVertical ? 0 : 0
-            Layout.column: isVertical ? 0 : 1
-          }
-
-          // Compact mode
-          Loader {
-            active: compactMode
-            visible: compactMode
-            sourceComponent: miniGaugeComponent
-            Layout.alignment: Qt.AlignCenter
-            Layout.row: 0
-            Layout.column: 1
-
-            onLoaded: {
-              item.ratio = Qt.binding(() => SystemStatService.cpuFreqRatio);
-            }
           }
         }
       }
