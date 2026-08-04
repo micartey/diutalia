@@ -3,17 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    diutalia-qs = {
-      url = "github:diutalia-dev/diutalia-qs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      diutalia-qs,
       ...
     }:
     let
@@ -34,6 +29,7 @@
         ];
 
       version = mkDate (self.lastModifiedDate or "19700101") + "_" + (self.shortRev or "dirty");
+      gitRev = self.rev or self.dirtyRev or "dirty";
     in
     {
       formatter = eachSystem (system: pkgsFor.${system}.nixfmt);
@@ -44,9 +40,10 @@
 
       overlays = {
         default = nixpkgs.lib.composeManyExtensions [
-          diutalia-qs.overlays.default
           (final: prev: {
-            quickshell = prev.quickshell.overrideAttrs (old: {
+            quickshell = (final.callPackage ./quickshell/nix/package.nix {
+              inherit version gitRev;
+            }).overrideAttrs (old: {
               patches = (old.patches or [ ]) ++ [
                 (builtins.toFile "quickshell-default-channel-map.patch" ''
                   diff --git a/src/services/pipewire/node.cpp b/src/services/pipewire/node.cpp

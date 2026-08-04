@@ -9,11 +9,6 @@ import qs.Services.UI
 Singleton {
   id: root
 
-  // TODO Remove in may 2026
-  Component.onCompleted: {
-    _setBandsCount();
-  }
-
   // Register a component that needs audio data, call this when a visualizer becomes active.
   // Pass a unique identifier (e.g., "lockscreen", "controlcenter:screen1", "plugin:fancy-audiovisualizer")
   function registerComponent(componentId) {
@@ -46,8 +41,7 @@ Singleton {
     id: spectrum
     node: Pipewire.defaultAudioSink
     enabled: root._shouldRun
-    // TODO Uncomment this in may 2026
-    // bandCount: Settings.data.audio.spectrumMirrored ? 32 : 64
+    bandCount: Settings.data.audio.spectrumMirrored ? 32 : 64
     frameRate: Settings.data.audio.spectrumFrameRate
     lowerCutoff: 50
     upperCutoff: 12000
@@ -60,22 +54,6 @@ Singleton {
 
     onIdleChanged: {
       root.isIdle = spectrum.idle;
-    }
-  }
-
-  // TODO Remove in may 2026 - temporary until diutalia-qs is fully propagated
-  Connections {
-    target: Settings.data.audio
-    function onSpectrumMirroredChanged() {
-      _setBandsCount();
-    }
-  }
-  function _setBandsCount() {
-    const bandCount = Settings.data.audio.spectrumMirrored ? 32 : 64;
-    if (spectrum.bandCount !== undefined) {
-      spectrum.bandCount = bandCount;
-    } else if (spectrum.barCount !== undefined) {
-      spectrum.barCount = bandCount;
     }
   }
 }
