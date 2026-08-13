@@ -43,6 +43,11 @@ Item {
 
   readonly property bool hideIfNotDetected: widgetSettings.hideIfNotDetected !== undefined ? widgetSettings.hideIfNotDetected : widgetMetadata.hideIfNotDetected
   readonly property bool hideIfIdle: widgetSettings.hideIfIdle !== undefined ? widgetSettings.hideIfIdle : widgetMetadata.hideIfIdle
+  readonly property color color0To20: Qt.color(widgetSettings.color0To20 !== undefined ? widgetSettings.color0To20 : widgetMetadata.color0To20)
+  readonly property color color20To40: Qt.color(widgetSettings.color20To40 !== undefined ? widgetSettings.color20To40 : widgetMetadata.color20To40)
+  readonly property color color40To60: Qt.color(widgetSettings.color40To60 !== undefined ? widgetSettings.color40To60 : widgetMetadata.color40To60)
+  readonly property color color60To80: Qt.color(widgetSettings.color60To80 !== undefined ? widgetSettings.color60To80 : widgetMetadata.color60To80)
+  readonly property color color80To100: Qt.color(widgetSettings.color80To100 !== undefined ? widgetSettings.color80To100 : widgetMetadata.color80To100)
 
   // Check if selected device is actually present/connected
   readonly property bool isReady: BatteryService.isDeviceReady(selectedDevice)
@@ -52,6 +57,18 @@ Item {
   readonly property bool isPluggedIn: isReady ? BatteryService.isPluggedIn(selectedDevice) : false
   readonly property bool isLowBattery: isReady ? BatteryService.isLowBattery(selectedDevice) : false
   readonly property bool isCriticalBattery: isReady ? BatteryService.isCriticalBattery(selectedDevice) : false
+  readonly property color batteryColor: {
+    if (percent <= 20)
+      return color0To20;
+    if (percent <= 40)
+      return color20To40;
+    if (percent <= 60)
+      return color40To60;
+    if (percent <= 80)
+      return color60To80;
+    return color80To100;
+  }
+  readonly property bool hasBatteryColor: isReady
 
   // Visibility: show if hideIfNotDetected is false, or if battery is ready
   readonly property bool shouldShow: !hideIfNotDetected || (isReady && (hideIfIdle ? !isPluggedIn : true))
@@ -182,8 +199,10 @@ Item {
     pluggedIn: root.isPluggedIn
     low: root.isLowBattery
     critical: root.isCriticalBattery
-    baseColor: graphicMouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
-    textColor: graphicMouseArea.containsMouse ? Color.mHover : Color.mSurface
+    baseColor: root.hasBatteryColor ? root.batteryColor : (graphicMouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface)
+    lowColor: root.hasBatteryColor ? root.batteryColor : Color.mError
+    chargingColor: root.hasBatteryColor ? root.batteryColor : Color.mPrimary
+    textColor: root.hasBatteryColor ? (0.2126 * root.batteryColor.r + 0.7152 * root.batteryColor.g + 0.0722 * root.batteryColor.b > 0.5 ? "black" : "white") : (graphicMouseArea.containsMouse ? Color.mHover : Color.mSurface)
   }
 
   MouseArea {
@@ -238,7 +257,7 @@ Item {
     forceOpen: root.isReady && root.displayMode === "icon-always"
     forceClose: root.displayMode === "icon-only" || !root.isReady
     customBackgroundColor: root.isCharging ? Color.mPrimary : ((root.isLowBattery || root.isCriticalBattery) ? Color.mError : "transparent")
-    customTextIconColor: root.isCharging ? Color.mOnPrimary : ((root.isLowBattery || root.isCriticalBattery) ? Color.mOnError : "transparent")
+    customTextIconColor: root.hasBatteryColor ? root.batteryColor : (root.isCharging ? Color.mOnPrimary : ((root.isLowBattery || root.isCriticalBattery) ? Color.mOnError : "transparent"))
     tooltipText: !getBatteryPanel()?.isPanelOpen ? root.tooltipContent : ""
     onClicked: toggleBatteryPanel()
     onRightClicked: PanelService.showContextMenu(contextMenu, pill, screen)

@@ -38,6 +38,7 @@ Item {
   readonly property string iconColorKey: widgetSettings.iconColor !== undefined ? widgetSettings.iconColor : widgetMetadata.iconColor
   readonly property string textColorKey: widgetSettings.textColor !== undefined ? widgetSettings.textColor : widgetMetadata.textColor
   readonly property bool applyToAllMonitors: widgetSettings.applyToAllMonitors !== undefined ? widgetSettings.applyToAllMonitors : (Settings.data.brightness.syncAllMonitors !== undefined ? Settings.data.brightness.syncAllMonitors : widgetMetadata.applyToAllMonitors)
+  readonly property bool hideWhenBrightnessUnsupported: widgetSettings.hideWhenBrightnessUnsupported !== undefined ? widgetSettings.hideWhenBrightnessUnsupported : widgetMetadata.hideWhenBrightnessUnsupported
   readonly property bool reverseScroll: Settings.data.general.reverseScroll
 
   // Used to avoid opening the pill on Quickshell startup
@@ -68,8 +69,14 @@ Item {
     return count;
   }
 
-  visible: brightnessMonitor !== null
-  opacity: brightnessMonitor !== null ? 1.0 : 0.0
+  readonly property bool allDisplaysBrightnessZero: {
+    var monitors = BrightnessService.monitors || [];
+    return monitors.length > 0 && monitors.every(m => !isNaN(m.brightness) && Math.round(m.brightness * 100) === 0);
+  }
+  readonly property bool shouldShow: brightnessMonitor !== null && !(hideWhenBrightnessUnsupported && allDisplaysBrightnessZero)
+
+  visible: shouldShow
+  opacity: shouldShow ? 1.0 : 0.0
 
   function getIcon() {
     var monitor = brightnessMonitor;

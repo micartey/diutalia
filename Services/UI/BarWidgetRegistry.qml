@@ -96,22 +96,28 @@ Singleton {
                                   "Battery": {
                                     "displayMode": "graphic-clean",
                                     "deviceNativePath": "__default__",
-                                    "showPowerProfiles": false,
-                                    "showDiutaliaPerformance": false,
-                                    "hideIfNotDetected": true,
-                                    "hideIfIdle": false
-                                  },
+                                     "showPowerProfiles": false,
+                                     "showDiutaliaPerformance": false,
+                                     "hideIfNotDetected": true,
+                                     "hideIfIdle": false,
+                                     "color0To20": "#D32F2F",
+                                     "color20To40": "#EF5350",
+                                     "color40To60": "#E65100",
+                                     "color60To80": "#9EAD00",
+                                     "color80To100": "#2E7D32"
+                                   },
                                   "Bluetooth": {
                                     "displayMode": "onhover",
                                     "iconColor": "none",
                                     "textColor": "none"
                                   },
-                                  "Brightness": {
-                                    "displayMode": "onhover",
-                                    "iconColor": "none",
-                                    "textColor": "none",
-                                    "applyToAllMonitors": false
-                                  },
+                                   "Brightness": {
+                                     "displayMode": "onhover",
+                                     "iconColor": "none",
+                                     "textColor": "none",
+                                     "applyToAllMonitors": false,
+                                     "hideWhenBrightnessUnsupported": false
+                                   },
                                   "Clock": {
                                     "clockColor": "none",
                                     "useCustomFont": false,

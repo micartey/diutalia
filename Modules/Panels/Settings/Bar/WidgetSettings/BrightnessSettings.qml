@@ -21,6 +21,7 @@ ColumnLayout {
   property string valueIconColor: widgetData.iconColor !== undefined ? widgetData.iconColor : widgetMetadata.iconColor
   property string valueTextColor: widgetData.textColor !== undefined ? widgetData.textColor : widgetMetadata.textColor
   property bool valueApplyToAllMonitors: widgetData.applyToAllMonitors !== undefined ? widgetData.applyToAllMonitors : widgetMetadata.applyToAllMonitors
+  property bool valueHideWhenBrightnessUnsupported: widgetData.hideWhenBrightnessUnsupported !== undefined ? widgetData.hideWhenBrightnessUnsupported : widgetMetadata.hideWhenBrightnessUnsupported
 
   readonly property bool hasMultipleMonitors: (Quickshell.screens || []).length > 1
 
@@ -30,6 +31,7 @@ ColumnLayout {
     settings.iconColor = valueIconColor;
     settings.textColor = valueTextColor;
     settings.applyToAllMonitors = valueApplyToAllMonitors;
+    settings.hideWhenBrightnessUnsupported = valueHideWhenBrightnessUnsupported;
     settingsChanged(settings);
   }
 
@@ -76,6 +78,18 @@ ColumnLayout {
                   saveSettings();
                 }
     defaultValue: widgetMetadata.textColor
+  }
+
+  NToggle {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.brightness.hide-when-unsupported-label")
+    description: I18n.tr("bar.brightness.hide-when-unsupported-description")
+    checked: valueHideWhenBrightnessUnsupported
+    onToggled: checked => {
+                 valueHideWhenBrightnessUnsupported = checked;
+                 saveSettings();
+               }
+    defaultValue: widgetMetadata.hideWhenBrightnessUnsupported
   }
 
   NToggle {

@@ -52,6 +52,18 @@
       "device-default": "Default (Display Device)",
       "device-description": "Select which battery device to display.",
       "device-label": "Battery device",
+      "color-0-to-20-label": "Color at 0-20%",
+      "color-20-to-40-label": "Color at 20-40%",
+      "color-40-to-60-label": "Color at 40-60%",
+      "color-60-to-80-label": "Color at 60-80%",
+      "color-80-to-100-label": "Color at 80-100%",
+      "color-dark-orange": "Dark orange",
+      "color-green": "Green",
+      "color-light-red": "Light red",
+      "color-red": "Red",
+      "color-soft-green": "Soft green",
+      "color-soft-orange": "Soft orange",
+      "color-yellow-green": "Yellowish green",
       "display-mode-description": "Choose how the battery is displayed in the bar.",
       "display-mode-graphic": "Graphical battery",
       "display-mode-graphic-clean": "Graphical battery (no %)",
@@ -70,7 +82,9 @@
     },
     "brightness": {
       "apply-all-description": "Change brightness for every monitor when using the scroll wheel.",
-      "apply-all-label": "Apply scroll changes to all monitors"
+      "apply-all-label": "Apply scroll changes to all monitors",
+      "hide-when-unsupported-description": "Hide the widget when every display reports 0% brightness.",
+      "hide-when-unsupported-label": "Hide when brightness is not supported"
     },
     "clock": {
       "clock-display-description": "Customise your clock's display by adding tokens from the list below. To use the 12-hour format, you must include the 'AP' token.",

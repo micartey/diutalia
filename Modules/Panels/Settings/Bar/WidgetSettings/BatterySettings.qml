@@ -23,6 +23,20 @@ ColumnLayout {
   property bool valueShowDiutaliaPerformance: widgetData.showDiutaliaPerformance !== undefined ? widgetData.showDiutaliaPerformance : widgetMetadata.showDiutaliaPerformance
   property bool valueHideIfNotDetected: widgetData.hideIfNotDetected !== undefined ? widgetData.hideIfNotDetected : widgetMetadata.hideIfNotDetected
   property bool valueHideIfIdle: widgetData.hideIfIdle !== undefined ? widgetData.hideIfIdle : widgetMetadata.hideIfIdle
+  property string valueColor0To20: widgetData.color0To20 !== undefined ? widgetData.color0To20 : widgetMetadata.color0To20
+  property string valueColor20To40: widgetData.color20To40 !== undefined ? widgetData.color20To40 : widgetMetadata.color20To40
+  property string valueColor40To60: widgetData.color40To60 !== undefined ? widgetData.color40To60 : widgetMetadata.color40To60
+  property string valueColor60To80: widgetData.color60To80 !== undefined ? widgetData.color60To80 : widgetMetadata.color60To80
+  property string valueColor80To100: widgetData.color80To100 !== undefined ? widgetData.color80To100 : widgetMetadata.color80To100
+  readonly property var batteryColors: [
+    { "key": "#2E7D32", "name": I18n.tr("bar.battery.color-green") },
+    { "key": "#66BB6A", "name": I18n.tr("bar.battery.color-soft-green") },
+    { "key": "#9EAD00", "name": I18n.tr("bar.battery.color-yellow-green") },
+    { "key": "#FB8C00", "name": I18n.tr("bar.battery.color-soft-orange") },
+    { "key": "#E65100", "name": I18n.tr("bar.battery.color-dark-orange") },
+    { "key": "#EF5350", "name": I18n.tr("bar.battery.color-light-red") },
+    { "key": "#D32F2F", "name": I18n.tr("bar.battery.color-red") }
+  ]
 
   function saveSettings() {
     var settings = Object.assign({}, widgetData || {});
@@ -35,6 +49,11 @@ ColumnLayout {
     settings.hideIfNotDetected = valueHideIfNotDetected;
     settings.hideIfIdle = valueHideIfIdle;
     settings.deviceNativePath = valueDeviceNativePath;
+    settings.color0To20 = valueColor0To20;
+    settings.color20To40 = valueColor20To40;
+    settings.color40To60 = valueColor40To60;
+    settings.color60To80 = valueColor60To80;
+    settings.color80To100 = valueColor80To100;
     settingsChanged(settings);
   }
 
@@ -86,6 +105,66 @@ ColumnLayout {
                   saveSettings();
                 }
     defaultValue: widgetMetadata.displayMode
+  }
+
+  NComboBox {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.battery.color-0-to-20-label")
+    model: batteryColors
+    currentKey: valueColor0To20
+    onSelected: key => {
+                  valueColor0To20 = key;
+                  saveSettings();
+                }
+    defaultValue: widgetMetadata.color0To20
+  }
+
+  NComboBox {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.battery.color-20-to-40-label")
+    model: batteryColors
+    currentKey: valueColor20To40
+    onSelected: key => {
+                  valueColor20To40 = key;
+                  saveSettings();
+                }
+    defaultValue: widgetMetadata.color20To40
+  }
+
+  NComboBox {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.battery.color-40-to-60-label")
+    model: batteryColors
+    currentKey: valueColor40To60
+    onSelected: key => {
+                  valueColor40To60 = key;
+                  saveSettings();
+                }
+    defaultValue: widgetMetadata.color40To60
+  }
+
+  NComboBox {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.battery.color-60-to-80-label")
+    model: batteryColors
+    currentKey: valueColor60To80
+    onSelected: key => {
+                  valueColor60To80 = key;
+                  saveSettings();
+                }
+    defaultValue: widgetMetadata.color60To80
+  }
+
+  NComboBox {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.battery.color-80-to-100-label")
+    model: batteryColors
+    currentKey: valueColor80To100
+    onSelected: key => {
+                  valueColor80To100 = key;
+                  saveSettings();
+                }
+    defaultValue: widgetMetadata.color80To100
   }
 
   NToggle {
