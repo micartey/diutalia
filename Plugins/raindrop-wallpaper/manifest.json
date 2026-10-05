@@ -1,0 +1,31 @@
+{
+  "id": "raindrop-wallpaper",
+  "name": "Raindrop Wallpaper",
+  "version": "1.4.0",
+  "minDiutaliaVersion": "4.7.7",
+  "author": "Diutalia Contributors",
+  "license": "MIT",
+  "repository": "https://github.com/micartey/diutalia",
+  "description": "Liquid-glass droplets and fast background rain with adjustable window hit chance.",
+  "tags": ["Desktop"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": { "plugins": [] },
+  "metadata": {
+    "defaultSettings": {
+      "enabled": true,
+      "density": 100,
+      "speed": 1.0,
+      "windowDropletSpeed": 1.0,
+      "opacity": 0.85,
+      "dropletSize": 1.0,
+      "refraction": 0.7,
+      "dropletLifetime": 3.0,
+      "hitWindowPercentage": 35,
+      "backgroundRain": 65,
+      "glassStrength": 1.5
+    }
+  }
+}

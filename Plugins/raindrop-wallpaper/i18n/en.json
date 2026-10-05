@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "enabled": {
+      "label": "Enable wet glass",
+      "description": "Droplets pause while locked or in performance mode, and require wallpaper to be enabled."
+    },
+    "density": {
+      "label": "Rain density",
+      "description": "Amount of falling rain and opportunities for droplets to hit the glass."
+    },
+    "speed": {
+      "label": "Rain speed",
+      "description": "Speed of background rain and small window impacts. Large sliding droplets have their own speed control."
+    },
+    "windowDropletSpeed": {
+      "label": "Window droplet speed",
+      "description": "Independent speed of the large sliding droplets on the glass. Zero freezes this layer without stopping background rain or smaller impacts."
+    },
+    "opacity": { "label": "Effect opacity" },
+    "dropletSize": {
+      "label": "Droplet size",
+      "description": "Scale the mix of tiny beads, rounded drops, and larger sliding droplets."
+    },
+    "refraction": {
+      "label": "Refraction strength",
+      "description": "How strongly each clear glass-like droplet bends the wallpaper near its edges."
+    },
+    "glassStrength": {
+      "label": "Glass intensity",
+      "description": "Strength of purple-blue iridescence, white reflections, and edge lensing. Zero keeps clear refraction without the colored glass coating."
+    },
+    "dropletLifetime": {
+      "label": "Droplet lifetime",
+      "description": "Seconds before a droplet fades and a new impact can appear, at its layer's 1x speed. Shorter values mean faster turnover."
+    },
+    "hitWindowPercentage": {
+      "label": "Hit window percentage",
+      "description": "Chance that an eligible rain event forms a glass droplet. Zero shows background rain only; 100% lets every eligible event hit."
+    },
+    "backgroundRain": {
+      "label": "Background rain",
+      "description": "Visibility of fast falling rain behind the glass droplets. Zero hides background particles."
+    }
+  }
+}
