@@ -23,6 +23,7 @@ layout(std140, binding = 0) uniform buf {
     float backgroundRain;
     float glassStrength;
     float windowTime;
+    float backgroundTime;
 } ubuf;
 
 vec3 hash(vec2 p) {
@@ -75,7 +76,7 @@ vec4 bead(vec2 pixel, float cellSize, float seed, float moving, float neighbor) 
 }
 
 float rain(vec2 pixel, vec2 cellSize, float seed, float velocity) {
-    vec2 falling = pixel - vec2(0.12, 1.0) * ubuf.time * velocity;
+    vec2 falling = pixel - vec2(0.12, 1.0) * ubuf.backgroundTime * velocity;
     vec2 cell = floor(falling / cellSize);
     vec3 random = hash(cell + seed);
     vec2 local = falling - (cell + 0.2 + random.xy * 0.6) * cellSize;

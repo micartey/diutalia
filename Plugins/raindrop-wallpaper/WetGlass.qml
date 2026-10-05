@@ -12,6 +12,9 @@ Item {
   property real dropletSize: 1
   property real refraction: 0.7
   property real speed: 1
+  property bool paused: false
+  property bool continueBackgroundRainWhenPaused: false
+  property real backgroundTime: 0
   property real time: 0
   property real windowTime: 0
   property real windowDropletSpeed: 1
@@ -49,14 +52,18 @@ Item {
   Timer {
     interval: 33
     repeat: true
-    running: root.visible && (root.speed > 0 || root.windowDropletSpeed > 0)
+    running: root.visible && ((!root.paused && (root.speed > 0 || root.windowDropletSpeed > 0)) || (root.paused && root.continueBackgroundRainWhenPaused && root.speed > 0 && root.backgroundRain > 0))
     property real previousTime: 0
     onRunningChanged: previousTime = Date.now()
     onTriggered: {
       const now = Date.now();
       const dt = Math.min(0.1, (now - previousTime) / 1000);
-      root.time += dt * root.speed;
-      root.windowTime += dt * root.windowDropletSpeed;
+      if (!root.paused) {
+        root.time += dt * root.speed;
+        root.windowTime += dt * root.windowDropletSpeed;
+      }
+      if (!root.paused || root.continueBackgroundRainWhenPaused)
+        root.backgroundTime += dt * root.speed;
       previousTime = now;
     }
   }
@@ -82,6 +89,7 @@ Item {
     property real backgroundRain: root.backgroundRain / 100
     property real glassStrength: root.glassStrength
     property real windowTime: root.windowTime
+    property real backgroundTime: root.backgroundTime
 
     fragmentShader: Qt.resolvedUrl("shaders/wet-glass.frag.qsb")
   }

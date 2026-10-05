@@ -1,7 +1,7 @@
 {
   "id": "raindrop-wallpaper",
   "name": "Raindrop Wallpaper",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "minDiutaliaVersion": "4.7.7",
   "author": "Diutalia Contributors",
   "license": "MIT",
@@ -16,6 +16,8 @@
   "metadata": {
     "defaultSettings": {
       "enabled": true,
+      "pauseWhenWindowsPresent": true,
+      "continueBackgroundRainWhenPaused": false,
       "density": 100,
       "speed": 1.0,
       "windowDropletSpeed": 1.0,

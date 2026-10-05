@@ -4,6 +4,14 @@
       "label": "Enable wet glass",
       "description": "Droplets pause while locked or in performance mode, and require wallpaper to be enabled."
     },
+    "pauseWhenWindowsPresent": {
+      "label": "Pause when windows are present",
+      "description": "Freeze rain on each monitor whose active workspace contains a window, even if wallpaper remains visible. Resume when that workspace is empty."
+    },
+    "continueBackgroundRainWhenPaused": {
+      "label": "Keep background rain moving while paused",
+      "description": "When windows pause the glass droplets, keep background streaks moving at the rain speed. This keeps the full-screen shader active and saves less GPU power than pausing everything."
+    },
     "density": {
       "label": "Rain density",
       "description": "Amount of falling rain and opportunities for droplets to hit the glass."

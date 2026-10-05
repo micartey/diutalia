@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Window
 import "../" as Rain
+import "../WindowPresence.js" as WindowPresence
 
 Window {
   id: window
@@ -12,6 +13,9 @@ Window {
   property int stage: 0
   property real glassChecksum: -1
   property real stoppedWindowTime: 0
+  property real pausedTime: 0
+  property real pausedWindowTime: 0
+  property real pausedBackgroundTime: 0
 
   function advance() {
     stage++;
@@ -110,6 +114,12 @@ Window {
     onTriggered: {
       switch (window.stage) {
       case 0:
+        const outputs = WindowPresence.occupiedOutputs(
+          [{ id: 1, output: "DP-1", isActive: true }], [{ workspaceId: 1 }], false);
+        if (outputs["DP-1"] !== true) {
+          Qt.exit(15);
+          return;
+        }
         if (glass.shaderStatus !== ShaderEffect.Compiled || glass.wallpaperStatus !== Image.Ready || glass.time !== 0) {
           Qt.exit(1);
           return;
@@ -178,10 +188,43 @@ Window {
         window.capture("refreshed");
         break;
       case 11:
-        glass.hitWindowPercentage = 0;
+        glass.speed = 1;
+        glass.windowDropletSpeed = 1;
+        glass.paused = true;
+        window.pausedTime = glass.time;
+        window.pausedWindowTime = glass.windowTime;
+        window.pausedBackgroundTime = glass.backgroundTime;
         window.advance();
         break;
       case 12:
+        if (glass.time !== window.pausedTime || glass.windowTime !== window.pausedWindowTime || glass.backgroundTime !== window.pausedBackgroundTime) {
+          Qt.exit(12);
+          return;
+        }
+        glass.continueBackgroundRainWhenPaused = true;
+        glass.backgroundRain = 65;
+        window.advance();
+        break;
+      case 13:
+        if (glass.time !== window.pausedTime || glass.windowTime !== window.pausedWindowTime || glass.backgroundTime <= window.pausedBackgroundTime) {
+          Qt.exit(13);
+          return;
+        }
+        glass.paused = false;
+        window.advance();
+        break;
+      case 14:
+        if (glass.time <= window.pausedTime || glass.windowTime <= window.pausedWindowTime) {
+          Qt.exit(14);
+          return;
+        }
+        glass.speed = 0;
+        glass.windowDropletSpeed = 0;
+        glass.hitWindowPercentage = 0;
+        glass.backgroundRain = 0;
+        window.advance();
+        break;
+      case 15:
         window.capture("empty");
         break;
       }

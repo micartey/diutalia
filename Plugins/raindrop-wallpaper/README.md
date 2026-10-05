@@ -14,7 +14,8 @@ iridescent rims, broad colored reflections, bright white ribbons, and chromatic 
 - Configurable rain density, opacity, droplet size, refraction, glass intensity, lifetime, hit percentage, and background rain visibility.
 - Click-through overlay on every connected monitor, below normal application windows.
 - Stops rendering while locked, in performance mode, or when wallpaper is disabled.
-- GPU shader bundled with the plugin; no runtime compiler or external processes.
+- Freezes animation per monitor when its active workspace contains a window (enabled by default).
+- GPU shader bundled with the plugin; no runtime compiler or per-frame external processes.
 
 ## Usage
 
@@ -34,6 +35,21 @@ rain visibility is 65%. Try lifetime 1.5 seconds and speed 1.5x for a lively sho
 background rain and smaller impacts. Set it to 0x to freeze just that layer, or
 try 0.3x for a slow glide. Its appearance/fade cycle slows with the layer as well.
 Set both rain speed and window droplet speed to zero to freeze the whole effect.
+
+**Pause when windows are present** defaults to enabled. Any window on a monitor's
+active workspace freezes all animation clocks on that monitor, including around small
+windows. Other monitors keep animating. Closing the last window or switching to an
+empty workspace resumes from the frozen frame, without reloading wallpaper textures
+or jumping ahead in time. Disable this setting to keep rain moving behind windows.
+Detection uses compositor workspace/window events, not polling. Niri uses one
+`niri msg --json event-stream` process because this shell's Niri backend does not
+populate window models. If compositor data is unavailable, rain keeps animating.
+
+Enable **Keep background rain moving while paused** to freeze glass droplets but
+continue the falling background streaks. This option defaults to disabled and
+uses the rain speed setting. A separate background clock prevents droplet impacts
+from renewing while paused. Background motion still updates the combined full-screen
+shader, so this mode saves less GPU power than freezing the entire effect.
 
 **Hit window percentage** controls the probability that an eligible rain event
 becomes a window droplet, after the density setting is applied. At 0%, only
@@ -79,7 +95,7 @@ QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=rhi QSG_RHI_BACKEND=opengl qml Plugin
 
 The test checks independent rain/window clocks and renders wallpaper-backed and solid-color droplets, background-only rain,
 glass-only droplets, and an empty overlay. It checks transparency, freeze/animation,
-droplet renewal, zero/100% hit chance, colored/untinted glass, and purple-blue-white
+full pause/resume and background-only continuation, droplet renewal, zero/100% hit chance, colored/untinted glass, and purple-blue-white
 reflections on a neutral background, and writes PNGs for visual inspection.
 The separate refraction regression test uses a high-contrast checkerboard to
 verify that changing refraction actually changes wallpaper pixels, and that
@@ -94,3 +110,9 @@ Qt Quick's `software`
 backend does not render ShaderEffect; use OpenGL or Vulkan (software GPU drivers
 such as llvmpipe also work). Verify click-through, multi-monitor layering,
 lock-screen suspension, and settings persistence in a running Diutalia session.
+
+Run event-driven window detection tests without Qt:
+
+```sh
+node Plugins/raindrop-wallpaper/tests/WindowPresence.test.cjs
+```

@@ -5,6 +5,8 @@ import Quickshell.Wayland
 import qs.Commons
 import qs.Services.Power
 import qs.Services.UI
+import qs.Services.Compositor
+import "WindowPresence.js" as WindowPresence
 
 Item {
   id: root
@@ -14,6 +16,11 @@ Item {
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
   readonly property bool rainEnabled: cfg.enabled ?? defaults.enabled ?? true
+  readonly property bool pauseWhenWindowsPresent: cfg.pauseWhenWindowsPresent ?? defaults.pauseWhenWindowsPresent ?? true
+  readonly property bool continueBackgroundRainWhenPaused: cfg.continueBackgroundRainWhenPaused ?? defaults.continueBackgroundRainWhenPaused ?? false
+  property var occupiedOutputs: ({})
+  property var niriState: ({ workspaces: [], windows: [] })
+  readonly property bool trackNiri: pluginApi !== null && rainEnabled && pauseWhenWindowsPresent && CompositorService.isNiri
   readonly property int density: Math.max(10, Math.min(300, cfg.density ?? defaults.density ?? 100))
   readonly property real speed: Math.max(0, Math.min(3, cfg.speed ?? defaults.speed ?? 1))
   readonly property real windowDropletSpeed: Math.max(0, Math.min(3, cfg.windowDropletSpeed ?? defaults.windowDropletSpeed ?? 1))
@@ -24,6 +31,59 @@ Item {
   readonly property real hitWindowPercentage: Math.max(0, Math.min(100, cfg.hitWindowPercentage ?? defaults.hitWindowPercentage ?? 35))
   readonly property real backgroundRain: Math.max(0, Math.min(100, cfg.backgroundRain ?? defaults.backgroundRain ?? 65))
   readonly property real glassStrength: Math.max(0, Math.min(3, cfg.glassStrength ?? defaults.glassStrength ?? 1.5))
+
+  function updateOccupiedOutputs() {
+    if (CompositorService.isNiri)
+      return;
+    const workspaces = [];
+    const windows = [];
+    for (let i = 0; i < CompositorService.workspaces.count; i++)
+      workspaces.push(CompositorService.workspaces.get(i));
+    for (let i = 0; i < CompositorService.windows.count; i++)
+      windows.push(CompositorService.windows.get(i));
+    occupiedOutputs = WindowPresence.occupiedOutputs(workspaces, windows, CompositorService.globalWorkspaces);
+  }
+
+  Component.onCompleted: updateOccupiedOutputs()
+
+  Connections {
+    target: CompositorService
+    function onWindowListChanged() { root.updateOccupiedOutputs(); }
+    function onWorkspacesChanged() { root.updateOccupiedOutputs(); }
+    function onWorkspaceChanged() { root.updateOccupiedOutputs(); }
+  }
+
+  Process {
+    command: ["niri", "msg", "--json", "event-stream"]
+    running: root.trackNiri && !niriRetry.running
+    onRunningChanged: {
+      root.niriState = { workspaces: [], windows: [] };
+      if (CompositorService.isNiri)
+        root.occupiedOutputs = {};
+    }
+    stdout: SplitParser {
+      onRead: data => {
+        try {
+          const outputs = WindowPresence.applyNiriEvent(root.niriState, JSON.parse(data));
+          if (outputs !== null)
+            root.occupiedOutputs = outputs;
+        } catch (error) {
+          Logger.w("RaindropWallpaper", "Invalid Niri event: " + error);
+        }
+      }
+    }
+    onExited: (exitCode, exitStatus) => {
+      if (root.trackNiri) {
+        Logger.w("RaindropWallpaper", "Niri event stream stopped; retrying in 5 seconds");
+        niriRetry.start();
+      }
+    }
+  }
+
+  Timer {
+    id: niriRetry
+    interval: 5000
+  }
 
   IpcHandler {
     target: "plugin:raindrop-wallpaper"
@@ -78,6 +138,8 @@ Item {
 
         WetGlass {
           anchors.fill: parent
+          paused: root.pauseWhenWindowsPresent && root.occupiedOutputs[screenLoader.modelData.name] === true
+          continueBackgroundRainWhenPaused: root.continueBackgroundRainWhenPaused
           wallpaperSource: WallpaperService.isSolidColorPath(window.wallpaperPath) ? "" : window.wallpaperPath
           useSolidColor: Settings.data.wallpaper.useSolidColor || WallpaperService.isSolidColorPath(window.wallpaperPath)
           solidColor: WallpaperService.isSolidColorPath(window.wallpaperPath) ? WallpaperService.getSolidColor(window.wallpaperPath) : Settings.data.wallpaper.solidColor

@@ -10,6 +10,8 @@ ColumnLayout {
   property var cfg: pluginApi?.pluginSettings || ({})
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
   property bool editEnabled: cfg.enabled ?? defaults.enabled ?? true
+  property bool editPauseWhenWindowsPresent: cfg.pauseWhenWindowsPresent ?? defaults.pauseWhenWindowsPresent ?? true
+  property bool editContinueBackgroundRainWhenPaused: cfg.continueBackgroundRainWhenPaused ?? defaults.continueBackgroundRainWhenPaused ?? false
   property int editDensity: cfg.density ?? defaults.density ?? 100
   property real editSpeed: cfg.speed ?? defaults.speed ?? 1
   property real editWindowDropletSpeed: cfg.windowDropletSpeed ?? defaults.windowDropletSpeed ?? 1
@@ -28,6 +30,21 @@ ColumnLayout {
     description: pluginApi?.tr("settings.enabled.description")
     checked: root.editEnabled
     onToggled: checked => root.editEnabled = checked
+  }
+
+  NToggle {
+    label: pluginApi?.tr("settings.pauseWhenWindowsPresent.label")
+    description: pluginApi?.tr("settings.pauseWhenWindowsPresent.description")
+    checked: root.editPauseWhenWindowsPresent
+    onToggled: checked => root.editPauseWhenWindowsPresent = checked
+  }
+
+  NToggle {
+    label: pluginApi?.tr("settings.continueBackgroundRainWhenPaused.label")
+    description: pluginApi?.tr("settings.continueBackgroundRainWhenPaused.description")
+    checked: root.editContinueBackgroundRainWhenPaused
+    enabled: root.editPauseWhenWindowsPresent
+    onToggled: checked => root.editContinueBackgroundRainWhenPaused = checked
   }
 
   NValueSlider {
@@ -153,6 +170,8 @@ ColumnLayout {
     if (!pluginApi)
       return;
     pluginApi.pluginSettings.enabled = editEnabled;
+    pluginApi.pluginSettings.pauseWhenWindowsPresent = editPauseWhenWindowsPresent;
+    pluginApi.pluginSettings.continueBackgroundRainWhenPaused = editContinueBackgroundRainWhenPaused;
     pluginApi.pluginSettings.density = editDensity;
     pluginApi.pluginSettings.speed = editSpeed;
     pluginApi.pluginSettings.windowDropletSpeed = editWindowDropletSpeed;
