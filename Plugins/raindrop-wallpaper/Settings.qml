@@ -22,6 +22,7 @@ ColumnLayout {
   property real editHitWindowPercentage: cfg.hitWindowPercentage ?? defaults.hitWindowPercentage ?? 35
   property real editBackgroundRain: cfg.backgroundRain ?? defaults.backgroundRain ?? 65
   property real editGlassStrength: cfg.glassStrength ?? defaults.glassStrength ?? 1.5
+  property real editParallax: cfg.parallax ?? defaults.parallax ?? 0
 
   spacing: Style.marginL
 
@@ -132,6 +133,18 @@ ColumnLayout {
 
   NValueSlider {
     Layout.fillWidth: true
+    label: pluginApi?.tr("settings.parallax.label")
+    description: pluginApi?.tr("settings.parallax.description")
+    from: 0
+    to: 10
+    stepSize: 0.5
+    value: root.editParallax
+    text: root.editParallax.toFixed(1)
+    onMoved: value => root.editParallax = value
+  }
+
+  NValueSlider {
+    Layout.fillWidth: true
     label: pluginApi?.tr("settings.dropletLifetime.label")
     description: pluginApi?.tr("settings.dropletLifetime.description")
     from: 0.5
@@ -182,6 +195,7 @@ ColumnLayout {
     pluginApi.pluginSettings.hitWindowPercentage = editHitWindowPercentage;
     pluginApi.pluginSettings.backgroundRain = editBackgroundRain;
     pluginApi.pluginSettings.glassStrength = editGlassStrength;
+    pluginApi.pluginSettings.parallax = editParallax;
     pluginApi.saveSettings();
   }
 }

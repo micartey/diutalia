@@ -37,6 +37,10 @@
       "label": "Glass intensity",
       "description": "Strength of purple-blue iridescence, white reflections, and edge lensing. Zero keeps clear refraction without the colored glass coating."
     },
+    "parallax": {
+      "label": "Mouse parallax",
+      "description": "Shift rain and droplets with pointer movement. Range is 0–10; zero disables the effect, higher values increase travel distance and enable pointer tracking on the wallpaper overlay."
+    },
     "dropletLifetime": {
       "label": "Droplet lifetime",
       "description": "Seconds before a droplet fades and a new impact can appear, at its layer's 1x speed. Shorter values mean faster turnover."

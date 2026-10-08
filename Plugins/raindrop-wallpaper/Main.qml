@@ -31,6 +31,7 @@ Item {
   readonly property real hitWindowPercentage: Math.max(0, Math.min(100, cfg.hitWindowPercentage ?? defaults.hitWindowPercentage ?? 35))
   readonly property real backgroundRain: Math.max(0, Math.min(100, cfg.backgroundRain ?? defaults.backgroundRain ?? 65))
   readonly property real glassStrength: Math.max(0, Math.min(3, cfg.glassStrength ?? defaults.glassStrength ?? 1.5))
+  readonly property real parallax: Math.max(0, Math.min(10, cfg.parallax ?? defaults.parallax ?? 0))
 
   function updateOccupiedOutputs() {
     if (CompositorService.isNiri)
@@ -123,7 +124,7 @@ Item {
 
         screen: screenLoader.modelData
         color: "transparent"
-        mask: Region {}
+        mask: Region { item: root.parallax > 0 ? pointerInputRegion : null }
         WlrLayershell.layer: WlrLayer.Bottom
         WlrLayershell.exclusionMode: ExclusionMode.Ignore
         WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
@@ -134,6 +135,25 @@ Item {
           bottom: true
           left: true
           right: true
+        }
+
+        MouseArea {
+          id: pointerArea
+          anchors.fill: parent
+          enabled: root.parallax > 0
+          acceptedButtons: Qt.NoButton
+          hoverEnabled: true
+          onPositionChanged: mouse => {
+            window.pointerOffset = Qt.vector2d(mouse.x / width - 0.5, mouse.y / height - 0.5);
+          }
+          // Retain last offset when another surface takes pointer; resetting causes snapping.
+        }
+
+        property vector2d pointerOffset: Qt.vector2d(0, 0)
+
+        Item {
+          id: pointerInputRegion
+          anchors.fill: parent
         }
 
         WetGlass {
@@ -155,6 +175,8 @@ Item {
           hitWindowPercentage: root.hitWindowPercentage
           backgroundRain: root.backgroundRain
           glassStrength: root.glassStrength
+          parallax: root.parallax
+          pointerOffset: window.pointerOffset
         }
       }
     }

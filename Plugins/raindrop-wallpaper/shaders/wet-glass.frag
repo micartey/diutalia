@@ -24,6 +24,7 @@ layout(std140, binding = 0) uniform buf {
     float glassStrength;
     float windowTime;
     float backgroundTime;
+    vec2 parallaxOffset;
 } ubuf;
 
 vec3 hash(vec2 p) {
@@ -96,7 +97,7 @@ float rainfall(vec2 pixel) {
 
 void main() {
     vec2 uv = qt_TexCoord0;
-    vec2 pixel = uv * ubuf.screenSize;
+    vec2 pixel = uv * ubuf.screenSize - ubuf.parallaxOffset * ubuf.screenSize;
     float scale = max(0.4, ubuf.dropletSize);
     vec4 drop = bead(pixel, 34.0 * scale, 17.0, 0.0, 0.0);
     vec4 medium = bead(pixel, 60.0 * scale, 53.0, 0.0, 0.0);
@@ -118,9 +119,10 @@ void main() {
     float distance = length(local);
     float dome = sqrt(max(0.0, 1.0 - min(1.0, distance * distance)));
     vec3 normal = normalize(vec3(local * 0.85, dome + 0.12));
-    // Clear centers, strong edge lensing, and a faint chromatic fringe suggest liquid glass.
+    // Refraction fades linearly from the center toward the rim; color fringes stay rim-localized.
     float rim = smoothstep(0.55, 0.97, distance);
-    vec2 offset = normal.xy * (drop.z * 2.2 + 8.0) * ubuf.refraction * (0.15 + rim * 0.85)
+    float inwardWarp = 1.0 - clamp(distance, 0.0, 1.0);
+    vec2 offset = normal.xy * (drop.z * 2.2 + 8.0) * ubuf.refraction * (0.15 + inwardWarp * 0.85)
                   * (1.0 + ubuf.glassStrength * 0.2) / ubuf.screenSize;
     vec2 fringe = normal.xy * rim * ubuf.refraction * (0.65 + ubuf.glassStrength * 0.65) / ubuf.screenSize;
     vec3 color = vec3(wallpaper(uv - offset - fringe).r,

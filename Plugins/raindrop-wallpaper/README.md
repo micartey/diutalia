@@ -12,7 +12,8 @@ iridescent rims, broad colored reflections, bright white ribbons, and chromatic 
 - Actual wallpaper sampling through curved droplet surfaces, not painted white streaks.
 - Independent speed controls for background rain and large sliding window droplets.
 - Configurable rain density, opacity, droplet size, refraction, glass intensity, lifetime, hit percentage, and background rain visibility.
-- Click-through overlay on every connected monitor, below normal application windows.
+- Optional mouse parallax shifts rain and droplets in the pointer's direction; strength is configurable.
+- Overlay on every connected monitor, below normal application windows; pointer input stays disabled unless parallax is enabled.
 - Stops rendering while locked, in performance mode, or when wallpaper is disabled.
 - Freezes animation per monitor when its active workspace contains a window (enabled by default).
 - GPU shader bundled with the plugin; no runtime compiler or per-frame external processes.
@@ -29,6 +30,9 @@ and white reflections; set it to zero for clear, untinted lenses. Color follows
 the droplet curvature rather than tinting the whole wallpaper.
 Reflections use bounded blending so bright wallpapers retain their colors and
 detail instead of turning into white blobs.
+Mouse parallax defaults to off. Increase its setting to make all rain and droplet
+layers follow pointer movement; maximum strength shifts particles by up to 10% of
+screen size from screen center.
 Default droplet lifetime is 3 seconds, window hit chance is 35%, and background
 rain visibility is 65%. Try lifetime 1.5 seconds and speed 1.5x for a lively shower.
 **Window droplet speed** controls the larger sliding layer independently of

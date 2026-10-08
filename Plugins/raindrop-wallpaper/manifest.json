@@ -1,7 +1,7 @@
 {
   "id": "raindrop-wallpaper",
   "name": "Raindrop Wallpaper",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "minDiutaliaVersion": "4.7.7",
   "author": "Diutalia Contributors",
   "license": "MIT",
@@ -27,7 +27,8 @@
       "dropletLifetime": 3.0,
       "hitWindowPercentage": 35,
       "backgroundRain": 65,
-      "glassStrength": 1.5
+      "glassStrength": 1.5,
+      "parallax": 0
     }
   }
 }

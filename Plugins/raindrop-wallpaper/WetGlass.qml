@@ -22,6 +22,8 @@ Item {
   property real hitWindowPercentage: 35
   property real backgroundRain: 65
   property real glassStrength: 1.5
+  property real parallax: 0
+  property vector2d pointerOffset: Qt.vector2d(0, 0)
   readonly property int shaderStatus: glass.status
   readonly property string shaderLog: glass.log
   readonly property int wallpaperStatus: wallpaper.status
@@ -90,6 +92,7 @@ Item {
     property real glassStrength: root.glassStrength
     property real windowTime: root.windowTime
     property real backgroundTime: root.backgroundTime
+    property vector2d parallaxOffset: Qt.vector2d(root.pointerOffset.x * root.parallax / 50, root.pointerOffset.y * root.parallax / 50)
 
     fragmentShader: Qt.resolvedUrl("shaders/wet-glass.frag.qsb")
   }
